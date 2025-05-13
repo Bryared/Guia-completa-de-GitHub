@@ -19,3 +19,4 @@ y equipos que deseen dominar las mejores prácticas del control de versiones.
 - ⚙️ [Automatización con GitHub Actions](Documentos/09-automatizacion.md)
 - 🌐 [Publicación de sitios web con GitHub Pages](Documentos/10-publicacion.md)
 - 💻 [Entornos de desarrollo en la nube: Codespaces y GitHub Dev Editor](Documentos/11-codespaces.md)
+- 🧭 [Índice Específico](Documentos/indice-detallado.md)
