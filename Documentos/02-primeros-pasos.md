@@ -10,7 +10,6 @@ Git es un sofware de control de versiones de una carpeta que nos permite tener d
 | Control de versiones distribuido | Cada colaborador tiene el repositorio completo, permitiendo trabajar sin conexión y mayor resiliencia.     |
 | Ramificación ligera              | Creación y fusión de ramas de forma rápida y sencilla, favoreciendo flujos de trabajo basados en features. |
 | Historial completo               | Registro detallado de cada cambio con autor, fecha y mensaje, facilitando auditoría y reversión.           |
-| Integridad de datos              | Uso de SHA-1 para asegurar que el historial no se corrompa y detectar modificiaciones no autorizadas.      |
 | Rendimiento                      | Operaciones locales rápidas (commits, diffs, logs) sin depender de un servidor central.                    |
 | Colaboración fluida              | Herramientas como pull requests y forks facilitan revisiones de código y contribuciones externas.          |
 | Compatibilidad y extensibilidad  | Gran ecosistema de clientes GUI, hooks, servicios remotos (GitHub, GitLab, Bitbucket) y plugins.           |
@@ -129,8 +128,9 @@ Aunque es opcional, puede definir el editor predeterminado para mensajes de comm
 git config --global core.editor "code --wait"
 ```
 
-## 🖥️ Comandos básicos de la terminal
-
+## 🖥️ Comandos básicos de la terminal de Git Bach
+Aquí verás detalladamente los comandos basicos de la terminal
+El resumen puedes encontrarlo aqui: ->  <-
 #### 📁 Crear tu primer repositorio
 
 Una vez que se han instalado y configurado las herramientas necesarias, el siguiente paso consiste en crear y gestionar un repositorio Git en un proyecto nuevo o existente. En esta sección se describen los pasos y comandos principales para inicializar un repositorio, preparar archivos, confirmar cambios y explorar el historial de versiones.
@@ -314,8 +314,6 @@ git reset --hard <ID-del-commit>
   git branch -n <nuevo_nombre>
   ```
 
-
-
 ## 🧬 Estructura interna del repositorio
 
 El directorio oculto `.git` contiene toda la información que Git utiliza para gestionar el historial, las referencias y la configuración del repositorio. A continuación se describen sus principales componentes:
@@ -413,6 +411,3 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
 - **Enlace:** <https://code.visualstudio.com/>  
 
 Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.```
-
-
-## ✅ Resultado esperado
