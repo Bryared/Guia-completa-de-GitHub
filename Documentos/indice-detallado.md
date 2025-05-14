@@ -168,45 +168,27 @@ Herramientas de merge (VSCode, meld)
 Recrear un conflicto entre dos ramas y resolverlo manualmente
 
 # 6. ☁️ Trabajo con repositorios remotos en GitHub
-## 6.1 Crear un repo remoto
-
-Opciones de visibilidad, README, plantilla de licencia
-
-## 6.2 Conexión local-remoto
-
-git remote add origin
-
-git push -u origin main
-
-## 6.3 Operaciones remotas
-
-git fetch vs. git pull
-
-git push (forzar, tags)
-
-## 6.4 Autenticación
-
-HTTPS con token personal
-
-SSH (generar par de llaves, ssh-agent)
-
-## 6.5 Sincronización de forks
-
-upstream remoto, fetch + rebase
-
-## 6.6 Ejercicio
-
-Clonar un fork, sincronizar con el repo original
+## 6.1 🔄 Conceptos Básicos
+## ☁️ GitHub como servicio de hosting Git
+## 🏗️ Crear un repositorio remoto en GitHub
+## 6.2 ⚖️ Configuración Inicial de Remotos
+## 6.3 🔑 URLs y Autenticación
+## 6.4 ➡️ Enviar Cambios al Remoto (Push)
+## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
+## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
+## 6.7 🌐 Gestión de múltiples remotos
+## 6.8 📖 Clonación de Repositorios
+## 6.9 🚚 Migrar un repositorio local a GitHub
+## 6.10 🏢 Organizaciones, Equipos y Permisos en GitHub
+## 6.11 🗃️ Monorepos y gestión de permisos avanzada
+## 6.12 ⚙️ Automatización Local con Git
+## 6.13 ⚠️ Manejo de Errores Comunes en Repos Remotos
+## 6.14 💡 Buenas Prácticas Fundamentales con Repos Remotos
+## 6.14 💡 Buenas Prácticas con Repos Remotos
 
 # 7. 🤝 Colaboración: Forks, Pull Requests y revisiones
 ## 7.1 Fork vs. clone
-
-Flujo de contribución en proyectos open-source
-
 ## 7.2 Crear un Pull Request
-
-Descripción clara, checklist, reviewers
-
 ## 7.3 Review de código
 
 Comentarios en línea, sugerencias, aprobaciones
