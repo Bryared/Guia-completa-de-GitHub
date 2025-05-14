@@ -1,5 +1,5 @@
 # ⚙️ 2. Primeros Pasos con Git
-Git es un sistema de control de versiones que permite gestionar y rastrear cambios en archivos de código.
+Git es un sistema de control de versiones que permite gestionar y rastrear cambios en archivos de código. Para comenzar, se instala Git, se configura el usuario con git config, y se inicia un repositorio con git init. Luego, se pueden agregar archivos con git add y guardar cambios usando git commit
 ## 🎯 Objetivo
 
 ## 🧠 ¿Qué es Git?
