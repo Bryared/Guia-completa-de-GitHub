@@ -4,7 +4,53 @@ El trabajo con repositorios remotos en GitHub facilita la colaboración, sincron
 Esta sección abarca desde los conceptos básicos hasta configuraciones avanzadas, preparándote para dominar el trabajo local y remoto en proyectos Git.
 
 ---
+## 6.1 Conceptos Básicos**
 
+  * Definición de repositorio remoto
+  * Diferencias Local vs Remoto
+  * Ventajas de usar remotos
+  * GitHub como servicio de hosting
+
+## 6.2 Configuración Inicial de Remotos**
+
+  * `git remote add`
+  * `git remote -v`
+  * `git remote set-url`
+  * `git remote remove`
+
+## 6.3 URLs y Autenticación para Git**
+
+  * HTTP vs SSH (sintaxis y pros/contras)
+  * Tokens de Acceso Personal (PAT)
+  * Claves SSH (`ssh-keygen`, agentes, registro)
+  * `gh auth login` (GitHub CLI)
+
+## 6.4 Envío de Cambios (Push)**
+
+  * `git push origin <rama>`
+  * `--set-upstream`
+  * `--force` / `--force-with-lease`
+  * Push de etiquetas (`--tags`)
+  * Push de todas las ramas (`--all`)
+
+## 6.5 Obtención de Cambios (Fetch & Pull)**
+
+  * `git fetch origin`
+  * `git pull origin <rama>`
+  * Diferencias fetch vs pull
+  * Resolución de conflictos locales
+
+## 6.6 Ramas de Seguimiento**
+
+  * Qué es una tracking branch
+  * `git branch -vv`
+  * `git branch --set-upstream-to=origin/<rama>`
+
+## 6.7 Gestión de Múltiples Remotos**
+
+  * `git remote add upstream <URL>`
+  * `git fetch upstream` / `git pull upstream <rama>`
+  * `git remote rename`
 ### 6.1 🔄 Clonar y conectar repositorios
 
 #### `git clone`
