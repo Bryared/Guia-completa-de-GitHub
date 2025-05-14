@@ -28,71 +28,47 @@ Luego genera un **objeto de commit** con metadatos que apunta al árbol raíz de
 
 
 ---
+Perfecto. Aquí tienes ese contenido organizado y resumido **en formato R Markdown (`.Rmd`)**, tal como lo solicitaste:
 
-## 5.2 🔀 Fusionar ramas (merge)
+## 5.2🌿 Crear y gestionar ramas en Git
 
-Cuando terminas de trabajar en una rama, puedes integrarla de nuevo a `main`:
-
-```bash
-git switch main
-git merge nueva-rama
-```
-
-#### Tipos de merge:
-
-* **Fast-forward**: cuando no hay cambios paralelos, Git “avanza” la rama.
-* **Merge commit**: cuando hay divergencia, Git crea un commit de fusión.
-
-> 📸 *\[Sugerencia: diagrama comparando fast-forward vs. merge commit]*
-
----
-
-#### Comandos básicos:
+#### 📌 Crear una rama (`git branch`)
+Para crear una nueva rama en Git, simplemente usa:
 
 ```bash
-git branch                # Ver todas las ramas locales
-git branch nombre-rama    # Crear una nueva rama
-git switch nombre-rama    # Cambiar a una rama
-git checkout -b nueva     # Crear y cambiar en un solo paso
-git branch -d nombre      # Eliminar una rama (solo si fue fusionada)
-git branch -D nombre      # Forzar eliminación
-```
+git branch nombre-de-la-rama
+````
 
-> ✅ Las ramas son ideales para mantener el desarrollo limpio, organizado y libre de errores.
+Esto crea un nuevo apuntador que parte desde el commit actual, pero **no cambia** la rama activa.
 
----
+>💡Importante! HEAD funciona como un apuntador que señala en qué rama estás actualmente. 
 
-### 5.2 🔀 Fusiones y estrategias
+#### 🔍 Ver ramas activas (`git log --decorate`)
 
-#### `git merge` (fusión):
-
-Combina dos ramas preservando el historial.
+Puedes visualizar en qué ramas se encuentra cada commit con:
 
 ```bash
-git switch main
-git merge feature
+git log --oneline --decorate
 ```
 
-#### `git rebase` (reorganización):
+Esto añade etiquetas con los nombres de ramas o `HEAD` al lado de los commits.
 
-Aplica los commits de una rama sobre otra para obtener un historial lineal.
+#### 🔄 Cambiar de rama con `git switch`
+
+En versiones recientes de Git, se recomienda usar `git switch` en lugar del más antiguo `git checkout` para cambiar de rama:
 
 ```bash
-git switch feature
-git rebase main
+git switch nombre-de-la-rama
 ```
 
-> ⚠️ No uses `rebase` en ramas compartidas públicamente (reescribe historia).
+Esto es más claro y seguro, ya que `checkout` tenía múltiples funciones (cambiar de rama, restaurar archivos, etc.) lo que causaba confusión.
 
-#### `git cherry-pick`:
+##### ⚙️ ¿Qué hace `git switch`?
 
-Toma un commit específico de otra rama y lo aplica donde estés.
+* **Mueve el `HEAD`** a la rama seleccionada.
+* **Actualiza los archivos** del directorio de trabajo al estado del último commit en esa rama.
 
-```bash
-git cherry-pick <hash>
-```
-
----
+> 📝 Nota: Si hay cambios sin guardar, Git puede impedir el cambio de rama para evitar conflictos o pérdida de datos.
 
 ## 5.3 🧨 Conflictos de fusión
 
@@ -118,37 +94,6 @@ git commit
 > ⚠️ Usa VS Code u otros editores para resolver conflictos más cómodamente.
 
 ---
-### 5.3 🧨 Resolución de conflictos
-
-Cuando Git no puede fusionar automáticamente, genera un **conflicto**.
-
-Pasos:
-
-1. Ver archivos en conflicto:
-
-   ```bash
-   git status
-   ```
-2. Editar archivos afectados y resolver manualmente:
-
-   ```txt
-   <<<<<<< HEAD
-   Versión actual
-   =======
-   Versión de la otra rama
-   >>>>>>> rama-feature
-   ```
-3. Confirmar la resolución:
-
-   ```bash
-   git add archivo
-   git commit
-   ```
-
-> 💡 Usa editores como VS Code para resolverlos más fácilmente.
-
----
-
 ## 5.4 🧬 Rebase vs Merge
 
 #### 🌀 `git rebase` (reescribe el historial):
@@ -240,174 +185,3 @@ git push origin mi-feature
 5. Abre un Pull Request en GitHub y pídete a ti mismo una revisión ✨
 
 ---
-
-### 5.4 🔁 Estrategias de branching en equipo
-
-#### ✅ Git Flow (ideal para proyectos grandes)
-
-* `main`: versión estable en producción
-* `develop`: integración de features
-* `feature/`: nuevas funcionalidades
-* `release/`: versiones candidatas
-* `hotfix/`: arreglos urgentes en producción
-
-> 📌 Requiere mucha coordinación, ideal para ciclos de lanzamiento estructurados.
-
----
-
-#### 🌐 GitHub Flow (proyectos con despliegue continuo)
-
-* `main` siempre está desplegado.
-* Cada cambio va en una nueva rama → PR → revisión → merge.
-
-> ✅ Sencillo y ágil. Ideal para equipos que hacen deploy frecuente.
-
----
-
-#### 🌳 Trunk Based Development (TBD)
-
-* Todos trabajan directamente o mediante pequeñas ramas sobre `main`.
-* Se promueve el uso de **feature toggles** y **testing automatizado**.
-
-> 💥 Muy utilizado en DevOps y CI/CD. Requiere pruebas automatizadas sólidas.
-
----
-
-### 5.5 📈 Comparación de estrategias
-
-| Estrategia      | Complejidad | Escalabilidad | Frecuencia de Deploy | Uso ideal                     |
-| --------------- | ----------- | ------------- | -------------------- | ----------------------------- |
-| Git Flow        | Alta        | Alta          | Moderada             | Equipos grandes y controlados |
-| GitHub Flow     | Media       | Media         | Alta                 | Equipos ágiles                |
-| Trunk Based Dev | Baja        | Alta          | Muy Alta             | DevOps / Continuous Delivery  |
-
----
-
-### 5.6 🧪 Buenas prácticas con ramas
-
-* Usa nombres descriptivos: `feature/login-ui`, `bugfix/typo-footer`
-* Haz commits pequeños y frecuentes
-* Revisa conflictos antes de `merge` o `rebase`
-* Borra ramas una vez fusionadas
-
----
-
-### 5.7 📌 Alias útiles
-
-```bash
-git config --global alias.br "branch"
-git config --global alias.co "checkout"
-git config --global alias.cm "commit -m"
-git config --global alias.st "status"
-```
-
----
-
-### 5.8 📸 Imágenes y diagramas sugeridos
-
-* Diagrama de ramas paralelas (`main`, `feature`, `release`)
-* Comparación visual entre `merge` vs `rebase`
-* Flujo visual de Git Flow vs GitHub Flow vs Trunk Based
-
-
----
-
-### 5.4 🔁 Estrategias de branching en equipo (continuación)
-
-#### 🌳 **Trunk Based Development (TBD)**
-
-* Todos trabajan sobre una única rama: `main` o `trunk`.
-* Las ramas son **muy cortas** (de pocas horas o días).
-* Se realiza **integración continua** (CI) para evitar conflictos grandes.
-
-> ✅ Ideal para equipos DevOps, startups, y proyectos que despliegan muchas veces al día.
-
-**Ventajas:**
-
-* Menos conflictos acumulados.
-* Historial más simple.
-* Compatible con prácticas de entrega continua (CD).
-
-**Buenas prácticas:**
-
-* Feature flags (habilitar/deshabilitar funcionalidades sin hacer merge).
-* Commits frecuentes con pruebas automatizadas.
-
----
-
-### 5.5 💡 Recomendaciones generales de trabajo con ramas
-
-| Buenas Prácticas                | Descripción                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| ✅ Nombrar ramas de forma clara  | `feature/login`, `bugfix/header`, `hotfix/api-error`        |
-| 🧪 Probar antes de hacer merge  | Usa CI (GitHub Actions, Travis, etc.)                       |
-| 🔍 Crear Pull Requests pequeñas | Facilita la revisión de código                              |
-| 🚫 Evitar ramas muy largas      | Ramas antiguas generan conflictos y duplicación de esfuerzo |
-
----
-
-### 5.6 🧠 Casos prácticos para dominar el flujo de ramas
-
-#### 🛠 Caso 1: Crear nueva funcionalidad
-
-```bash
-git switch -c feature/contact-form
-# hacer cambios
-git add .
-git commit -m "Formulario de contacto agregado"
-git push -u origin feature/contact-form
-```
-
-Crear un **Pull Request** desde GitHub para revisión.
-
----
-
-#### 🔥 Caso 2: Arreglar error en producción (hotfix)
-
-```bash
-git switch -c hotfix/crash-home
-# corregir error
-git commit -am "Corrige crash en la home"
-git push -u origin hotfix/crash-home
-# luego hacer merge rápido a main
-```
-
----
-
-#### 🔄 Caso 3: Rebase de una rama antigua
-
-```bash
-git switch feature/login
-git fetch origin
-git rebase origin/main
-```
-
-Resuelve conflictos y actualiza la rama antes de hacer merge.
-
----
-
-#### 🍒 Caso 4: Aplicar solo un commit de otra rama
-
-```bash
-git cherry-pick abc1234  # hash del commit útil
-```
-
-Muy útil cuando quieres reutilizar un cambio específico sin hacer merge total.
-
----
-
-### 5.7 🧰 Recursos y herramientas útiles
-
-* [Git Branching Models](https://nvie.com/posts/a-successful-git-branching-model/)
-* Visual Studio Code (extensión GitLens)
-* GitKraken / Sourcetree (clientes visuales de Git)
-* GitHub Desktop (GUI oficial)
-* Comando `git log --oneline --graph --all` para visualizar ramas gráficamente
-
----
-
-## 5.7 📚 Recursos adicionales
-
-* [Visualizing Branches (Git-SCM)](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
-* [Guía oficial de Pull Requests (GitHub)](https://docs.github.com/en/pull-requests)
-* [Learn Git Branching (interactivo)](https://learngitbranching.js.org/)
