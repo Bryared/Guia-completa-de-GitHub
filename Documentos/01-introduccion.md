@@ -11,19 +11,13 @@
 
 Git permite trabajar de manera **distribuida**, lo que significa que cada desarrollador tiene una copia completa del repositorio en su máquina local.
 
-Fue creado por **Linus Torvalds** en 2005 para gestionar el desarrollo del kernel de Linux.
+Fue creado por **Linus Torvalds** en 2005 para gestionar el desarrollo del kernel de Linux. [Historia de Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
 
 #### 🔑 Características principales:
 
 * **Velocidad**: Git está optimizado para ser rápido en operaciones como commits, ramas y fusiones.
 * **Integridad**: Cada cambio se identifica mediante un hash SHA-1, garantizando la integridad de los datos.
 * **Distribuido**: Cada desarrollador tiene una copia completa del repositorio, lo que permite trabajar sin conexión.
-
-#### 🏗️ Arquitectura:
-
-* **Distribuida**: Cada usuario tiene una copia completa del historial.
-
-
 
 ## 1.3 🌐 ¿Qué es GitHub?
 
