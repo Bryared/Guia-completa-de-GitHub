@@ -52,14 +52,71 @@ Cuando tienes **acceso directo** al repositorio o no necesitas hacer un *fork*. 
 
 ### 7.2 📤 Crear un Pull Request (PR)
 
-Un PR solicita que los cambios en tu rama (local o de fork) se integren al repositorio principal.
+Un **Pull Request (PR)** permite proponer y discutir cambios antes de integrarlos a la rama principal de un repositorio (como `main` o `develop`).
+Se usa para colaboración, revisión de código, y mantener un historial limpio.
 
-1. Asegúrate de que tu rama esté actualizada.
-2. Pulsa el botón **“Compare & pull request”**.
-3. Describe claramente tus cambios.
-4. Espera revisión y aprobación.
+> ⚠️ Ideal cuando trabajas en una rama o en un fork y quieres que tus cambios se integren al proyecto principal.
 
-> 🧼 Es buena práctica vincular el PR a un Issue usando: `Fixes #123`.
+---
+
+#### 🔹 ¿Cuándo usar un PR?
+
+* Cuando desarrollas una nueva funcionalidad en una rama (`feature/login`).
+* Al corregir errores desde una rama separada (`fix/typo`).
+* Si colaboras en un proyecto externo desde un **fork**.
+* Siempre que quieras una **revisión antes de hacer merge**.
+
+---
+
+#### 🔹 Pasos para crear un Pull Request
+
+1. ✅ **Asegúrate de que tu rama esté actualizada**
+   *Sincroniza con la rama principal para evitar conflictos.*
+
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout mi-rama
+   git rebase main
+   ```
+
+2. 📤 **Sube tus cambios al repositorio remoto**
+
+   ```bash
+   git push origin mi-rama
+   ```
+
+3. 🟢 **Desde GitHub, haz clic en “Compare & pull request”**
+   GitHub detectará automáticamente que tu rama tiene cambios no integrados.
+
+4. ✍️ **Completa el formulario del PR**
+
+   * **Título claro y descriptivo**.
+   * **Descripción detallada** de qué hiciste y por qué.
+   * Agrega capturas si es visual.
+   * Asigna revisores si es necesario.
+
+5. 🔗 **Vincula un Issue automáticamente (opcional)**
+   Si el PR resuelve un issue, puedes mencionarlo:
+
+   ```
+   Fixes #123
+   Closes #45
+   ```
+
+   > GitHub cerrará el issue automáticamente al hacer merge del PR.
+
+6. ⏳ **Espera revisión**
+   Los colaboradores pueden comentar, pedir cambios o aprobar.
+
+7. 🔀 **Haz merge cuando esté aprobado**
+   Elige entre:
+
+   * **Merge Commit** → Combina con historial completo.
+   * **Squash and Merge** → Junta todos los commits en uno.
+   * **Rebase and Merge** → Aplica los commits uno a uno sobre la rama base.
+
+> 🧼 **Consejo:** Evita trabajar directamente en `main`. Siempre crea ramas nuevas para tus cambios y usa PR para integrarlos de forma ordenada y segura.
 
 ---
 
