@@ -2,10 +2,11 @@
 
 📘 Un manual sobre el uso moderno de Git y GitHub.  
 
-| 🎯 Integrante                | 🔨 Usuario de GitHub                          |
+| 🎯 Integrante                | 🔨 Usuario de GitHub                            |
 |-----------------------------|-------------------------------------------------|
-| Bryan Vargas Maldonado      | [@Bryared]                                      |
-| Andrew Vargas Maldonado     | [@andrwxl]                                      |
+| Bryan Vargas Maldonado      | [@Bryared](https://github.com/Bryared)         |
+| Andrew Vargas Maldonado     | [@andrwxl](https://github.com/andrwxl)         |
+
 
 ---
 
