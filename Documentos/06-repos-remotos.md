@@ -510,56 +510,64 @@ Luego puedes revisar ramas, comparar o integrarlas manualmente si lo deseas.
 
 ---
 
-### 6.8 🔄 Clonar y conectar repositorios
 ## 6.8 📖 Clonación de Repositorios
 
-**Qué aprenderás a hacer:** Clonar repositorios con configuraciones específicas y eficiencia.
+**Clonar** un repositorio es el primer paso para trabajar con un proyecto que ya existe en GitHub. Al hacerlo, obtienes una copia completa del historial, archivos y configuración del proyecto en tu máquina local.
 
-* `git clone <URL>`: Clonar un repo completo.
-* `git clone -b rama --single-branch`: Solo una rama.
-* `git clone --depth 1`: Clonación superficial.
-* **Sparse Checkout:**
 
-  * `git sparse-checkout init`
-  * `git sparse-checkout set ruta`
+### 🔍 ¿Qué hace `git clone`?
 
----
-#### `git clone`
+El comando `git clone` copia:
 
-Copia un repositorio remoto en tu máquina local.
+* Todo el historial del proyecto (commits, ramas, etiquetas).
+* La última versión de los archivos.
+* La configuración remota (`origin`) para sincronizar con GitHub.
 
 ```bash
 git clone https://github.com/usuario/repositorio.git
 ```
 
-> Clona todo el historial, ramas y archivos.
+> Esto crea una carpeta con el contenido del repositorio y un control de versiones listo para usar.
 
----
 
-#### `git remote`
+### 🔄 Variantes útiles de clonación
 
-Conecta tu repositorio local con uno remoto.
+#### 🔸 Clonar una rama específica
 
-```bash
-git remote add origin https://github.com/usuario/repositorio.git
-git remote -v  # Verifica conexiones remotas
-```
-
----
-
-#### `git push`, `git fetch`, `git pull`
-
-| Comando     | Función                                          |
-| ----------- | ------------------------------------------------ |
-| `git push`  | Envía cambios locales al repositorio remoto      |
-| `git fetch` | Trae actualizaciones del remoto, sin integrarlas |
-| `git pull`  | Trae e integra (fetch + merge)                   |
+Por defecto, `git clone` trae **todas las ramas**, pero puedes traer solo una si lo necesitas:
 
 ```bash
-git push origin main       # Sube cambios
-git fetch origin           # Trae últimos cambios sin aplicar
-git pull origin main       # Trae y fusiona
+git clone -b nombre-rama --single-branch https://github.com/usuario/repositorio.git
 ```
+
+#### 🔹 Clonación superficial (shallow clone)
+
+Ideal si solo te interesa el estado actual del proyecto y quieres ahorrar espacio:
+
+```bash
+git clone --depth 1 https://github.com/usuario/repositorio.git
+```
+
+> Solo trae el último commit y ahorra tiempo de descarga.
+
+#### 🔍 Clonar sin historial completo + solo una rama:
+
+```bash
+git clone --depth 1 --single-branch -b main https://github.com/usuario/repositorio.git
+```
+
+### 📁 Sparse Checkout: Clonar solo partes del proyecto
+
+Ideal para monorepos o proyectos grandes donde solo trabajas con una carpeta específica:
+
+```bash
+git clone --no-checkout https://github.com/usuario/repositorio.git
+cd repositorio
+git sparse-checkout init --cone
+git sparse-checkout set ruta/a/carpeta
+```
+
+> Solo se descarga el contenido de esa carpeta, no todo el repositorio.
 
 ---
 
@@ -576,8 +584,6 @@ git push -u origin main
 ```
 
 > 💡 Usa `-u` para establecer el seguimiento remoto predeterminado.
-
----
 
 #### Migración avanzada: espejo de repositorio
 
