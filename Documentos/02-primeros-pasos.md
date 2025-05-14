@@ -209,7 +209,16 @@ Una vez que se han instalado y configurado las herramientas necesarias, el sigui
 * Volver al último commit realizado:
 
   ```bash
-  git checkout
+  git checkout <hash>
+  ```
+  o también:
+  ```bash
+  git restore
+  ```
+* Cambia a otra rama:
+  
+  ```bash
+  git checkout <nombre_rama>
   ```
 #### 🔄 Modos de `git reset`
 
@@ -412,4 +421,25 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
     - **Git Graph:** visualización de grafo de ramas y commits.  
 - **Enlace:** <https://code.visualstudio.com/>  
 
-Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.```
+Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.
+
+## 2.8 📘 Actividad guiada sugerida para cerrar el módulo
+
+> ### 🧪 Práctica: Crea tu primer repositorio
+
+1. Crea una carpeta nueva:
+   `mkdir mi-primer-repo && cd mi-primer-repo`
+2. Inicializa Git:
+   `git init`
+3. Crea un archivo README.md y edítalo:
+   `echo "# Mi Primer Repo" > README.md`
+4. Añádelo al staging:
+   `git add README.md`
+5. Haz tu primer commit:
+   `git commit -m "Primer commit"`
+6. Verifica el historial:
+   `git log --oneline`
+7. Crea una rama:
+   `git switch -c mi-rama`
+8. Cambia algo en el README y haz un segundo commit.
+9. Usa `git log --oneline` para ver el historial.
