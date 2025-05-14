@@ -363,4 +363,47 @@ Conocer esta estructura facilita la comprensión profunda de cómo Git almacena 
 
 ## 🖼️ Opciones visuales (GUI)
 
+Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, existen diversas aplicaciones que facilitan la gestión de repositorios Git. A continuación se presentan cuatro alternativas populares, junto con sus características principales y enlaces oficiales.
+
+### 🔹 GitHub Desktop
+
+- **Descripción:** Cliente oficial de GitHub, diseñado para integrarse de forma nativa con repositorios alojados en GitHub y GitHub Enterprise.  
+- **Características clave:**  
+  - Sincronización automática con GitHub (push/pull).  
+  - Gestión de ramas y resolución de conflictos mediante interfaz visual.  
+  - Visualización clara de diferencias y estados de archivos.  
+- **Enlace:** <https://desktop.github.com/>
+
+### 🔹 GitKraken
+
+- **Descripción:** Cliente multiplataforma (Windows, macOS, Linux) con interfaz intuitiva basada en gráficos de árbol para visualizar el historial de commits y ramas.  
+- **Características clave:**  
+  - Editor integrado de merge y resolución de conflictos.  
+  - Integración con múltiples servicios (GitHub, GitLab, Bitbucket).  
+  - Soporte para flujos de trabajo con Git LFS y submódulos.  
+- **Enlace:** <https://www.gitkraken.com/>
+
+### 🔹 Sourcetree
+
+- **Descripción:** Aplicación gratuita de Atlassian para Windows y macOS, orientada a usuarios de Bitbucket y repositorios Git locales.  
+- **Características clave:**  
+  - Visualización de commits en un grafo interactivo.  
+  - Herramientas de staging gráfico y terminal integrada.  
+  - Soporte nativo para Mercurial, además de Git.  
+- **Enlace:** <https://www.sourcetreeapp.com/>
+
+### 🔹 Visual Studio Code (Control de versiones)
+
+- **Descripción:** Editor de código ligero que incluye soporte integrado para Git, ampliable mediante extensiones.  
+- **Características clave:**  
+  - Panel de fuente (Source Control) con botones para `stage`, `commit`, `push` y `pull`.  
+  - Vista de diferencias lado a lado y resaltado de cambios.  
+  - Extensiones recomendadas:  
+    - **GitLens:** análisis avanzado de historial de commits y autores.  
+    - **Git Graph:** visualización de grafo de ramas y commits.  
+- **Enlace:** <https://code.visualstudio.com/>  
+
+Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.```
+
+
 ## ✅ Resultado esperado
