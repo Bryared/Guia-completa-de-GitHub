@@ -78,12 +78,26 @@ Se te preguntará si deseas crear el repositorio en GitHub y enlazarlo automáti
 
 ## 6.2 ⚖️ Configuración Inicial de Remotos
 
-Aprenderás a asociar, cambiar o eliminar remotos en tu repositorio local.
+Aprenderás cómo vincular tu repositorio local con un repositorio remoto en GitHub, cómo verificar esa conexión y cómo modificarla si es necesario.
 
-* `git remote add origin <URL>`: Asocia el repositorio local con un remoto.
-* `git remote -v`: Lista los remotos configurados.
-* `git remote set-url origin <nueva-URL>`: Cambia la URL del remoto.
-* `git remote remove origin`: Elimina la asociación con un remoto.
+### 🔗 ¿Qué es un "remote"?
+
+En Git, un **remote** es simplemente un **alias** que representa la URL de un repositorio remoto (por ejemplo, en GitHub). Esto te permite sincronizar cambios entre tu proyecto local y ese repositorio remoto.
+
+> 📌 El remote más común se llama `origin`, y apunta al repositorio principal de trabajo.
+
+---
+
+### 🔧 Comandos Clave para Gestionar Remotos
+
+| Comando                                | Descripción                                    |
+| -------------------------------------- | ---------------------------------------------- |
+| `git remote add origin <URL>`          | Asocia tu repo local con un repositorio remoto |
+| `git remote -v`                        | Muestra los remotos configurados y sus URLs    |
+| `git remote set-url origin <nuevaURL>` | Cambia la URL de un remoto existente           |
+| `git remote remove origin`             | Elimina la referencia a un remoto              |
+
+---
 
 ### 🔗 Vincular un repositorio local a uno remoto
 git remote add origin <URL>
