@@ -8,7 +8,7 @@ Esta sección abarca desde los conceptos básicos hasta configuraciones avanzada
 
 Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 
-### ¿Qué es un repositorio remoto?**
+### ¿Qué es un repositorio remoto?
   Es una versión del repositorio Git alojada en la nube, generalmente en servicios como GitHub. Permite sincronizar, colaborar y respaldar proyectos.
 
 > 💡 Piensa en el repositorio remoto como una “fuente oficial” del proyecto que está siempre disponible online.
@@ -435,24 +435,78 @@ git branch --set-upstream-to=origin/nueva-rama
 
 > Esto es útil si renombraste ramas o cambiaste el origen del trabajo.
 
-
 ---
-## 6.7 🪜 Gestión de Múltiples Remotos
 
-Trabajarás con más de un repositorio remoto (ej. origin y upstream).
+## 6.7 🌐 Gestión de múltiples remotos
 
-* Casos comunes: fork, espejo, upstream.
-* `git remote add upstream <URL>`: Añadir otro remoto.
-* `git fetch upstream` y `git pull upstream main`: Obtener cambios del repo original.
-* `git push origin <rama>`: Subir cambios a tu fork.
-* `git remote rename origin github`: Renombrar remoto.
+En proyectos más avanzados —como forks, colaboraciones con múltiples copias del mismo repositorio o espejos de backup— puede que necesites trabajar con **más de un repositorio remoto**. En este subapartado aprenderás a agregar, renombrar y sincronizar múltiples remotos, sin entrar aún en la gestión de tareas, automatización o estrategias colaborativas complejas.
 
-## 6.7 🌐 Trabajar con múltiples remotos
-origin vs. upstream: escenarios típicos con forks.
+### 📌 ¿Qué es tener múltiples remotos?
 
-Añadir y gestionar múltiples remotos (git remote add, remove, rename).
+Un repositorio puede estar conectado a **más de una URL remota**. Cada conexión tiene un nombre, como `origin`, `upstream`, `github`, etc.
 
-Obtener y comparar ramas de remotos distintos.
+Ejemplos comunes:
+
+* `origin`: el repositorio principal (ej. tu fork en GitHub).
+* `upstream`: el repositorio original desde el que hiciste el fork.
+* `mirror`: una copia espejo para respaldo o despliegue.
+
+
+### 🔧 Comandos clave para gestionar remotos adicionales
+
+#### ➕ Añadir un segundo remoto
+
+```bash
+git remote add upstream https://github.com/usuario-original/repositorio.git
+```
+
+#### 🔁 Verificar todos los remotos configurados
+
+```bash
+git remote -v
+```
+
+#### ✏️ Renombrar un remoto existente
+
+```bash
+git remote rename origin github
+```
+
+#### ❌ Eliminar un remoto
+
+```bash
+git remote remove upstream
+```
+
+
+### 🔄 Sincronizar cambios desde otro remoto
+
+Aunque `origin` sea tu repositorio principal, puedes obtener cambios del remoto `upstream` sin hacer un `merge` automáticamente.
+
+```bash
+git fetch upstream
+```
+
+Luego puedes revisar ramas, comparar o integrarlas manualmente si lo deseas.
+
+
+### 🧭 Buenas prácticas
+
+* Usa nombres descriptivos (`origin`, `upstream`, `backup`).
+* Documenta en el `README` de tu proyecto la estructura de remotos si es compartido.
+* Sincroniza frecuentemente para mantenerte actualizado.
+* No hagas `push` a remotos que no controles directamente sin revisión previa.
+
+
+### ✅ Mini resumen visual
+
+| Acción              | Comando básico                    |
+| ------------------- | --------------------------------- |
+| Añadir otro remoto  | `git remote add upstream <URL>`   |
+| Ver remotos         | `git remote -v`                   |
+| Obtener cambios     | `git fetch upstream`              |
+| Subir a otro remoto | `git push origin nombre-rama`     |
+| Renombrar remoto    | `git remote rename origin github` |
 
 ---
 
