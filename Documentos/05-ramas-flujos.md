@@ -21,14 +21,7 @@ Las ramas permiten:
 - Corregir errores sin afectar el trabajo principal,
 - Unir cambios fácilmente con `merge` o `rebase`.
 
-
-Cuando usas `git commit`, Git crea objetos **blob** para los archivos y un **árbol** que representa su estructura.  
-Luego genera un **objeto de commit** con metadatos que apunta al árbol raíz del proyecto.
-![image](https://github.com/user-attachments/assets/ac668e76-d4a9-4b6f-a4f6-fd422a785c64)
-
-
 ---
-Perfecto. Aquí tienes ese contenido organizado y resumido **en formato R Markdown (`.Rmd`)**, tal como lo solicitaste:
 
 ## 5.2🌿 Crear y gestionar ramas en Git
 
@@ -70,28 +63,56 @@ Esto es más claro y seguro, ya que `checkout` tenía múltiples funciones (camb
 
 > 📝 Nota: Si hay cambios sin guardar, Git puede impedir el cambio de rama para evitar conflictos o pérdida de datos.
 
-## 5.3 🧨 Conflictos de fusión
+---
 
-Un **conflicto** ocurre cuando Git no puede decidir cómo fusionar cambios.
+## 5.3 🌿 Procedimientos Básicos: Ramificar y Fusionar
 
-1. Git marcará el archivo en conflicto así:
+#### 🔧 Flujo de trabajo típico
 
-   ```txt
-   <<<<<<< HEAD
-   Línea en main
-   =======
-   Línea en rama
-   >>>>>>> nueva-rama
-   ```
-
-2. Debes **editar manualmente**, eliminar los indicadores `<<<<<<<`, y confirmar la resolución:
+1. Estás trabajando en la rama `master`.
+2. Creas una nueva rama para una tarea o problema:
 
 ```bash
-git add archivo.txt
+git checkout -b nombre-de-la-rama
+````
+
+3. Haces commits en esta rama.
+4. Si surge un problema urgente:
+
+   * Cambias de vuelta a `master`: `git checkout master`
+   * Creas una rama `hotfix` y haces la corrección.
+   * Fusionas `hotfix` en `master`: `git merge hotfix`
+   * Borras `hotfix`: `git branch -d hotfix`
+5. Vuelves a tu rama de trabajo y continúas.
+
+#### 🔀 Fusionar cambios
+
+* Para integrar tu trabajo en `master`:
+
+```bash
+git checkout master
+git merge nombre-de-la-rama
+```
+
+* Si no hay conflictos, se fusiona automáticamente (fast-forward o merge commit).
+
+#### ⚠️ ¿Y si hay conflictos?
+
+* Git marcará los archivos conflictivos.
+* Edita los archivos, resuelve los conflictos y guarda.
+* Marca como resueltos:
+
+```bash
+git add archivo
 git commit
 ```
 
-> ⚠️ Usa VS Code u otros editores para resolver conflictos más cómodamente.
+* También puedes usar una herramienta visual:
+
+```bash
+git mergetool
+```
+> ⚠️RECOMENDACION PARA LOS CONFLICTOS⚠️ Usa VS Code u otros editores para resolver conflictos más cómodamente.
 
 ---
 ## 5.4 🧬 Rebase vs Merge
