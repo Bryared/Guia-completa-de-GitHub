@@ -99,12 +99,70 @@ En Git, un **remote** es simplemente un **alias** que representa la URL de un re
 
 ---
 
-### 🔗 Vincular un repositorio local a uno remoto
-git remote add origin <URL>
+### 🔗 Vincular un repositorio local a uno remoto (GitHub)
+#### 📁 Caso: Ya tienes un proyecto local iniciado con Git
 
-Confirmar con git remote -v.
+```bash
+git init
+git add .
+git commit -m "Primer commit"
+```
 
-Subir por primera vez con git push -u origin main
+##### 🔗 Paso 1: Añadir el remoto
+
+```bash
+git remote add origin https://github.com/usuario/repositorio.git
+```
+
+> 💡 Esto no sube nada todavía, solo establece la conexión con GitHub.
+
+##### 🔍 Paso 2: Verificar la conexión
+
+```bash
+git remote -v
+```
+
+Salida esperada:
+
+```
+origin  https://github.com/usuario/repositorio.git (fetch)
+origin  https://github.com/usuario/repositorio.git (push)
+```
+
+---
+
+#### 📤 Subir tu proyecto por primera vez
+
+Usa `git push` para enviar tu proyecto local al repositorio remoto:
+
+```bash
+git push -u origin main
+```
+
+* `-u`: Establece `origin/main` como la rama remota predeterminada.
+* A partir de ahora, puedes usar simplemente `git push` y `git pull`.
+
+> 💡 Asegúrate de que tu rama principal se llame `main` o cambia el nombre con `git branch -M main` si es necesario.
+
+---
+
+#### 🔁 Cambiar la URL del remoto
+
+Si por alguna razón necesitas cambiar la dirección del remoto (por ejemplo, cambiaste de HTTP a SSH):
+
+```bash
+git remote set-url origin git@github.com:usuario/repositorio.git
+```
+
+---
+
+#### ❌ Eliminar el remoto
+
+```bash
+git remote remove origin
+```
+
+Esto **no borra** el repositorio en GitHub, solo elimina la conexión local.
 
 ---
 
@@ -112,31 +170,91 @@ Subir por primera vez con git push -u origin main
 
 Aprenderás a autenticarte correctamente para trabajar con repos remotos vía HTTPS o SSH.
 
+### 🔗 ¿Por qué necesitas autenticarte?
+
+Cada vez que intentas **subir (push)** o **bajar (pull/fetch)** cambios desde un repositorio privado (o incluso público si usas comandos con privilegios), Git necesita verificar **quién eres** y si tienes **permiso para hacerlo**.
+
 ### HTTP vs SSH:
 
   * HTTP: Simple pero requiere autenticarse cada vez o usar tokens.
   * SSH: Requiere configurar claves, pero evita pedir contraseñas.
 
-### Tokens de Acceso Personal (PAT):
+### 🔒 HTTPS con Tokens de Acceso Personal (PAT)
+HTTPS: "Hypertext Transfer Protocol Secure"
 
-  * Generar desde GitHub > Settings > Developer Settings
-  * Se usan como contraseña al usar HTTP
+GitHub **ya no permite usar tu contraseña** en comandos Git vía HTTPS. En su lugar, debes usar un **Token de Acceso Personal** como contraseña.
 
-### Claves SSH:
+#### 🛠️ Cómo generar un PAT:
+1. Generar desde GitHub: [GitHub > Settings > Tokens](https://github.com/settings/tokens). 
+2. Clic en **"Generate new token"**
+3. Define:
+   * Nombre
+   * Caducidad (recomendado)
+   * Permisos necesarios (repo, workflow, etc.)
+4. Copia y guarda tu token (¡no podrás verlo de nuevo!)
+    
+>  Usa este token como si fuera tu contraseña cuando Git te lo pida al usar HTTPS.
 
-  * Crear: `ssh-keygen -t ed25519 -C "tu@email.com"`
-  * Agregar al agente y a GitHub
+### 🔐 SSH: Claves Públicas y Privadas
+SSH (Secure Shell) es el método más robusto. Una vez configurado, **no tendrás que escribir tu usuario ni contraseña** al interactuar con GitHub.
 
-### GitHub CLI (gh):
+#### 🧰 Pasos para usar SSH:
+#### 1. Crear: una clave SSH (si no tienes una)
+```bash
+ssh-keygen -t ed25519 -C "tu@email.com"
+```
+> Presiona Enter en todos los pasos para aceptar los valores por defecto.
 
-  * Autenticación rápida: `gh auth login`
+#### 2. Agregar la clave al agente SSH
 
-### 🔐 Autenticación con GitHub
-Configurar Personal Access Tokens (HTTPS).
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
 
-Uso de claves SSH para conexión segura.
+#### 3. Copiar tu clave pública
 
-Almacenamiento de credenciales (credential helper).
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+#### 4. Pegarla en GitHub
+
+* Ve a: `https://github.com/settings/keys`
+* Clic en **"New SSH Key"**
+* Pega tu clave y guarda.
+
+#### 5. Probar conexión
+
+```bash
+ssh -T git@github.com
+```
+
+> 💡 Si ves un mensaje que dice “You’ve successfully authenticated…”, ¡todo está listo!
+
+---
+
+### 🖥️ Almacenamiento de Credenciales
+
+Para no tener que ingresar tu PAT o clave cada vez:
+
+* En HTTPS: Usa el "Credential Helper" de Git:
+
+```bash
+git config --global credential.helper cache  # Almacena temporalmente
+git config --global credential.helper store  # Almacena indefinidamente
+```
+
+> ⚠️ No recomendado almacenar tokens indefinidamente en máquinas compartidas.
+
+---
+
+### ⚡ Alternativa rápida: GitHub CLI
+La herramienta de línea de comandos de GitHub (`gh`) permite iniciar sesión y autenticarse fácilmente.
+```bash
+gh auth login
+```
+Te guía para autenticarte y configura Git automáticamente. Ideal para agilizar la configuración inicial.
 
 ---
 
@@ -384,7 +502,14 @@ Mantendrás un flujo limpio, seguro y profesional al trabajar con repositorios r
 * No forces `git push --force` en ramas compartidas.
 * Protege ramas críticas (`main`, `develop`).
 * Usa Pull Requests para revisión y calidad.
+### 📌 Buenas Prácticas
 
+* Usa nombres claros como `origin`, `upstream`, `github`, etc.
+* Revisa siempre tu conexión antes de hacer `push`.
+* Usa `git remote -v` frecuentemente para verificar las URLs correctas.
+* Si colaboras con forks, puedes agregar múltiples remotos (verás esto en el punto 6.7).
+
+---
 ---
 
 ### 6.15 🧪 Ejercicio práctico sugerido
