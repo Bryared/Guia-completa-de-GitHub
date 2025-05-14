@@ -6,8 +6,9 @@ A continuación se presenta un resumen de comandos útiles en Git y la terminal,
 
 - `ls` → Muestra los archivos del directorio actual.  
 - `ls -a` → Muestra todos los archivos, incluidos los ocultos (como `.git`).  
-- `cd ..` → Retrocede al directorio padre.  
-- `rm "archivo"` → Elimina un archivo del sistema de archivos.
+- `cd ..` → Retrocede al directorio padre.
+- `mkdir "archivo"` → Crea un nuevo archivo en el directorio actual.
+- `rm "archivo"` → Elimina un archivo en el directorio actual.
 
 ##### 🧱 Inicialización y área de preparación
 
@@ -23,7 +24,6 @@ A continuación se presenta un resumen de comandos útiles en Git y la terminal,
 
 - `git commit -m "mensaje"` → Crea un commit con los archivos en staging.  
 - `git commit -am "mensaje"` → Agrega y hace commit de archivos modificados (no nuevos).  
-- **Un commit es como una “foto” del estado actual del proyecto.**
 
 ##### 🔁 Navegación entre versiones y ramas
 
