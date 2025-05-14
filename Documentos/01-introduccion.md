@@ -2,12 +2,16 @@
 
 ## 1.1 🎯 Objetivos
 
-* Entender el propósito de un sistema de control de versiones.
-* Conocer la historia y evolución de **Git** y **GitHub**.
+* Entender el propósito de un sistema de control de versiones y por qué son herramientas fundamentales en el desarrollo de software moderno.
+
 
 ## 1.2 🧠 ¿Qué es Git?
 
-**Git** es un sistema de control de versiones distribuido, creado por **Linus Torvalds** en 2005 para gestionar el desarrollo del kernel de Linux.
+**Git** es un **sistema de control de versiones distribuido**, que permite a los desarrolladores realizar un seguimiento de los **cambios** realizados en el código fuente durante el desarrollo del software. 
+
+Git permite trabajar de manera **distribuida**, lo que significa que cada desarrollador tiene una copia completa del repositorio en su máquina local.
+
+Fue creado por **Linus Torvalds** en 2005 para gestionar el desarrollo del kernel de Linux.
 
 #### 🔑 Características principales:
 
@@ -18,26 +22,36 @@
 #### 🏗️ Arquitectura:
 
 * **Distribuida**: Cada usuario tiene una copia completa del historial.
-* **Centralizada** (como SVN): Hay un único repositorio central del que dependen todos.
+
+
 
 ## 1.3 🌐 ¿Qué es GitHub?
 
-**GitHub** es una plataforma basada en la web que ofrece alojamiento para repositorios Git y herramientas para la colaboración en equipo.
+**GitHub** es una plataforma basada en la web que ofrece **alojamiento, control de las versiones, y colaboración para repositorios Git** . 
 
-#### ✨ Funcionalidades clave:
+Facilitando el trabajo en equipo, la integración continua, la documentación y la automatización de tareas.
+
+#### ⭐️ Funcionalidades clave:
 
 * **Repositorios remotos**: Facilita compartir y colaborar en código fuente.
 * **Control de versiones en la nube**.
 * **Social coding**: Seguimiento de proyectos, issues, pull requests y más.
 * **Integración continua** y **automatización** con GitHub Actions.
 
+
 ## 1.4 🆚 Git vs. GitHub:
 
-| Git (Herramienta)               | GitHub (Plataforma)                 |
-| ------------------------------- | ----------------------------------- |
-| Sistema de control de versiones | Servicio en la nube basado en Git   |
-| Funciona localmente             | Repositorios remotos y colaboración |
-| 100% CLI                        | Interfaz gráfica + CLI              |
+| Concepto          | Git                                     | GitHub                               |
+| ----------------- | --------------------------------------- | ------------------------------------ |
+| Tipo              | Software de control de versiones        | Plataforma web para alojar repos Git |
+| Uso               | Local en tu equipo                      | En la nube (remoto)                  |
+| Necesita internet | No                                      | Sí                                   |
+| Colaboración      | Limitada localmente                     | Avanzada: PRs, revisiones, Issues    |
+| Interfaz          | Línea de comandos (CLI)                 | Web + CLI (GitHub CLI)               |
+| Propietario       | Open source (creado por Linus Torvalds) | Propiedad de Microsoft               |
+
+> 📝 **Resumen:** Git es la herramienta, GitHub es el servicio que te permite sacarle el mayor provecho.
+
 
 ## 1.5 💡 Ventajas del control de versiones
 
@@ -73,11 +87,12 @@ Trabajo remoto:
 Colaboración:
   Fork ➜ Clonar ➜ Crear rama ➜ Pull Request ➜ Merge
 ```
+
 ## 1.7 📝 Ejercicio
 
 > Investigar un proyecto *open-source* y describir su flujo de Git/GitHub.
 
-## 1.7 🔗 Recursos
+## 1.8 🔗 Recursos
 
 * [Documentación oficial de Git](https://git-scm.com/doc)
 * [Documentación oficial de GitHub](https://docs.github.com/)
