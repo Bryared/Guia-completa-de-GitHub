@@ -55,7 +55,7 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 4. Puedes incluir archivos comunes como:
 
    * `✔️` **Add a README** → Presentación del proyecto.
-   * `✔️` **.gitignore** → Archivos que Git debe ignorar.
+   * `✔️` [**.gitignore**](https://github.com/Bryared/Guia-completa-de-GitHub/blob/main/Documentos/02-primeros-pasos.md#3-preparar-staging-archivos) → Archivos que Git debe ignorar.
    * `✔️` **License** → Tipo de licencia que rige tu proyecto.
 5. Haz clic en **Create Repository**.
 
@@ -846,6 +846,7 @@ Demostrar dominio práctico sobre creación, clonación, configuración, sincron
 * [Guía oficial de GitHub: "Hello World"](https://guides.github.com/activities/hello-world/)
 * [Documentación de git-scm sobre remotos](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 * Video: ["Git Remotes Simplified"](https://www.youtube.com/watch?v=9D1x7-2FmTA)
+* Video 2: ["¿Como trabajar con repositorios remotos (GitHub)?"](www.youtube.com/watch?v=I-VEUE8srvQ&pp=ygUrdHJhYmFqbyBjb24gcmVwb3NpdG9yaW9zIHJlbW90b3MgZW4gZ2l0aHVifQ%3D%3D)
 * GitHub CLI (`gh repo clone`, `gh repo create`, etc.)
 
 ---
