@@ -22,7 +22,7 @@
 - 8.🐞 [Gestión de tareas e incidencias con GitHub Issues](Documentos/08-issues.md)
 - 9.📊 [Gestión de proyectos con GitHub Projects](Documentos/09-proyectos.md)
 - 10.⚙️ [Automatización con GitHub Actions](Documentos/10-automatizacion.md)
-- 11.📄 [Compartir código con GitHub Gists](Documentos/11-Gists.md)
+- 11.📄 [Compartir código con GitHub Gists](Documentos/11-gists.md)
 - 12.🌐 [Publicación de sitios web con GitHub Pages](Documentos/12-publicacion.md)
 - 13.💻 [Entornos de desarrollo en la nube: Codespaces y GitHub Dev Editor](Documentos/13-codespaces.md)
 - 14.🛡️ [Buenas prácticas, seguridad y herramientas avanzadas](Documentos/14-buenas-practicas.md)
