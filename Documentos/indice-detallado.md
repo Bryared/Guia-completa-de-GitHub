@@ -1,66 +1,66 @@
 # 1. 📌 Introducción a Git y GitHub
-## 1.1 Objetivos
+### 1.1 Objetivos
 
 Entender el propósito de un sistema de control de versiones.
 
 Conocer la historia y evolución de Git y GitHub.
 
-## 1.2 ¿Qué es Git?
+### 1.2 ¿Qué es Git?
 
 Definición y características principales
 
 Arquitectura distribuida vs. centralizada
 
-## 1.3 ¿Qué es GitHub?
+### 1.3 ¿Qué es GitHub?
 
 Plataforma colaborativa: repositorios remotos, social coding
 
 Diferencias clave frente a Git local
 
-## 1.4 Ventajas del control de versiones
+### 1.4 Ventajas del control de versiones
 
 Colaboración y trazabilidad
 
 Historias de éxito (proyectos open-source, empresas)
 
-## 1.5 Flujo de trabajo general
+### 1.5 Flujo de trabajo general
 
 Local → Remoto → Colaborativo
 
 Diagrama de alto nivel
 
-## 1.6 Ejercicio
+### 1.6 Ejercicio
 
 Investigar un proyecto open-source y describir su flujo de Git/GitHub.
 
-## 1.7 Recursos
+### 1.7 Recursos
 
 Enlace a la documentación oficial de Git y GitHub
 
 # 2. ⚙️ Primeros pasos con Git
-## 2.1 Instalación de Git
+### 2.1 Instalación de Git
 
 Windows (Git for Windows), macOS (Homebrew), Linux (apt/yum)
 
-## 2.2 Configuración inicial
+### 2.2 Configuración inicial
 
 git config --global user.name / user.email
 
 Archivo .gitconfig y secciones comunes
 
-## 2.3 Alias y personalización
+### 2.3 Alias y personalización
 
 Crear alias (git config alias.co checkout)
 
 Colores, prompts y hooks de cliente
 
-## 2.4 .gitignore y .gitattributes
+### 2.4 .gitignore y .gitattributes
 
 Sintaxis básica de .gitignore
 
 Uso de .gitattributes para fin de línea y diffs personalizados
 
-## 2.5 Primer repositorio
+### 2.5 Primer repositorio
 
 git init vs. git clone
 
