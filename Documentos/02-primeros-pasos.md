@@ -39,7 +39,7 @@ Existen dos métodos principales para instalar Git en macOS:
 brew install git
 ````
 
-* **Descarga manual** desde el sitio oficial: [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
+* **Descarga manual** desde el sitio oficial: [Descarga git en macOS](https://git-scm.com/download/mac)
 
 Ambos métodos instalarán la última versión estable de Git disponible para macOS.
 
@@ -130,7 +130,7 @@ git config --global core.editor "code --wait"
 
 ## 🖥️ Comandos básicos de la terminal de Git Bach
 Aquí verás detalladamente los comandos basicos de la terminal
-El resumen puedes encontrarlo aqui: ->  <-
+El resumen puedes encontrarlo [aqui](Resumenes/comandos-git-bach.md) <-
 #### 📁 Crear tu primer repositorio
 
 Una vez que se han instalado y configurado las herramientas necesarias, el siguiente paso consiste en crear y gestionar un repositorio Git en un proyecto nuevo o existente. En esta sección se describen los pasos y comandos principales para inicializar un repositorio, preparar archivos, confirmar cambios y explorar el historial de versiones.
