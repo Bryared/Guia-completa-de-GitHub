@@ -49,41 +49,121 @@ git remote add origin <URL>
 Confirmar con git remote -v.
 
 Subir por primera vez con git push -u origin main
+
 ---
 
-## 6.3 URLs y Autenticación para Git**
+## 6.3 🔑 URLs y Autenticación
 
-  * HTTP vs SSH (sintaxis y pros/contras)
-  * Tokens de Acceso Personal (PAT)
-  * Claves SSH (`ssh-keygen`, agentes, registro)
-  * `gh auth login` (GitHub CLI)
+Aprenderás a autenticarte correctamente para trabajar con repos remotos vía HTTPS o SSH.
 
-## 6.4 Envío de Cambios (Push)**
+### HTTP vs SSH:
 
-  * `git push origin <rama>`
-  * `--set-upstream`
-  * `--force` / `--force-with-lease`
-  * Push de etiquetas (`--tags`)
-  * Push de todas las ramas (`--all`)
+  * HTTP: Simple pero requiere autenticarse cada vez o usar tokens.
+  * SSH: Requiere configurar claves, pero evita pedir contraseñas.
 
-## 6.5 Obtención de Cambios (Fetch & Pull)**
+### Tokens de Acceso Personal (PAT):
 
-  * `git fetch origin`
-  * `git pull origin <rama>`
-  * Diferencias fetch vs pull
-  * Resolución de conflictos locales
+  * Generar desde GitHub > Settings > Developer Settings
+  * Se usan como contraseña al usar HTTP
 
-## 6.6 Ramas de Seguimiento**
+### Claves SSH:
+
+  * Crear: `ssh-keygen -t ed25519 -C "tu@email.com"`
+  * Agregar al agente y a GitHub
+
+### GitHub CLI (gh):
+
+  * Autenticación rápida: `gh auth login`
+
+### 🔐 Autenticación con GitHub
+Configurar Personal Access Tokens (HTTPS).
+
+Uso de claves SSH para conexión segura.
+
+Almacenamiento de credenciales (credential helper).
+
+---
+
+## 6.4 ➡️ Enviar Cambios al Remoto (Push)
+
+Enviarás tus cambios locales a GitHub con diferentes estrategias.
+
+* `git push origin main`: Enviar la rama actual al remoto.
+* `git push --set-upstream origin <rama>`: Establecer seguimiento.
+* `git push --force` y `--force-with-lease`: Para sobrescribir historial remoto (usarlo con precaución).
+* `git push origin v1.0`: Subir etiquetas.
+* `git push --tags`: Subir todas las etiquetas.
+* `git push --all origin`: Subir todas las ramas locales.
+
+### 6.4 ⬆️ Subir cambios al repositorio remoto
+git push, git push --set-upstream.
+
+Subir ramas nuevas y etiquetas (git push origin nombre-rama).
+
+Ver qué ramas están sincronizadas con git branch -vv.
+
+---
+
+## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
+
+Descargarás y fusionarás cambios del repositorio remoto en tu copia local.
+
+* `git fetch origin`: Trae cambios sin fusionar.
+* `git pull origin main`: Trae y fusiona cambios.
+
+### **Diferencias:**
+
+  * `fetch`: Solo descarga.
+  * `pull`: Descarga y aplica.
+  * fetch vs pull
+
+### **Resolución de conflictos locales:**
+  * Usar `git mergetool` o resolución manual.
+
+## 6.5 ⬇️ Descargar cambios desde GitHub
+git fetch: traer sin mezclar.
+
+git pull: traer y fusionar automáticamente.
+
+Detectar y resolver conflictos en pull.
+
+---
+
+## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
+
+Establecerás y administrarás relaciones entre ramas locales y remotas.
 
   * Qué es una tracking branch
-  * `git branch -vv`
-  * `git branch --set-upstream-to=origin/<rama>`
 
-## 6.7 Gestión de Múltiples Remotos**
+* Permiten a una rama local rastrear su equivalente remoto.
+* `git branch -vv`: Muestra información de seguimiento.
+* `git branch --set-upstream-to=origin/<rama>`: Establece seguimient
 
-  * `git remote add upstream <URL>`
-  * `git fetch upstream` / `git pull upstream <rama>`
-  * `git remote rename`
+##6.6 🧭 Configurar ramas de seguimiento (tracking)
+Entender upstream y cómo Git sabe qué rama remota seguir.
+
+Cambiar o definir upstream con git branch --set-upstream-to.
+
+---
+## 6.7 🪜 Gestión de Múltiples Remotos
+
+Trabajarás con más de un repositorio remoto (ej. origin y upstream).
+
+* Casos comunes: fork, espejo, upstream.
+* `git remote add upstream <URL>`: Añadir otro remoto.
+* `git fetch upstream` y `git pull upstream main`: Obtener cambios del repo original.
+* `git push origin <rama>`: Subir cambios a tu fork.
+* `git remote rename origin github`: Renombrar remoto.
+
+## 6.7 🌐 Trabajar con múltiples remotos
+origin vs. upstream: escenarios típicos con forks.
+
+Añadir y gestionar múltiples remotos (git remote add, remove, rename).
+
+Obtener y comparar ramas de remotos distintos.
+
+---
+
 ### 6.1 🔄 Clonar y conectar repositorios
 
 #### `git clone`
