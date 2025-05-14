@@ -4,22 +4,25 @@ Este módulo te enseña cómo usar **ramas (branches)**, **fusionar cambios (mer
 
 ---
 
-## 5.1 🌱 ¿Qué es una rama (branch)?
+## 5.1 🌿 ¿Qué es una rama en Git?
 
-Una **rama** es una versión paralela del proyecto, una línea de desarrollo independiente que permite trabajar en nuevas funcionalidades sin afectar el código principal (generalmente `main` o `master`).
+Una **rama** en Git es un puntero móvil a un commit. Representa una línea de trabajo independiente dentro del proyecto.
 
-```bash
-git branch nueva-rama     # Crear una rama
-git switch nueva-rama     # Cambiarse a esa rama
+Git no guarda cambios como diferencias entre archivos, sino como **instantáneas completas** del proyecto en cada commit. Cada commit incluye:
+1. Git calcula un **hash SHA-1** para cada archivo preparado.
+2. Crea una copia del archivo (blob) en el repositorio.
+3. Guarda las referencias a estos blobs en el área de staging.
+4. Finalmente, genera un commit que referencia a estos blobs y a su commit padre.
+
+Cuando creas una rama, estás creando una nueva línea de desarrollo que parte de un commit existente. Git hace esto de forma rápida y eficiente, permitiendo múltiples ramas sin afectar el rendimiento.
+
+Las ramas permiten:
+- Desarrollar nuevas funcionalidades de forma aislada,
+- Corregir errores sin afectar el trabajo principal,
+- Unir cambios fácilmente con `merge` o `rebase`.
+
 ```
 
-> 💡 Puedes usar también:
-
-```bash
-git checkout -b nueva-rama  # Crear y cambiar en un solo paso
-```
-
-> 📸 *\[Sugerencia: insertar un diagrama con ramas paralelas (main vs feature)]*
 
 ---
 
