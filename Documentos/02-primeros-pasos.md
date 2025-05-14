@@ -70,7 +70,57 @@ Este comando debe mostrar la versión de Git instalada, lo cual confirma que la 
 
 ---
 
+
 ## ⚙️ Configuración inicial de Git
+
+Antes de comenzar a trabajar con Git, es fundamental establecer la identidad del usuario para que cada confirmación (commit) quede correctamente registrada. Esta sección explica cómo configurar el nombre y el correo electrónico globales, así como verificar todos los ajustes disponibles.
+
+### 🔹 Definir nombre de usuario
+
+Se utiliza el siguiente comando para asociar su nombre al autor de los commits:
+
+```bash
+git config --global user.name "Tu Nombre Completo"
+````
+
+> **Nota:** Reemplace `"Tu Nombre Completo"` por el nombre que desea que aparezca en el historial de versiones.
+
+### 🔹 Definir correo electrónico
+
+Git requiere un correo electrónico válido para identificar al autor de cada cambio. Configurelo con:
+
+```bash
+git config --global user.email "tu.email@dominio.com"
+```
+
+> **Nota:** Utilice la dirección de correo institucional o personal que esté vinculada a su cuenta de GitHub o al servicio de repositorios que vaya a emplear.
+
+### 🔹 Verificación de la configuración
+
+Para consultar todas las opciones configuradas (tanto globales como locales), ejecute:
+
+```bash
+git config --list
+```
+
+Este comando listará pares clave-valor que incluyen `user.name`, `user.email` y otras preferencias. Asegúrese de que los valores sean correctos:
+
+```
+user.name=Tu Nombre Completo
+user.email=tu.email@dominio.com
+...
+```
+
+### 🔹 Configuración adicional recomendada
+
+Aunque es opcional, puede definir el editor predeterminado para mensajes de commit y mejorar la experiencia de uso:
+
+### Establecer VS Code como editor predeterminado
+```bash
+git config --global core.editor "code --wait"
+```
+
+Con estos ajustes iniciales completados, Git estará listo para rastrear cambios bajo su identidad académica o profesional.
 
 ## 🖥️ Comandos básicos de la terminal
 
