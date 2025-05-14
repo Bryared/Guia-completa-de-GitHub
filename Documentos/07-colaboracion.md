@@ -20,17 +20,11 @@ La colaboración es uno de los pilares de GitHub. Los **Forks**, **Pull Requests
 3. Haces cambios → commit → push.
 4. Abres un **Pull Request** hacia el repositorio original.
 
-¡Buena observación! Sí, sería **muy útil incluir un ejemplo práctico usando `git clone` desde Visual Studio Code (VS Code)**, ya que es una herramienta muy popular, especialmente para quienes recién comienzan y prefieren trabajar con interfaz gráfica. Aquí tienes una **sección ampliada para agregar al punto 7.1 🍴 Fork vs. Clone**, que incluye un ejemplo con `clone` en VS Code:
-
----
-
-### 🖥️ Ejemplo práctico: Clonar un repositorio con VS Code
+#### 🖥️ Ejemplo práctico: Clonar un repositorio con VS Code
 
 #### 👉 ¿Cuándo usar `git clone`?
 
 Cuando tienes **acceso directo** al repositorio o no necesitas hacer un *fork*. Es ideal para trabajar en tus propios proyectos o en repos colaborativos donde tienes permiso.
-
----
 
 #### 🔧 Pasos para clonar un repositorio en VS Code:
 
@@ -54,15 +48,6 @@ Cuando tienes **acceso directo** al repositorio o no necesitas hacer un *fork*. 
 
 > Ahora tienes el repositorio descargado en tu maquina, listo para hacer nuevas ramas, hacer commits, push, pulls, y cualquier cambio que creas que pueda aportar al trabajo
 
----
-
-### 📸 Vista en VS Code:
-
-Puedes añadir una captura como esta para hacerlo más visual:
-
-```
-[ VS Code abriendo un repo clonado desde GitHub ]
-```
 ---
 
 ### 7.2 📤 Crear un Pull Request (PR)
