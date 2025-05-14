@@ -1,7 +1,5 @@
 # ⚙️ Primeros Pasos con Git
-#### 🎯 Objetivo
-El objetivo de Git es gestionar el control de versiones de un proyecto, facilitando la colaboración simultánea entre múltiples desarrolladores, quienes pueden realizar cambios y mejoras de forma estructurada y eficiente dentro de un repositorio compartido.
-#### 🧠 ¿Qué es Git?
+#### 🧠 Recordando que es Git!
 Git es un sofware de control de versiones de una carpeta que nos permite tener diferentes versiones de una carpeta
 #### 📝Ventajas de usar git
 
