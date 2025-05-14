@@ -4,12 +4,33 @@ El trabajo con repositorios remotos en GitHub facilita la colaboración, sincron
 Esta sección abarca desde los conceptos básicos hasta configuraciones avanzadas, preparándote para dominar el trabajo local y remoto en proyectos Git.
 
 ---
-## 6.1 Conceptos Básicos**
+## 6.1 🔄 Conceptos Básicos
 
-  * Definición de repositorio remoto
-  * Diferencias Local vs Remoto
-  * Ventajas de usar remotos
-  * GitHub como servicio de hosting
+Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
+
+### ¿Qué es un repositorio remoto?**
+  Es una versión del repositorio Git alojada en la nube, generalmente en servicios como GitHub. Permite sincronizar, colaborar y respaldar proyectos.
+
+### Diferencias entre repositorio local y remoto**
+
+  * *Local:* Está en tu computadora.
+  * *Remoto:* Está en servidores como GitHub.
+
+### Ventajas de usar repositorios remotos**
+
+  * Copia de seguridad
+  * Colaboración
+  * Automatización y despliegue
+
+### GitHub como servicio de hosting Git**
+  Es el proveedor más popular para alojar repos y colaborar.
+
+### 6.1 🏗️ Crear un repositorio remoto en GitHub
+Desde la interfaz web de GitHub.
+
+Desde la terminal con gh repo create.
+
+Inicialización con README, .gitignore, licencia.
 
 ## 6.2 Configuración Inicial de Remotos**
 
