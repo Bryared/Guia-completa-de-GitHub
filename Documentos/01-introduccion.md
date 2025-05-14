@@ -1,18 +1,35 @@
-# 📌 Introducción
-¿Qué es Git?
+# 📌 Introducción a Git y GitHub
 
-¿Qué es GitHub y cómo se integra con Git?
+## 1.1 🎯 Objetivos
 
-Git vs GitHub: diferencias y complementariedades
+* Entender el propósito de un sistema de control de versiones.
+* Conocer la historia y evolución de **Git** y **GitHub**.
 
-Flujo de trabajo moderno en desarrollo colaborativo
+## 1.2 🧠 ¿Qué es Git?
 
-Instalación de Git y creación de cuenta en GitHub
+* Definición y características principales.
+* Arquitectura **distribuida** vs. **centralizada**.
 
-¿Qué es el control de versiones?
+## 1.3 🌐 ¿Qué es GitHub?
 
-¿Por qué usar Git? Ventajas sobre otros sistemas
+* Plataforma colaborativa: repositorios remotos, *social coding*.
+* Diferencias clave frente a Git local.
 
-¿Qué es GitHub y cómo se relaciona con Git?
+## 1.4 💡 Ventajas del control de versiones
 
-Casos de uso reales de Git y GitHub (equipos, empresas, proyectos personales)
+* Colaboración y trazabilidad.
+* Historias de éxito (*proyectos open-source, empresas*).
+
+## 1.5 🔄 Flujo de trabajo general
+
+* Local → Remoto → Colaborativo.
+* Diagrama de alto nivel.
+
+## 1.6 📝 Ejercicio
+
+> Investigar un proyecto *open-source* y describir su flujo de Git/GitHub.
+
+## 1.7 🔗 Recursos
+
+* [Documentación oficial de Git](https://git-scm.com/doc)
+* [Documentación oficial de GitHub](https://docs.github.com/)
