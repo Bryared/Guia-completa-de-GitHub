@@ -174,10 +174,14 @@ Aprenderás a autenticarte correctamente para trabajar con repos remotos vía HT
 
 Cada vez que intentas **subir (push)** o **bajar (pull/fetch)** cambios desde un repositorio privado (o incluso público si usas comandos con privilegios), Git necesita verificar **quién eres** y si tienes **permiso para hacerlo**.
 
-### HTTP vs SSH:
+### 🔀 Formas de conexión con GitHub
+Existen tres formas principales de conexión entre tu repositorio local y GitHub:
 
-  * HTTP: Simple pero requiere autenticarse cada vez o usar tokens.
-  * SSH: Requiere configurar claves, pero evita pedir contraseñas.
+| Método          | Ventajas                 | Desventajas                          | Ideal para                          |
+| --------------- | ------------------------ | ------------------------------------ | ----------------------------------- |
+| **HTTPS + PAT** | Fácil de configurar      | Requiere ingresar o guardar el token | Uso ocasional o entornos simples    |
+| **SSH**         | Seguro y sin contraseñas | Necesita configuración inicial       | Desarrollo frecuente y profesional  |
+| **GitHub CLI**  | Rápido y automatizado    | Requiere tener instalada la CLI `gh` | Automatización y experiencia fluida |
 
 ### 🔒 HTTPS con Tokens de Acceso Personal (PAT)
 HTTPS: "Hypertext Transfer Protocol Secure"
@@ -260,14 +264,63 @@ Te guía para autenticarte y configura Git automáticamente. Ideal para agilizar
 
 ## 6.4 ➡️ Enviar Cambios al Remoto (Push)
 
-Enviarás tus cambios locales a GitHub con diferentes estrategias.
+Aprenderás a subir tus cambios locales a GitHub configurando correctamente el seguimiento entre ramas.
 
-* `git push origin main`: Enviar la rama actual al remoto.
-* `git push --set-upstream origin <rama>`: Establecer seguimiento.
-* `git push --force` y `--force-with-lease`: Para sobrescribir historial remoto (usarlo con precaución).
-* `git push origin v1.0`: Subir etiquetas.
-* `git push --tags`: Subir todas las etiquetas.
-* `git push --all origin`: Subir todas las ramas locales.
+---
+
+### 🔁 ¿Qué significa hacer `push`?
+
+Hacer `git push` es **enviar los commits de tu repositorio local al remoto**, como GitHub. Es un paso fundamental para:
+
+* Compartir tu trabajo con otros.
+* Respaldar tu código en la nube.
+* Activar automatizaciones (como CI/CD).
+
+---
+
+### 📤 Primer Push (inicial)
+
+Cuando creas un repositorio en GitHub, generalmente está vacío. Para subir tu proyecto local:
+
+```bash
+git push -u origin main
+```
+
+> `-u` (o `--set-upstream`) establece una relación de seguimiento entre tu rama local y la rama remota. Así podrás usar simplemente `git push` en el futuro.
+
+---
+### 🔁 Comandos de push frecuentes
+
+| Comando                            | Descripción                                                |
+| ---------------------------------- | ---------------------------------------------------------- |
+| `git push origin main`             | Sube la rama `main` al actual remoto llamado `origin`      |
+| `git push origin main`             | Enviar la rama actual al remoto.                           |
+| `git push --set-upstream origin <rama>`| Establecer seguimiento.|
+| `git push -u origin feature/login` | Sube una nueva rama y configura seguimiento                |
+| `git push --force`                 | Fuerza la subida, sobrescribiendo el historial remoto (⚠️) |
+| `git push --force-with-lease`      | Fuerza con precaución (mejor práctica si necesitas forzar) |
+| `git push`                         | Sube los cambios a la rama remota ya configurada           |
+| `git push --tags`                  | Sube todas las etiquetas (tags) locales                    |
+| `git push origin v1.0`             | Sube solo la etiqueta `v1.0`                               |
+| `git push --all origin`            | Sube todas las ramas locales al remoto                     |
+
+> ⚠️ **Evita usar `--force` en ramas compartidas**
+> Puede sobrescribir el trabajo de otros desarrolladores. Solo úsalo cuando **estés seguro de lo que haces**, o en ramas personales.
+
+**Alternativa segura:** `--force-with-lease`
+Este comando **verifica primero** que nadie haya subido cambios al remoto antes de sobrescribirlo.
+
+---
+
+### 👁️ Ver estado de ramas y seguimiento
+
+```bash
+git branch -vv
+```
+
+Muestra las ramas locales y si están vinculadas a ramas remotas (tracking branches). Muy útil para asegurarte de que estás trabajando con la rama correcta.
+
+---
 
 ### 6.4 ⬆️ Subir cambios al repositorio remoto
 git push, git push --set-upstream.
