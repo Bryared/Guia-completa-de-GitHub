@@ -571,76 +571,170 @@ git sparse-checkout set ruta/a/carpeta
 
 ---
 
-### 6.9 🚚 Migrar un repositorio local a GitHub
+## 6.9 🚚 Migrar un repositorio local a GitHub
 
-#### Caso: Tengo un proyecto local y quiero subirlo a GitHub
+### 🎯 Objetivo
+
+Aprenderás cómo subir un proyecto que ya tienes en tu máquina a un repositorio remoto en GitHub, desde lo más básico hasta migraciones avanzadas como espejos.
+
+
+### 🧱 Caso básico: subir un proyecto local a GitHub
+
+Pasos típicos:
 
 ```bash
-git init
-git add .
-git commit -m "Primer commit"
+git init                           # Inicializar repositorio local
+git add .                          # Agregar todos los archivos
+git commit -m "Primer commit"      # Crear un commit inicial
 git remote add origin https://github.com/usuario/repositorio.git
-git push -u origin main
+git push -u origin main            # Subir la rama principal
 ```
 
-> 💡 Usa `-u` para establecer el seguimiento remoto predeterminado.
+🔹 Usa `-u` para establecer una relación de seguimiento entre `main` local y remoto.
 
-#### Migración avanzada: espejo de repositorio
+
+### 🪞 Caso avanzado: migrar un repositorio como espejo
+
+Ideal para copiar absolutamente todo (ramas, etiquetas, hooks, etc.)
 
 ```bash
-git clone --mirror https://github.com/otro/origen.git
-cd origen.git
-git push --mirror https://github.com/miusuario/nuevo-repo.git
+git clone --mirror https://github.com/original/repo.git
+cd repo.git
+git push --mirror https://github.com/usuario/nuevo-repo.git
 ```
 
-> Clona TODO, incluidas todas las ramas y etiquetas.
+✔️ Esto clona y replica absolutamente todos los datos del repositorio original.
 
 ---
 
-### 6.10 🏢 Organizaciones, equipos y permisos
+## 6.10 🏢 Organizaciones, Equipos y Permisos en GitHub
 
-#### GitHub permite agrupar usuarios y proyectos en **organizaciones**:
+Entender cómo GitHub permite colaborar a escala con múltiples usuarios y repositorios a través de organizaciones.
 
-* **Repositorios privados o públicos**
-* **Equipos** con roles: lectura, escritura, admin
-* Control de **permisos por rama y entorno**
-* **Protected branches**: solo ciertos usuarios pueden hacer `merge`
+### 👥 ¿Qué es una organización en GitHub?
 
-> Ideal para proyectos empresariales, educativos o colaborativos.
-
----
-
-### 6.11 🗃️ Monorepos y gestión de permisos avanzada
-
-Un **monorepo** es un solo repositorio que contiene múltiples módulos o proyectos.
+Una **organización** agrupa usuarios y repositorios bajo una sola entidad colaborativa.
 
 **Ventajas:**
 
-* Gestión unificada del código.
-* Facilita refactors entre proyectos.
-* Configuración compartida (CI/CD, linting).
+* Centralización de configuración, permisos y facturación.
+* Control granular por repositorio, rama o entorno.
+* Ideal para equipos, instituciones educativas o empresas.
 
-**Desafíos:**
+### 🛡️ Gestión de equipos y roles
 
-* Tamaño y rendimiento.
-* Coordinación entre equipos.
+Roles predefinidos:
+
+| Rol      | Permisos principales                          |
+| -------- | --------------------------------------------- |
+| Read     | Solo lectura                                  |
+| Triage   | Clasifica issues/pull requests                |
+| Write    | Lectura + escritura                           |
+| Maintain | Administración sin acceso completo            |
+| Admin    | Acceso completo, incluido control de permisos |
+
+
+### 🔐 Permisos avanzados
+
+* **Protected Branches**: solo ciertas personas pueden hacer `push` o `merge`.
+* **Required reviews**: obligar revisiones antes de `merge`.
+* **Entornos protegidos**: restringir despliegues automatizados.
+
+> Estas configuraciones complementan y refuerzan la seguridad del trabajo con repositorios remotos.
 
 ---
 
-## 6.12 ⚙️ Automatización Local
+## 6.11 🗃️ Monorepos y gestión de permisos avanzada
 
-Automatizarás sincronización y tareas relacionadas con Git usando hooks o scripts.
+Dominarás estrategias estructurales avanzadas para manejar múltiples proyectos dentro de un solo repositorio remoto.
 
-### **Git Hooks:**
 
-  * `pre-push`, `post-merge`, etc.
-  * Automatizar tareas antes/después de eventos Git.
+### 🧩 ¿Qué es un monorepo?
 
-### **Scripts de sincronización:**
+Un **monorepo** contiene múltiples proyectos, módulos o paquetes dentro de un solo repositorio Git.
 
-  * Usar cron + bash/python para fetch automático.
-(La automatización con GitHub Actions y CI/CD estará en Sección 10.)
+
+### ✅ Ventajas:
+
+* **Gestión centralizada** del código y configuración.
+* Refactorizaciones cruzadas más sencillas.
+* Configuración común para CI/CD, linters, etc.
+
+### ⚠️ Desafíos:
+
+* Repositorios pesados, especialmente al clonar (`git clone`).
+* Requiere herramientas y convenciones de organización.
+* Necesidad de configuración eficiente (ej. `sparse-checkout`).
+
+
+### 🔐 Permisos por carpeta (con GitHub Teams)
+
+Aunque GitHub **no permite permisos por carpeta de forma nativa**, puedes:
+
+* Usar **repositorios separados** y un script para mantener sincronización.
+* Aplicar convenciones y herramientas como `CODEOWNERS`.
+
 ---
+
+## 6.12 ⚙️ Automatización Local con Git
+
+### 🎯 Objetivo
+
+Automatizar tareas relacionadas con la sincronización con remotos, sin depender de GitHub Actions.
+
+---
+
+### 🔁 Git Hooks
+
+Permiten ejecutar scripts automáticamente antes o después de comandos Git.
+
+| Hook         | Descripción                                        |
+| ------------ | -------------------------------------------------- |
+| `pre-push`   | Antes de hacer `git push`                          |
+| `post-merge` | Después de integrar cambios (`git merge` o `pull`) |
+| `commit-msg` | Validar el mensaje de commit                       |
+
+📁 Ubicación: `.git/hooks/`
+
+> Cada hook es un script ejecutable. Se deben renombrar quitando `.sample`.
+
+---
+
+### 🧪 Ejemplo: Validar antes de hacer push
+
+Archivo `.git/hooks/pre-push`:
+
+```bash
+#!/bin/bash
+echo "¿Has corrido los tests? (s/n)"
+read respuesta
+[ "$respuesta" = "s" ] || exit 1
+```
+
+---
+
+### 🕒 Sincronización automática con `cron`
+
+Archivo `cron` (Linux/macOS):
+
+```cron
+0 * * * * cd /ruta/al/repo && git fetch origin >> /tmp/fetch.log
+```
+
+> Realiza un `git fetch` cada hora y guarda el log.
+
+---
+
+### 🔄 Comparación con GitHub Actions
+
+| Automatización | Contexto                     |
+| -------------- | ---------------------------- |
+| Git Hooks      | Local, orientado a usuario   |
+| Cron + Scripts | Local, automatización pasiva |
+| GitHub Actions | Remota, automatización CI/CD |
+
+---
+
 
 ## 6.13 ⚠️ Manejo de Errores Comunes
 
@@ -659,7 +753,7 @@ Diagnosticarás y resolverás problemas frecuentes al interactuar con repositori
 
   * Revisar acceso y ortografía de la URL
 (La gestión de políticas de seguridad y escaneo de vulnerabilidades en repositorios se ve en Sección 14.)
----
+
 
 ---
 
@@ -687,7 +781,6 @@ Mantendrás un flujo limpio, seguro y profesional al trabajar con repositorios r
 * Usa `git remote -v` frecuentemente para verificar las URLs correctas.
 * Si colaboras con forks, puedes agregar múltiples remotos (verás esto en el punto 6.7).
 
----
 ---
 
 ### 6.15 🧪 Ejercicio práctico sugerido
