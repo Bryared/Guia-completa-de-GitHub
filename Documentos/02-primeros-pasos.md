@@ -119,33 +119,22 @@ user.name=Tu Nombre Completo
 user.email=tu.email@dominio.com
 ...
 ```
-
-#### 🔹 Configuración adicional recomendada
-
-Aunque es opcional, puede definir el editor predeterminado para mensajes de commit y mejorar la experiencia de uso:
-
 #### Establecer VS Code como editor predeterminado
+Aunque es opcional, puede definir el editor predeterminado para mensajes de commit y mejorar la experiencia de uso:
 ```bash
 git config --global core.editor "code --wait"
 ```
-
+---
 ## 2.5 🖥️ Comandos básicos de la terminal de Git Bach
 Aquí verás detalladamente los comandos basicos de la terminal
 El resumen puedes encontrarlo [aqui](https://github.com/Bryared/Guia-completa-de-GitHub/blob/main/Resumenes/comandos-git-bach.md) <-
 
-### 2.5.1 📁 Crear tu primer repositorio
+#### 1.🔹 Crear el directorio de trabajo
+   * `mkdir MiProyecto` Crea un directorio de trabajo
+   
+   * `cd MiProyecto` Te posicionas en el directorio de trabajo
 
-Una vez que se han instalado y configurado las herramientas necesarias, el siguiente paso consiste en crear y gestionar un repositorio Git en un proyecto nuevo o existente. En esta sección se describen los pasos y comandos principales para inicializar un repositorio, preparar archivos, confirmar cambios y explorar el historial de versiones.
-
-#### 🔹 Crear el directorio de trabajo
-
-1. Crear una carpeta para el proyecto y situarse en ella:
-   ```bash
-   mkdir MiProyecto
-   cd MiProyecto
-
-
-#### 🔹 Inicializar el repositorio
+#### 2.🔹 Inicializar el repositorio
 
 * **`git init`**
   Inicializa un nuevo repositorio Git en el directorio actual y crea la carpeta oculta `.git`:
@@ -155,235 +144,69 @@ Una vez que se han instalado y configurado las herramientas necesarias, el sigui
   ```
 
   Tras este comando, el proyecto está bajo control de versiones, aunque aún no contiene historial de confirmaciones.
+#### 3.🔹 Preparar (staging) archivos
+   Añadir un archivo al área de preparación (staging area):
+   
+* **`.gitignore`**
+   Evita que ciertos archivos o carpetas se suban al repositorio (si no han sido *trackeados* con `git add`).
+   **¿Cómo usarlo?** Crea un archivo llamado `.gitignore` en la raíz del repo. Dentro, especifica qué ignorar:
 
-#### 🔹 Preparar (staging) archivos
+   * `nombre.txt` → Ignora solo el archivo nombre.txt
+   * `*.log` → Ignora todos los archivos `.log`
+   * `carpeta/` → Ignora todo el contenido de la carpeta
+   * `!importante.log` → **No ignora** este archivo (aunque coincida con otra regla)
 
-1. Crear o modificar archivos en el directorio de trabajo, por ejemplo:
-
-   ```bash
-   touch README.md
-   ```
-2. Añadir un archivo al área de preparación (staging area):
-
+   > El `.gitignore` **solo afecta archivos nuevos** (no ya versionados).
+* **`git add`**
    ```bash
    git add "nombre_del_archivo"
    ```
-3. Si es necesario revertir la adición al área de preparación:
-
+   > También puedes añadir todos los archivos del repositorio con `git add .`
+* **`git rm`**
+   Y si es necesario revertir la adición al área de preparación:
    ```bash
    git rm --cached "nombre_del_archivo"
    ```
-
-> **Nota:**
->
-> * `git status` muestra en todo momento el estado del directorio de trabajo y del área de preparación.
-> * Para un resumen compacto, se puede usar `git status -s`.
-
-#### 🔹 Crear un commit (confirmación)
-
+* **`git status`**
+   Muestra en todo momento el estado del directorio de trabajo y del área de preparación.
+  ```bash
+   git status
+   ```
+  > Para un resumen compacto, se puede usar `git status -s`.
+#### 4.🔹 Crear un commit (confirmación)
+Un *commit* es como decir una “fotografía” del estado actual del proyecto: captura todos los cambios preparados hasta ese momento.
 * **`git commit -m "Descripción del cambio" -a`**
-  Crea un nuevo commit que incluye todos los archivos previamente añadidos al área de preparación y, con `-a`, añade automáticamente los cambios en archivos rastreados:
-
+  Crea un nuevo commit que incluye todos los archivos previamente añadidos al área de preparación
   ```bash
-  git commit -m "Añadir README inicial" -a
+  git commit -m "Añadir README inicial"
   ```
-
-> **Concepto clave:**
-> Un *commit* es una “fotografía” del estado actual del proyecto: captura todos los cambios preparados hasta ese momento.
-
-#### 🔹 Eliminar y restaurar archivos
-
-* Eliminar un archivo del directorio de trabajo:
-
+  > Usa `git commit -m "Añadir README inicial -a` por si aun no se ha añadido el archivo con add
+#### 5. 🔹 Explorar el historial
+* **`git status`**
+  Muestra qué archivos han cambiado, cuáles están listos para commit, y cuáles no:
   ```bash
-  rm "nombre_del_archivo"
+  git status
   ```
-* Restaurar la versión confirmada al área de trabajo:
-
-  ```bash
-  git restore "nombre_del_archivo"
-  ```
-
-#### 🔹 Navegar entre commits
-
-* Volver al último commit realizado:
-
-  ```bash
-  git checkout <hash>
-  ```
-  o también:
-  ```bash
-  git restore
-  ```
-* Cambia a otra rama:
-  
-  ```bash
-  git checkout <nombre_rama>
-  ```
-#### 🔄 Modos de `git reset`
-
-Dentro de la sección de “Navegar entre commits”, puede añadir el siguiente bloque que describe los tres modos principales de `git reset`:
-
-##### 🔹 `--soft`
-
-```bash
-git reset --soft <ID-del-commit>
-````
-
-* Mueve el puntero `HEAD` al commit especificado.
-* **Conserva** tanto el área de preparación (staging) como el directorio de trabajo tal como estaban.
-* Útil si deseas rehacer uno o varios commits sin perder los cambios preparados.
-
-##### 🔹 `--mixed` (modo por defecto)
-
-```bash
-git reset --mixed <ID-del-commit>
-```
-
-* Mueve `HEAD` al commit indicado.
-* **Deshace** la preparación de los cambios (los quita del área de staging) pero **mantiene** los archivos modificados en el directorio de trabajo.
-* Es el comportamiento por defecto al invocar `git reset <ID>` sin especificar opción.
-
-##### 🔹 `--hard`
-
-```bash
-git reset --hard <ID-del-commit>
-```
-
-* Mueve `HEAD` al commit dado.
-* **Descarta** todos los cambios en el área de staging y en el directorio de trabajo, volviendo el proyecto exactamente al estado de ese commit.
-* Debe usarse con precaución, ya que se pierden los cambios no confirmados.
-
-  ```
-* Ver las diferencias entre el área de preparación y el último commit:
-
-  ```bash
-  git diff --staged
-  ```
-
-#### 🔹 Explorar el historial
-
-* Listar todos los commits con detalle:
-
+* **`git log`**
+  Lista la informacion y hash de todos los commits con detalle:
   ```bash
   git log
   ```
-* Mostrar un resumen compacto de los commits:
-
-  ```bash
-  git log --oneline
-  ```
-* Mostrar diferencias entre dos commits (por rango de hashes):
-
-  ```bash
-  git log <hash1> <hash2>
-  ```
-
-> **Configuración opcional:**
-> Para abreviar los hashes en los logs, se puede ajustar:
->
-> ```bash
-> git config --global core.abbrev "n"
-> ```
-
-#### 🔹 Gestión de ramas
-
-* Ver las ramas existentes:
-
-  ```bash
-  git branch
-  ```
-* Crear una nueva rama:
-
-  ```bash
-  git branch <nombre_rama>
-  ```
-* Cambiarse a una rama existente:
-
-  ```bash
-  git switch <nombre_rama>
-  ```
-* Crear y cambiar a una nueva rama en un solo paso:
-
-  ```bash
-  git switch -c <nombre_rama>
-  ```
-* Eliminar una rama local (sin estar en ella):
-
-  ```bash
-  git branch -d <nombre_rama>
-  ```
-* Renombrar una rama:
-
-  ```bash
-  git branch -m <nombre_antiguo> <nombre_nuevo>
-  ```
-
-  o, si ya se está en la rama:
-
-  ```bash
-  git branch -n <nuevo_nombre>
-  ```
-
-## 2.6 🧬 Estructura interna del repositorio
-
-El directorio oculto `.git` contiene toda la información que Git utiliza para gestionar el historial, las referencias y la configuración del repositorio. A continuación se describen sus principales componentes:
-
-```bash
-# Mostrar la estructura principal de .git
-tree -a .git
-````
-
-* **HEAD**
-  Archivo que apunta a la rama o al commit actualmente revisado.
-
-  ```text
-  ref: refs/heads/main
-  ```
-
-* **config**
-  Archivo de configuración local del repositorio, donde se almacenan opciones como nombre de usuario, correo y alias.
-
-* **description**
-  Breve descripción del repositorio (utilizado por algunas herramientas como GitWeb).
-
-* **index**
-  Base de datos binaria que representa el área de preparación (staging area). Aquí Git guarda el listado de archivos preparados para el siguiente commit.
-
-* **objects/**
-  Carpeta que almacena todos los objetos de Git:
-
-  * **blobs**: contenido de los archivos
-  * **trees**: estructura de directorios
-  * **commits**: snapshots de proyecto
-  * **tags**: anotaciones de versiones
-
-* **refs/**
-  Contiene referencias (pointers) a commits concretos:
-
-  * **heads/**: punteros a ramas locales
-  * **tags/**: punteros a versiones etiquetadas
-  * **remotes/**: punteros a ramas remotas
-
-* **logs/**
-  Historial de movimientos de punteros (`HEAD`, ramas), útil para recuperar cambios ante un “reset” accidental.
-
-* **hooks/**
-  Scripts ejecutables que se disparan en eventos de Git (pre-commit, post-merge, etc.). Se incluyen ejemplos deshabilitados por defecto (`.sample`).
-
-* **info/**
-  Información adicional, como `exclude`, que permite ignorar archivos a nivel local sin modificar `.gitignore`.
-
+  > Para mostrar un resumen compacto de los commits usa `git log --oneline`
+  
+  > Para mostrar diferencias entre dos commits usa `git log <hash1> <hash2>`
+* **Configuración opcional:**
+ Para abreviar los hashes en los logs, se puede ajustar:
+   > ```bash
+   > git config --global core.abbrev "n"
+   > ```
 ---
 
-Conocer esta estructura facilita la comprensión profunda de cómo Git almacena y recupera información, así como permite la resolución avanzada de problemas y la personalización de hooks y configuraciones.\`\`\`
-
-
-## 2.7 🖼️ Opciones visuales (GUI)
+## 2.5 🖼️ Opciones visuales (GUI)
 
 Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, existen diversas aplicaciones que facilitan la gestión de repositorios Git. A continuación se presentan cuatro alternativas populares, junto con sus características principales y enlaces oficiales.
 
-### 🔹 GitHub Desktop
+#### 🔹 GitHub Desktop
 
 - **Descripción:** Cliente oficial de GitHub, diseñado para integrarse de forma nativa con repositorios alojados en GitHub y GitHub Enterprise.  
 - **Características clave:**  
@@ -392,7 +215,7 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
   - Visualización clara de diferencias y estados de archivos.  
 - **Enlace:** <https://desktop.github.com/>
 
-### 🔹 GitKraken
+#### 🔹 GitKraken
 
 - **Descripción:** Cliente multiplataforma (Windows, macOS, Linux) con interfaz intuitiva basada en gráficos de árbol para visualizar el historial de commits y ramas.  
 - **Características clave:**  
@@ -400,17 +223,8 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
   - Integración con múltiples servicios (GitHub, GitLab, Bitbucket).  
   - Soporte para flujos de trabajo con Git LFS y submódulos.  
 - **Enlace:** <https://www.gitkraken.com/>
-
-### 🔹 Sourcetree
-
-- **Descripción:** Aplicación gratuita de Atlassian para Windows y macOS, orientada a usuarios de Bitbucket y repositorios Git locales.  
-- **Características clave:**  
-  - Visualización de commits en un grafo interactivo.  
-  - Herramientas de staging gráfico y terminal integrada.  
-  - Soporte nativo para Mercurial, además de Git.  
-- **Enlace:** <https://www.sourcetreeapp.com/>
-
-### 🔹 Visual Studio Code (Control de versiones)
+- 
+#### 🔹 Visual Studio Code (Control de versiones)
 
 - **Descripción:** Editor de código ligero que incluye soporte integrado para Git, ampliable mediante extensiones.  
 - **Características clave:**  
@@ -421,9 +235,9 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
     - **Git Graph:** visualización de grafo de ramas y commits.  
 - **Enlace:** <https://code.visualstudio.com/>  
 
-Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.
+> Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.
 
-## 2.8 📘 Actividad guiada sugerida para cerrar el módulo
+## 2.6 📘 Actividad guiada sugerida para cerrar el módulo
 
 > ### 🧪 Práctica: Crea tu primer repositorio
 
