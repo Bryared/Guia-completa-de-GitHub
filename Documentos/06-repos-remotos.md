@@ -25,19 +25,31 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 ### GitHub como servicio de hosting Git**
   Es el proveedor más popular para alojar repos y colaborar.
 
-### 6.1 🏗️ Crear un repositorio remoto en GitHub
+### 🏗️ Crear un repositorio remoto en GitHub
 Desde la interfaz web de GitHub.
 
 Desde la terminal con gh repo create.
 
 Inicialización con README, .gitignore, licencia.
 
-## 6.2 Configuración Inicial de Remotos**
+---
 
-  * `git remote add`
-  * `git remote -v`
-  * `git remote set-url`
-  * `git remote remove`
+## 6.2 ⚖️ Configuración Inicial de Remotos
+
+Aprenderás a asociar, cambiar o eliminar remotos en tu repositorio local.
+
+* `git remote add origin <URL>`: Asocia el repositorio local con un remoto.
+* `git remote -v`: Lista los remotos configurados.
+* `git remote set-url origin <nueva-URL>`: Cambia la URL del remoto.
+* `git remote remove origin`: Elimina la asociación con un remoto.
+
+### 🔗 Vincular un repositorio local a uno remoto
+git remote add origin <URL>
+
+Confirmar con git remote -v.
+
+Subir por primera vez con git push -u origin main
+---
 
 ## 6.3 URLs y Autenticación para Git**
 
