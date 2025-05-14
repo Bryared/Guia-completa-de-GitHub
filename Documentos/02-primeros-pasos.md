@@ -1,7 +1,10 @@
-# ⚙️ Primeros Pasos con Git
+# 2. ⚙️ Primeros Pasos con Git
+## 2.1 🎯 Objetivo:
+Aprender a instalar y configurar Git en el sistema local, y familiarizarse con los primeros comandos esenciales para gestionar repositorios.
+
 #### 🧠 Recordando que es Git!
 Git es un sofware de control de versiones de una carpeta que nos permite tener diferentes versiones de una carpeta
-#### 📝Ventajas de usar git
+#### 2.2 📝Ventajas de usar git
 
 | Ventaja                          | Descripción                                                                                                |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -14,7 +17,7 @@ Git es un sofware de control de versiones de una carpeta que nos permite tener d
 
 ---
 
-## 💾 Instalación de Git
+## 2.3 💾 Instalación de Git
 
 Git es una herramienta esencial para el control de versiones en proyectos de software. Antes de poder utilizarla, es necesario instalarla correctamente según el sistema operativo. A continuación, se describen los pasos para su instalación en los sistemas más comunes.
 
@@ -77,7 +80,7 @@ Este comando debe mostrar la versión de Git instalada, lo cual confirma que la 
 ---
 
 
-## ⚙️ Configuración inicial de Git
+## 2.4 ⚙️ Configuración inicial de Git
 
 Antes de comenzar a trabajar con Git, es fundamental establecer la identidad del usuario para que cada confirmación (commit) quede correctamente registrada. Esta sección explica cómo configurar el nombre y el correo electrónico globales, así como verificar todos los ajustes disponibles.
 
@@ -126,10 +129,11 @@ Aunque es opcional, puede definir el editor predeterminado para mensajes de comm
 git config --global core.editor "code --wait"
 ```
 
-## 🖥️ Comandos básicos de la terminal de Git Bach
+## 2.5 🖥️ Comandos básicos de la terminal de Git Bach
 Aquí verás detalladamente los comandos basicos de la terminal
 El resumen puedes encontrarlo [aqui](https://github.com/Bryared/Guia-completa-de-GitHub/blob/main/Resumenes/comandos-git-bach.md) <-
-#### 📁 Crear tu primer repositorio
+
+### 2.5.1 📁 Crear tu primer repositorio
 
 Una vez que se han instalado y configurado las herramientas necesarias, el siguiente paso consiste en crear y gestionar un repositorio Git en un proyecto nuevo o existente. En esta sección se describen los pasos y comandos principales para inicializar un repositorio, preparar archivos, confirmar cambios y explorar el historial de versiones.
 
@@ -312,7 +316,7 @@ git reset --hard <ID-del-commit>
   git branch -n <nuevo_nombre>
   ```
 
-## 🧬 Estructura interna del repositorio
+## 2.6 🧬 Estructura interna del repositorio
 
 El directorio oculto `.git` contiene toda la información que Git utiliza para gestionar el historial, las referencias y la configuración del repositorio. A continuación se describen sus principales componentes:
 
@@ -366,7 +370,7 @@ tree -a .git
 Conocer esta estructura facilita la comprensión profunda de cómo Git almacena y recupera información, así como permite la resolución avanzada de problemas y la personalización de hooks y configuraciones.\`\`\`
 
 
-## 🖼️ Opciones visuales (GUI)
+## 2.7 🖼️ Opciones visuales (GUI)
 
 Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, existen diversas aplicaciones que facilitan la gestión de repositorios Git. A continuación se presentan cuatro alternativas populares, junto con sus características principales y enlaces oficiales.
 
