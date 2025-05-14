@@ -490,13 +490,6 @@ git fetch upstream
 Luego puedes revisar ramas, comparar o integrarlas manualmente si lo deseas.
 
 
-### 🧭 Buenas prácticas
-
-* Usa nombres descriptivos (`origin`, `upstream`, `backup`).
-* Documenta en el `README` de tu proyecto la estructura de remotos si es compartido.
-* Sincroniza frecuentemente para mantenerte actualizado.
-* No hagas `push` a remotos que no controles directamente sin revisión previa.
-
 
 ### ✅ Mini resumen visual
 
@@ -678,11 +671,8 @@ Aunque GitHub **no permite permisos por carpeta de forma nativa**, puedes:
 
 ## 6.12 ⚙️ Automatización Local con Git
 
-### 🎯 Objetivo
-
 Automatizar tareas relacionadas con la sincronización con remotos, sin depender de GitHub Actions.
 
----
 
 ### 🔁 Git Hooks
 
@@ -698,7 +688,6 @@ Permiten ejecutar scripts automáticamente antes o después de comandos Git.
 
 > Cada hook es un script ejecutable. Se deben renombrar quitando `.sample`.
 
----
 
 ### 🧪 Ejemplo: Validar antes de hacer push
 
@@ -711,7 +700,6 @@ read respuesta
 [ "$respuesta" = "s" ] || exit 1
 ```
 
----
 
 ### 🕒 Sincronización automática con `cron`
 
@@ -723,7 +711,6 @@ Archivo `cron` (Linux/macOS):
 
 > Realiza un `git fetch` cada hora y guarda el log.
 
----
 
 ### 🔄 Comparación con GitHub Actions
 
@@ -735,108 +722,122 @@ Archivo `cron` (Linux/macOS):
 
 ---
 
+## 6.13 ⚠️ Manejo de Errores Comunes en Repos Remotos
 
-## 6.13 ⚠️ Manejo de Errores Comunes
+Aprenderás a diagnosticar y resolver los errores más frecuentes al trabajar con repositorios remotos:
 
-Diagnosticarás y resolverás problemas frecuentes al interactuar con repositorios remotos.
+### 🚫 Permisos denegados (`403`, `401`)
 
-### **Permisos denegados:**
+* Verifica tus credenciales (token expirado o sin permisos).
+* Asegúrate de usar HTTPS o SSH correctamente.
+* Usa `git remote -v` para confirmar la URL del repositorio.
 
-  * Revisar URL y autenticación (401, 403)
-### **Historia divergente:**
+### 🔀 Historia divergente
 
-  * Solución: `git push --force-with-lease`
-### **Limpiar ramas remotas:**
+* Ocurre cuando tu historial local y remoto han cambiado por separado.
+* Solución:
 
-  * `git remote prune origin`
-### **Repositorio no encontrado:**
+  ```bash
+  git push --force-with-lease
+  ```
 
-  * Revisar acceso y ortografía de la URL
-(La gestión de políticas de seguridad y escaneo de vulnerabilidades en repositorios se ve en Sección 14.)
+  ⚠️ Úsalo con precaución y solo si sabes lo que haces.
 
+### 📭 Repositorio no encontrado
 
----
+* Verifica que la URL esté bien escrita.
+* Confirma que tienes acceso (el repositorio puede ser privado o eliminado).
 
-## 6.14 💡 Buenas Prácticas con Remotos
+### 🧹 Limpiar referencias obsoletas
 
-Mantendrás un flujo limpio, seguro y profesional al trabajar con repositorios remotos.
+* Para eliminar ramas remotas que ya no existen:
 
-* Nombres claros para remotos: `origin`, `upstream`, `mirror`.
-* Sincronizar con frecuencia (`git fetch`, `pull`).
-* Evitar `--force` en ramas compartidas.
-* Rotar tokens y usar passphrase en SSH.
-* Documentar remotos en el README del proyecto.
+  ```bash
+  git remote prune origin
+  ```
 
-### 6.5 🛠 Buenas prácticas para trabajo remoto
-
-* Sincroniza con `git pull` frecuentemente.
-* Usa ramas con nombres claros.
-* No forces `git push --force` en ramas compartidas.
-* Protege ramas críticas (`main`, `develop`).
-* Usa Pull Requests para revisión y calidad.
-### 📌 Buenas Prácticas
-
-* Usa nombres claros como `origin`, `upstream`, `github`, etc.
-* Revisa siempre tu conexión antes de hacer `push`.
-* Usa `git remote -v` frecuentemente para verificar las URLs correctas.
-* Si colaboras con forks, puedes agregar múltiples remotos (verás esto en el punto 6.7).
+> 🔒 Nota: El manejo de escaneo de vulnerabilidades y políticas de seguridad se detalla en la sección 14.
 
 ---
 
-### 6.15 🧪 Ejercicio práctico sugerido
+## 6.14 💡 Buenas Prácticas Fundamentales con Repos Remotos
 
-**Escenario:**
-Tienes un proyecto local. Súbelo a GitHub y trabaja con otro compañero simulando una colaboración básica.
+### 📌 Organización y nombres
 
-**Pasos clave:**
+* Usa nombres claros para tus remotos: `origin`, `upstream`, `mirror`.
+* Verifica remotos con `git remote -v`.
+* Documenta en el `README` los remotos y su función.
 
-1. Crear repo en GitHub.
-2. Subir proyecto con `git remote add` y `push`.
-3. Clonar desde otro equipo o usuario.
-4. Usar `pull`, `push` y `branch` para colaborar.
+### 🔁 Flujo de trabajo profesional
 
-## 6.12 ✍️ Ejercicios Prácticos
+* Sincroniza con `git fetch` regularmente.
+* Usa ramas con nombres descriptivos: `feature/`, `bugfix/`, `hotfix/`.
+* No uses `--force` en ramas compartidas. Si es necesario, usa `--force-with-lease`.
 
-1. Crea un repositorio local y enlázalo con un remoto.
-2. Sube cambios a GitHub usando `push` y `set-upstream`.
-3. Clona un repo con `--depth 1` y configura sparse-checkout.
-4. Automatiza un fetch diario usando `cron` o un hook.
-5. Simula conflicto y resuélvelo tras un `pull`.
-6. Usa `origin` y `upstream` en un flujo de sincronización.
+### 🔐 Seguridad básica
+
+* Usa conexión SSH con passphrase.
+* Protege ramas importantes (`main`, `develop`) desde GitHub.
+* Rota tus tokens de acceso periódicamente.
+
+### 🛠 Diagnóstico mínimo
+
+* Verifica el seguimiento de ramas con:
+
+  ```bash
+  git branch -vv
+  ```
+
+* Ante errores de permisos o URLs, revisa `git remote -v` y tus credenciales.
 
 ---
-### ❗ Buenas prácticas
+## 6.14 💡 Buenas Prácticas con Repos Remotos
 
-✅ Siempre verifica las ramas vinculadas con:
+Asegura un flujo de trabajo limpio, seguro y profesional al interactuar con remotos.
 
-```bash
-git branch -vv
-```
+### 📌 Convenciones recomendadas
 
-✅ Usa nombres claros y coherentes para tus ramas locales y remotas.
+* Usa nombres claros para tus remotos: `origin`, `upstream`, `github`, `mirror`, etc.
+* Documenta en el `README` qué remotos existen y su propósito.
+* Usa `git remote -v` frecuentemente para verificar URLs.
+* Protege ramas críticas (`main`, `develop`) con reglas en GitHub.
 
-✅ Evita usar `--force` en ramas con seguimiento sin estar seguro, ya que puedes sobrescribir trabajo remoto.
+### 🔐 Seguridad
 
+* Rota tus tokens de acceso periódicamente.
+* Usa `SSH` con passphrase siempre que sea posible.
+* Evita usar `--force`, especialmente en ramas compartidas.
+* Configura `branch protection` en GitHub para evitar sobrescribir trabajo.
 
-### 🧪 Ejercicio práctico sugerido
+### 🔁 Sincronización eficiente
 
-1. Crea una nueva rama:
+* Ejecuta `git fetch` regularmente para mantener tu repositorio actualizado.
+* Trabaja con ramas propias (`feature/login-page`, `hotfix/api-crash`).
+* Verifica el seguimiento de ramas con:
 
-   ```bash
-   git checkout -b feature/contact-form
-   ```
+  ```bash
+  git branch -vv
+  ```
 
-2. Sube y configura la relación remota:
+---
 
-   ```bash
-   git push -u origin feature/contact-form
-   ```
+### 6.15 🧪 Actividad
 
-3. Confirma con:
+Demostrar dominio práctico sobre creación, clonación, configuración, sincronización y colaboración con repositorios remotos, incluyendo manejo de errores y buenas prácticas.
 
-   ```bash
-   git branch -vv
-   ```
+#### ✅ Pasos:
+
+1. **Crea y sube un repositorio local** a GitHub (`git init`, `add`, `commit`, `remote add`, `push -u`).
+2. **Clónalo superficialmente** desde otra cuenta con `--depth 1`.
+3. **Activa `sparse-checkout`** para trabajar con una sola carpeta.
+4. **Agrega múltiples remotos** (`origin`, `upstream`, `mirror`) y realiza un `push --mirror`.
+5. **Protege la rama `main`** desde GitHub (revisiones requeridas, restricciones de `push`).
+6. **Automatiza un `git fetch` diario** con `cron` o hooks.
+7. **Simula un conflicto** en dos ramas y resuélvelo tras un `pull`.
+8. **Limpia ramas remotas** con `git remote prune origin`.
+9. **Verifica ramas conectadas** con `git branch -vv`.
+10. **Simula y resuelve errores comunes** (permisos, URLs, upstream).
+11. **Documenta todo en un `README.md`**: flujos, remotos, conflictos, seguridad.
 
 ---
 
