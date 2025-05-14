@@ -164,8 +164,20 @@ Obtener y comparar ramas de remotos distintos.
 
 ---
 
-### 6.1 🔄 Clonar y conectar repositorios
+### 6.8 🔄 Clonar y conectar repositorios
+## 6.8 📖 Clonación de Repositorios
 
+**Qué aprenderás a hacer:** Clonar repositorios con configuraciones específicas y eficiencia.
+
+* `git clone <URL>`: Clonar un repo completo.
+* `git clone -b rama --single-branch`: Solo una rama.
+* `git clone --depth 1`: Clonación superficial.
+* **Sparse Checkout:**
+
+  * `git sparse-checkout init`
+  * `git sparse-checkout set ruta`
+
+---
 #### `git clone`
 
 Copia un repositorio remoto en tu máquina local.
@@ -263,6 +275,52 @@ Un **monorepo** es un solo repositorio que contiene múltiples módulos o proyec
 
 ---
 
+## 6.9 ⚙️ Automatización Local
+
+Automatizarás sincronización y tareas relacionadas con Git usando hooks o scripts.
+
+### **Git Hooks:**
+
+  * `pre-push`, `post-merge`, etc.
+  * Automatizar tareas antes/después de eventos Git.
+
+### **Scripts de sincronización:**
+
+  * Usar cron + bash/python para fetch automático.
+(La automatización con GitHub Actions y CI/CD estará en Sección 10.)
+---
+
+## 6.10 ⚠️ Manejo de Errores Comunes
+
+Diagnosticarás y resolverás problemas frecuentes al interactuar con repositorios remotos.
+
+### **Permisos denegados:**
+
+  * Revisar URL y autenticación (401, 403)
+### **Historia divergente:**
+
+  * Solución: `git push --force-with-lease`
+### **Limpiar ramas remotas:**
+
+  * `git remote prune origin`
+### **Repositorio no encontrado:**
+
+  * Revisar acceso y ortografía de la URL
+(La gestión de políticas de seguridad y escaneo de vulnerabilidades en repositorios se ve en Sección 14.)
+---
+
+---
+
+## 6.11 💡 Buenas Prácticas con Remotos
+
+Mantendrás un flujo limpio, seguro y profesional al trabajar con repositorios remotos.
+
+* Nombres claros para remotos: `origin`, `upstream`, `mirror`.
+* Sincronizar con frecuencia (`git fetch`, `pull`).
+* Evitar `--force` en ramas compartidas.
+* Rotar tokens y usar passphrase en SSH.
+* Documentar remotos en el README del proyecto.
+
 ### 6.5 🛠 Buenas prácticas para trabajo remoto
 
 * Sincroniza con `git pull` frecuentemente.
@@ -285,9 +343,18 @@ Tienes un proyecto local. Súbelo a GitHub y trabaja con otro compañero simulan
 3. Clonar desde otro equipo o usuario.
 4. Usar `pull`, `push` y `branch` para colaborar.
 
+## 6.12 ✍️ Ejercicios Prácticos
+
+1. Crea un repositorio local y enlázalo con un remoto.
+2. Sube cambios a GitHub usando `push` y `set-upstream`.
+3. Clona un repo con `--depth 1` y configura sparse-checkout.
+4. Automatiza un fetch diario usando `cron` o un hook.
+5. Simula conflicto y resuélvelo tras un `pull`.
+6. Usa `origin` y `upstream` en un flujo de sincronización.
+
 ---
 
-### 6.7 📚 Recursos recomendados
+### 6.13 📚 Recursos recomendados
 
 * [Guía oficial de GitHub: "Hello World"](https://guides.github.com/activities/hello-world/)
 * [Documentación de git-scm sobre remotos](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
