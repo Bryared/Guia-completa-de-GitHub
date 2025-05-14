@@ -1,5 +1,5 @@
 # ⚙️ 2. Primeros Pasos con Git
-
+Git es un sistema de control de versiones que permite gestionar y rastrear cambios en archivos de código.
 ## 🎯 Objetivo
 
 ## 🧠 ¿Qué es Git?
