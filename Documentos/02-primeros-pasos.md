@@ -1,10 +1,23 @@
-# ⚙️ 2. Primeros Pasos con Git
+# ⚙️ Primeros Pasos con Git
 Git es un sistema de control de versiones que permite gestionar y rastrear cambios en archivos de código. Para comenzar, se instala Git, se configura el usuario con git config, y se inicia un repositorio con git init. Luego, se pueden agregar archivos con git add y guardar cambios usando git commit
-### 🎯 Objetivo
+#### 🎯 Objetivo
 El objetivo de Git es gestionar el control de versiones de un proyecto, facilitando la colaboración simultánea entre múltiples desarrolladores, quienes pueden realizar cambios y mejoras de forma estructurada y eficiente dentro de un repositorio compartido.
-### 🧠 ¿Qué es Git?
+#### 🧠 ¿Qué es Git?
 Git es un sofware de control de versiones de una carpeta que nos permite tener diferentes versiones de una carpeta
-Perfecto. A continuación te presento la sección **"💾 Instalación de Git"** en formato **R Markdown (.Rmd)**, con un tono profesional, claro y adecuado para un informe universitario.
+Perfecto. A continuación te presento la sección **"💾 Instalación de Git"** en formato **R Markdown (.Rmd)**.
+#### Ventajas de usar git :D
+
+Aquí tienes un **cuadro de ventajas** de usar Git:
+
+| Ventaja                          | Descripción                                                                                                |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Control de versiones distribuido | Cada colaborador tiene el repositorio completo, permitiendo trabajar sin conexión y mayor resiliencia.     |
+| Ramificación ligera              | Creación y fusión de ramas de forma rápida y sencilla, favoreciendo flujos de trabajo basados en features. |
+| Historial completo               | Registro detallado de cada cambio con autor, fecha y mensaje, facilitando auditoría y reversión.           |
+| Integridad de datos              | Uso de SHA-1 para asegurar que el historial no se corrompa y detectar modificiaciones no autorizadas.      |
+| Rendimiento                      | Operaciones locales rápidas (commits, diffs, logs) sin depender de un servidor central.                    |
+| Colaboración fluida              | Herramientas como pull requests y forks facilitan revisiones de código y contribuciones externas.          |
+| Compatibilidad y extensibilidad  | Gran ecosistema de clientes GUI, hooks, servicios remotos (GitHub, GitLab, Bitbucket) y plugins.           |
 
 ---
 
