@@ -19,6 +19,7 @@
 - 🌿 [Ramas y flujos de trabajo en equipo](Documentos/05-ramas-flujos.md)
 - ☁️ [Trabajo con repositorios remotos en GitHub](Documentos/06-repos-remotos.md)
 - 🤝 [Colaboración: Forks, Pull Requests y revisiones](Documentos/07-colaboracion.md)
+- 🐞 [Gestión de tareas e incidencias con GitHub Issues](Documentos/12-issues.md)
 - 📊 [Gestión de proyectos con GitHub Projects](Documentos/08-proyectos.md)
 - ⚙️ [Automatización con GitHub Actions](Documentos/09-automatizacion.md)
 - 🌐 [Publicación de sitios web con GitHub Pages](Documentos/10-publicacion.md)
