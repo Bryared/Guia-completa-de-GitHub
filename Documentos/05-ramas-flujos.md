@@ -112,6 +112,36 @@ git commit
 > ⚠️ Usa VS Code u otros editores para resolver conflictos más cómodamente.
 
 ---
+### 5.3 🧨 Resolución de conflictos
+
+Cuando Git no puede fusionar automáticamente, genera un **conflicto**.
+
+Pasos:
+
+1. Ver archivos en conflicto:
+
+   ```bash
+   git status
+   ```
+2. Editar archivos afectados y resolver manualmente:
+
+   ```txt
+   <<<<<<< HEAD
+   Versión actual
+   =======
+   Versión de la otra rama
+   >>>>>>> rama-feature
+   ```
+3. Confirmar la resolución:
+
+   ```bash
+   git add archivo
+   git commit
+   ```
+
+> 💡 Usa editores como VS Code para resolverlos más fácilmente.
+
+---
 
 ## 5.4 🧬 Rebase vs Merge
 
@@ -202,36 +232,6 @@ git push origin mi-feature
    ```
 
 5. Abre un Pull Request en GitHub y pídete a ti mismo una revisión ✨
-
----
-### 5.3 🧨 Resolución de conflictos
-
-Cuando Git no puede fusionar automáticamente, genera un **conflicto**.
-
-Pasos:
-
-1. Ver archivos en conflicto:
-
-   ```bash
-   git status
-   ```
-2. Editar archivos afectados y resolver manualmente:
-
-   ```txt
-   <<<<<<< HEAD
-   Versión actual
-   =======
-   Versión de la otra rama
-   >>>>>>> rama-feature
-   ```
-3. Confirmar la resolución:
-
-   ```bash
-   git add archivo
-   git commit
-   ```
-
-> 💡 Usa editores como VS Code para resolverlos más fácilmente.
 
 ---
 
