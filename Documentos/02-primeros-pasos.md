@@ -305,9 +305,61 @@ git reset --hard <ID-del-commit>
   git branch -n <nuevo_nombre>
   ```
 
-## 📁 Crear tu primer repositorio
+
 
 ## 🧬 Estructura interna del repositorio
+
+El directorio oculto `.git` contiene toda la información que Git utiliza para gestionar el historial, las referencias y la configuración del repositorio. A continuación se describen sus principales componentes:
+
+```bash
+# Mostrar la estructura principal de .git
+tree -a .git
+````
+
+* **HEAD**
+  Archivo que apunta a la rama o al commit actualmente revisado.
+
+  ```text
+  ref: refs/heads/main
+  ```
+
+* **config**
+  Archivo de configuración local del repositorio, donde se almacenan opciones como nombre de usuario, correo y alias.
+
+* **description**
+  Breve descripción del repositorio (utilizado por algunas herramientas como GitWeb).
+
+* **index**
+  Base de datos binaria que representa el área de preparación (staging area). Aquí Git guarda el listado de archivos preparados para el siguiente commit.
+
+* **objects/**
+  Carpeta que almacena todos los objetos de Git:
+
+  * **blobs**: contenido de los archivos
+  * **trees**: estructura de directorios
+  * **commits**: snapshots de proyecto
+  * **tags**: anotaciones de versiones
+
+* **refs/**
+  Contiene referencias (pointers) a commits concretos:
+
+  * **heads/**: punteros a ramas locales
+  * **tags/**: punteros a versiones etiquetadas
+  * **remotes/**: punteros a ramas remotas
+
+* **logs/**
+  Historial de movimientos de punteros (`HEAD`, ramas), útil para recuperar cambios ante un “reset” accidental.
+
+* **hooks/**
+  Scripts ejecutables que se disparan en eventos de Git (pre-commit, post-merge, etc.). Se incluyen ejemplos deshabilitados por defecto (`.sample`).
+
+* **info/**
+  Información adicional, como `exclude`, que permite ignorar archivos a nivel local sin modificar `.gitignore`.
+
+---
+
+Conocer esta estructura facilita la comprensión profunda de cómo Git almacena y recupera información, así como permite la resolución avanzada de problemas y la personalización de hooks y configuraciones.\`\`\`
+
 
 ## 🖼️ Opciones visuales (GUI)
 
