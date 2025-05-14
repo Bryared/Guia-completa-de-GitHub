@@ -13,7 +13,6 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 
 > 💡 Piensa en el repositorio remoto como una “fuente oficial” del proyecto que está siempre disponible online.
 
----
 
 ### 🖥️ Repositorio Local vs Repositorio Remoto
 
@@ -24,7 +23,6 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 | Velocidad      | Operaciones rápidas y sin conexión | Necesita conexión para sincronizar          |
 | Propósito      | Desarrollo individual              | Colaboración, respaldo, despliegue continuo |
 
----
 
 ### ✅ Ventajas de Usar Repositorios Remotos
 
@@ -63,7 +61,6 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 
 > 💡 Si eliges agregar README, .gitignore y licencia, tu repositorio ya estará inicializado con contenido.
 
----
 
 #### 💻 Opción 2: Desde la Terminal con GitHub CLI
 
@@ -86,7 +83,6 @@ En Git, un **remote** es simplemente un **alias** que representa la URL de un re
 
 > 📌 El remote más común se llama `origin`, y apunta al repositorio principal de trabajo.
 
----
 
 ### 🔧 Comandos Clave para Gestionar Remotos
 
@@ -97,7 +93,6 @@ En Git, un **remote** es simplemente un **alias** que representa la URL de un re
 | `git remote set-url origin <nuevaURL>` | Cambia la URL de un remoto existente           |
 | `git remote remove origin`             | Elimina la referencia a un remoto              |
 
----
 
 ### 🔗 Vincular un repositorio local a uno remoto (GitHub)
 #### 📁 Caso: Ya tienes un proyecto local iniciado con Git
@@ -129,8 +124,6 @@ origin  https://github.com/usuario/repositorio.git (fetch)
 origin  https://github.com/usuario/repositorio.git (push)
 ```
 
----
-
 #### 📤 Subir tu proyecto por primera vez
 
 Usa `git push` para enviar tu proyecto local al repositorio remoto:
@@ -144,8 +137,6 @@ git push -u origin main
 
 > 💡 Asegúrate de que tu rama principal se llame `main` o cambia el nombre con `git branch -M main` si es necesario.
 
----
-
 #### 🔁 Cambiar la URL del remoto
 
 Si por alguna razón necesitas cambiar la dirección del remoto (por ejemplo, cambiaste de HTTP a SSH):
@@ -154,7 +145,6 @@ Si por alguna razón necesitas cambiar la dirección del remoto (por ejemplo, ca
 git remote set-url origin git@github.com:usuario/repositorio.git
 ```
 
----
 
 #### ❌ Eliminar el remoto
 
@@ -236,7 +226,6 @@ ssh -T git@github.com
 
 > 💡 Si ves un mensaje que dice “You’ve successfully authenticated…”, ¡todo está listo!
 
----
 
 ### 🖥️ Almacenamiento de Credenciales
 
@@ -251,7 +240,6 @@ git config --global credential.helper store  # Almacena indefinidamente
 
 > ⚠️ No recomendado almacenar tokens indefinidamente en máquinas compartidas.
 
----
 
 ### ⚡ Alternativa rápida: GitHub CLI
 La herramienta de línea de comandos de GitHub (`gh`) permite iniciar sesión y autenticarse fácilmente.
@@ -266,7 +254,6 @@ Te guía para autenticarte y configura Git automáticamente. Ideal para agilizar
 
 Aprenderás a subir tus cambios locales a GitHub configurando correctamente el seguimiento entre ramas.
 
----
 
 ### 🔁 ¿Qué significa hacer `push`?
 
@@ -276,7 +263,6 @@ Hacer `git push` es **enviar los commits de tu repositorio local al remoto**, co
 * Respaldar tu código en la nube.
 * Activar automatizaciones (como CI/CD).
 
----
 
 ### 📤 Primer Push (inicial)
 
@@ -288,7 +274,6 @@ git push -u origin main
 
 > `-u` (o `--set-upstream`) establece una relación de seguimiento entre tu rama local y la rama remota. Así podrás usar simplemente `git push` en el futuro.
 
----
 ### 🔁 Comandos de push frecuentes
 
 | Comando                            | Descripción                                                |
@@ -309,8 +294,6 @@ git push -u origin main
 
 **Alternativa segura:** `--force-with-lease`
 Este comando **verifica primero** que nadie haya subido cambios al remoto antes de sobrescribirlo.
-
----
 
 ### 👁️ Ver estado de ramas y seguimiento
 
@@ -333,43 +316,125 @@ Ver qué ramas están sincronizadas con git branch -vv.
 
 ## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
 
-Descargarás y fusionarás cambios del repositorio remoto en tu copia local.
+Descargarás y fusionarás actualizaciones desde el repositorio remoto hacia tu copia local usando `git fetch` y `git pull`.
 
-* `git fetch origin`: Trae cambios sin fusionar.
-* `git pull origin main`: Trae y fusiona cambios.
+### 🔄 ¿Por qué es importante traer cambios?
 
-### **Diferencias:**
+Cuando trabajas en equipo (o desde distintos dispositivos), otros pueden estar subiendo cambios. Para evitar conflictos o sobrescribir trabajo ajeno, debes:
 
-  * `fetch`: Solo descarga.
-  * `pull`: Descarga y aplica.
-  * fetch vs pull
+* **Consultar el estado remoto** con `fetch`.
+* **Fusionar los cambios** con `pull`.
 
-### **Resolución de conflictos locales:**
-  * Usar `git mergetool` o resolución manual.
 
-## 6.5 ⬇️ Descargar cambios desde GitHub
-git fetch: traer sin mezclar.
+### 🧩 Diferencias entre `fetch` y `pull`
 
-git pull: traer y fusionar automáticamente.
+| Comando     | Qué hace                                                             | Cuándo usarlo                        |
+| ----------- | ---------------------------------------------------------------------| ------------------------------------ |
+| `git fetch` | Descarga cambios del remoto, pero **no los aplica** a tu rama actual.| Para revisar antes de fusionar       |
+| `git pull`  | Descarga **y aplica automáticamente** los cambios.                   | Para actualizar tu rama con la remota|
 
-Detectar y resolver conflictos en pull.
+### 📥 Comandos esenciales
+
+`git fetch origin`:🔹 Descarga todas las actualizaciones desde el remoto llamado `origin`, **sin fusionarlas**.
+
+`git pull origin main`:🔹 Descarga y **fusiona** automáticamente la rama `main` desde el remoto `origin`.
+
+`git pull`:🔹 Si ya está configurado el seguimiento (`-u`), fusiona automáticamente con la rama remota correspondiente.
+
+
+### 🧨 Posibles conflictos al hacer `pull`
+
+Si tú y otra persona modificaron las mismas líneas de código, Git **no podrá fusionar automáticamente** y te pedirá resolver los conflictos manualmente.
+
+**Pasos para resolver un conflicto:**
+
+1. Git marcará los archivos en conflicto con secciones especiales:
+
+   ```plaintext
+   <<<<<<< HEAD
+   Tu versión
+   =======
+   Versión del remoto
+   >>>>>>> origin/main
+   ```
+
+2. Edita el archivo para elegir qué conservar (o combinar partes).
+
+3. Marca como resuelto:
+
+   ```bash
+   git add archivo_en_conflicto
+   git commit  # Git puede crear uno automáticamente
+   ```
+
+4. Continúa tu trabajo normalmente.
+
+
+### 🛠️ Herramientas para resolución de conflictos
+
+* `git mergetool`: abre herramientas visuales como Meld o VSCode Merge.
+* Editores modernos como VS Code o IntelliJ muestran automáticamente los conflictos de forma visual.
 
 ---
 
 ## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
 
-Establecerás y administrarás relaciones entre ramas locales y remotas.
+Entender cómo Git conecta tus ramas locales con ramas remotas, para sincronizar automáticamente los cambios con `push` y `pull`.
 
-  * Qué es una tracking branch
+### 🔍 ¿Qué es una *tracking branch*?
 
-* Permiten a una rama local rastrear su equivalente remoto.
-* `git branch -vv`: Muestra información de seguimiento.
-* `git branch --set-upstream-to=origin/<rama>`: Establece seguimient
+Es una rama local que **está vinculada a una rama remota**. Esto permite que Git sepa:
 
-##6.6 🧭 Configurar ramas de seguimiento (tracking)
-Entender upstream y cómo Git sabe qué rama remota seguir.
+* A qué rama remota subir tus cambios (`push`).
+* De qué rama remota bajar actualizaciones (`pull`).
 
-Cambiar o definir upstream con git branch --set-upstream-to.
+📌 Por ejemplo:
+Si tienes una rama local llamada `main`, y la conectas con `origin/main`, entonces `git pull` y `git push` sabrán a qué rama remota referirse sin necesidad de especificarla.
+
+
+### 🧠 ¿Cuándo se configura automáticamente una *tracking branch*?
+
+Cuando haces:
+
+```bash
+git push -u origin main
+```
+
+> La opción `-u` (o `--set-upstream`) establece la relación entre `main` local y `origin/main`.
+
+
+### 🛠️ Comandos útiles
+
+| Comando                                         | Qué hace                                                       |
+| ----------------------------------------------- | -------------------------------------------------------------- |
+| `git branch -vv`                                | Muestra qué ramas locales están vinculadas a remotas           |
+| `git branch --set-upstream-to=origin/otra-rama` | Cambia o define la rama remota vinculada a tu rama actual      |
+| `git push -u origin mi-rama`                    | Sube la rama y crea la relación de seguimiento automáticamente |
+| `git status`                                    | También muestra si hay una rama remota asociada                |
+
+
+### 📘 Ejemplo completo
+
+```bash
+# Crear y cambiar a una nueva rama
+git checkout -b feature/login
+
+# Subirla y establecer relación con la rama remota
+git push -u origin feature/login
+
+# Ahora puedes simplemente usar:
+git pull
+git push
+```
+
+### 🔄 Cambiar el seguimiento de una rama existente
+
+```bash
+git branch --set-upstream-to=origin/nueva-rama
+```
+
+> Esto es útil si renombraste ramas o cambiaste el origen del trabajo.
+
 
 ---
 ## 6.7 🪜 Gestión de Múltiples Remotos
@@ -585,6 +650,40 @@ Tienes un proyecto local. Súbelo a GitHub y trabaja con otro compañero simulan
 4. Automatiza un fetch diario usando `cron` o un hook.
 5. Simula conflicto y resuélvelo tras un `pull`.
 6. Usa `origin` y `upstream` en un flujo de sincronización.
+
+---
+### ❗ Buenas prácticas
+
+✅ Siempre verifica las ramas vinculadas con:
+
+```bash
+git branch -vv
+```
+
+✅ Usa nombres claros y coherentes para tus ramas locales y remotas.
+
+✅ Evita usar `--force` en ramas con seguimiento sin estar seguro, ya que puedes sobrescribir trabajo remoto.
+
+
+### 🧪 Ejercicio práctico sugerido
+
+1. Crea una nueva rama:
+
+   ```bash
+   git checkout -b feature/contact-form
+   ```
+
+2. Sube y configura la relación remota:
+
+   ```bash
+   git push -u origin feature/contact-form
+   ```
+
+3. Confirma con:
+
+   ```bash
+   git branch -vv
+   ```
 
 ---
 
