@@ -21,7 +21,10 @@ Las ramas permiten:
 - Corregir errores sin afectar el trabajo principal,
 - Unir cambios fácilmente con `merge` o `rebase`.
 
-```
+
+Cuando usas `git commit`, Git crea objetos **blob** para los archivos y un **árbol** que representa su estructura.  
+Luego genera un **objeto de commit** con metadatos que apunta al árbol raíz del proyecto.
+![image](https://github.com/user-attachments/assets/ac668e76-d4a9-4b6f-a4f6-fd422a785c64)
 
 
 ---
