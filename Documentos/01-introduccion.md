@@ -90,3 +90,4 @@ Colaboración:
 
 * [Documentación oficial de Git](https://git-scm.com/doc)
 * [Documentación oficial de GitHub](https://docs.github.com/)
+* [Resumen de este documento](https://github.com/Bryared/Guia-completa-de-GitHub/blob/main/Resumenes/introduccion-resumen.md)
