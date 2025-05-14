@@ -1,6 +1,7 @@
 # 6. ☁️ Trabajo con repositorios remotos en GitHub
 
-El trabajo con repositorios remotos permite colaborar, sincronizar y mantener proyectos actualizados entre varios desarrolladores y dispositivos.
+El trabajo con repositorios remotos en GitHub facilita la colaboración, sincronización y actualización de proyectos entre varios desarrolladores y dispositivos. 
+Esta sección abarca desde los conceptos básicos hasta configuraciones avanzadas, preparándote para dominar el trabajo local y remoto en proyectos Git.
 
 ---
 
