@@ -2,6 +2,17 @@
 
 **GitHub Pages** te permite alojar sitios web estáticos directamente desde tu repositorio de GitHub. Ideal para portfolios, blogs, documentación o proyectos personales.
 
+| **Ventaja**                                | **Descripción**                                                               |
+| ------------------------------------------ | ----------------------------------------------------------------------------- |
+| 🌐 **Hosting gratuito**                    | Publica sitios web sin costo directamente desde tu repositorio.               |
+| 🚀 **Despliegue automático**               | Cada vez que haces push a `main` o `gh-pages`, el sitio se actualiza solo.    |
+| 🛠️ **Soporte para Jekyll y Markdown**     | Puedes usar Jekyll para blogs o escribir el sitio en Markdown fácilmente.     |
+| 🔒 **HTTPS incluido**                      | GitHub Pages proporciona certificados SSL automáticos.                        |
+| 🧩 **Integración con GitHub**              | Se conecta directo con tu flujo de trabajo de Git: Issues, Actions, PRs, etc. |
+| 💡 **Ideal para documentación**            | Perfecto para wikis, portafolios, currículums, guías técnicas, etc.           |
+| 🧑‍💻 **Sin necesidad de servidor propio** | No necesitas configurar o mantener servidores para tu página.                 |
+| 📁 **Soporte para sitios estáticos**       | Ideal para HTML, CSS, JS, frameworks como Hugo, Docusaurus o VuePress.        |
+
 ---
 
 ### 12.1 🧭 ¿Qué es GitHub Pages?
