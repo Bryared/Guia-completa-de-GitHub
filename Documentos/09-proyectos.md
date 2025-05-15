@@ -1,6 +1,8 @@
 # 9. 📊 Gestión de proyectos con GitHub Projects
 
 GitHub Projects es una herramienta de gestión visual de tareas, similar a Trello o Jira, integrada directamente en tu repositorio o cuenta de organización. Permite planificar, priorizar y hacer seguimiento al trabajo con tableros Kanban.
+---
+
 ![image](https://github.com/user-attachments/assets/d99761fb-e216-4e2e-899d-5c0c3cf97e9f)
 
 
