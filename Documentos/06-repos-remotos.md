@@ -50,14 +50,23 @@ Comprenderás qué es un repositorio remoto y cómo se diferencia del local.
 #### 🖱️ Opción 1: Desde la Interfaz Web
 
 1. Ve a [https://github.com](https://github.com).
+   * ![image](https://github.com/user-attachments/assets/50fab974-9ac1-47ff-89df-fcac5c65ceed)
+
 2. Haz clic en **“New Repository”**.
+   * ![image](https://github.com/user-attachments/assets/d68de7f1-808d-48a4-93ae-0c0b690f8717)
+
 3. Asigna un **nombre** y una **descripción**.
+   * ![image](https://github.com/user-attachments/assets/bb764d8f-e9c3-4248-9859-81042b39efcd)
+
 4. Puedes incluir archivos comunes como:
 
    * `✔️` **Add a README** → Presentación del proyecto.
    * `✔️` [**.gitignore**](https://github.com/Bryared/Guia-completa-de-GitHub/blob/main/Documentos/02-primeros-pasos.md#3-preparar-staging-archivos) → Archivos que Git debe ignorar.
    * `✔️` **License** → Tipo de licencia que rige tu proyecto.
+   * ![image](https://github.com/user-attachments/assets/78ca1652-0058-4b79-bd0b-b0641fd0f7d3)
+
 5. Haz clic en **Create Repository**.
+   * ![image](https://github.com/user-attachments/assets/1e5b2036-9c5f-4597-8c39-7d0d9b4cecc9)
 
 > 💡 Si eliges agregar README, .gitignore y licencia, tu repositorio ya estará inicializado con contenido.
 
