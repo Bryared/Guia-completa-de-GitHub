@@ -74,12 +74,20 @@ jobs:
 ---
 ## 10.5 🔄 CI/CD: Integración y Despliegue Continuo
 
+CI/CD es una práctica que automatiza todo el ciclo de vida de una aplicación: desde integrar y probar cambios (Integración Continua, CI) hasta preparar y entregar nuevas versiones a entornos de prueba o producción (Entrega/Despliegue Continuo, CD). Al usar pipelines automatizados, elimina errores manuales y evita el “Integration Hell”, permitiendo lanzar actualizaciones frecuentes y fiables con el apoyo de metodologías DevOps.
+
 ### CI – *Integración Continua* (Continuous Integration)
 
 Proceso donde cada cambio en el código es **integrado y probado automáticamente**.
+
 ✅ Automatiza la construcción y prueba de tu código en cada cambio.
+
 ✅ Asegura que el nuevo código **no rompa lo anterior**: Mantiene la calidad del código
+
 ✅ Detecta errores **tempranamente** en el ciclo de desarrollo.
+
+![](https://www.simplilearn.com/ice9/free_resources_article_thumb/Continuous_Integration.png)
+
 
 ### CD – *Entrega Continua / Despliegue Continuo* (Continuous Delivery / Deployment)
 
@@ -87,7 +95,9 @@ Permite que el software sea **entregado automáticamente a entornos de staging o
 
 🚀 Minimiza el tiempo entre escribir código (time-to-market) y verlo funcionando en vivo (errores manuales).
 
-### Comparativa
+![](https://vitolavecchia.altervista.org/wp-content/uploads/2020/02/Caratteristiche-e-differenza-tra-Continuous-Integration-Continuous-Delivery-e-Continuous-Deployment-nello-sviluppo-software.png)
+
+### Enfoque
  🧪 CI se enfoca en **probar**; CD se enfoca en **entregar/desplegar**.
 
 **Ventajas del uso de CI/CD con GitHub Actions:**
@@ -96,6 +106,8 @@ Permite que el software sea **entregado automáticamente a entornos de staging o
 * Feedback inmediato
 * Ahorro de tiempo en tareas repetitivas
 * Facilita equipos distribuidos
+
+![](https://www.testingdocs.com/wp-content/uploads/CiCD-pipeline.png)
 
 ---
 
