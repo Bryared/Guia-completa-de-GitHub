@@ -2,6 +2,19 @@
 
 GitHub ofrece soluciones potentes para programar desde cualquier lugar, sin necesidad de instalar herramientas localmente. Dos herramientas clave son **GitHub Codespaces** y **GitHub.dev**.
 
+| Característica             | ✅ **GitHub Codespaces**                                         | 📝 **GitHub.dev**                                             |
+| -------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------- |
+| 🌐 Entorno                 | Completo (basado en VS Code con backend en la nube)             | Editor ligero en navegador (solo frontend)                    |
+| ⚙️ Compilación y ejecución | Sí, puedes correr código, instalar dependencias, ejecutar tests | No permite ejecutar código (solo edición de archivos)         |
+| 💾 Terminal                | Sí, terminal integrada completa                                 | No tiene terminal                                             |
+| ⚡ Velocidad                | Más lento al iniciar (carga contenedor)                         | Muy rápido (carga instantánea)                                |
+| 💡 Uso ideal               | Desarrollo completo, pruebas, instalación de paquetes           | Ediciones rápidas, documentación, lectura de código           |
+| 📦 Dependencias            | Se pueden instalar (Node, Python, etc.)                         | No se pueden instalar paquetes ni usar entornos virtuales     |
+| ⚙️ Configurable            | Sí, con `devcontainer.json`                                     | No configurable                                               |
+| ☁️ Almacenamiento          | Usa recursos cloud (RAM, CPU, disco)                            | Solo edición de archivos en el repo                           |
+| 🔐 Seguridad               | Aislado en contenedor seguro                                    | No ejecuta código → menos riesgo pero también menos funcional |
+| 💰 Costo                   | Gratuito limitado, luego con cargo (según uso de recursos)      | 100% gratuito                                                 |
+
 ---
 
 ### 13.1 ☁️ ¿Qué es un entorno de desarrollo en la nube?
