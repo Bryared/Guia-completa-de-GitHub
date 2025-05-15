@@ -26,72 +26,65 @@
 ## 3.6 📝 Ejercicio
 
 # 4. 🔁 Gestión de versiones y cambios
-## 4.1 Comparación de revisiones
-
-git diff <commit> <commit>
-
-git difftool
-
-## 4.2 Reescritura de historial
-
-git commit --amend
-
-git rebase -i para squash y reordenar
-
-## 4.3 Reflog y recuperación
-
-git reflog para encontrar HEAD antiguas
-
-git cherry-pick para rescatar commits específicos
-
-## 4.4 Branches ligeros vs. pesados
-
-Impacto en el historial
-
-## 4.5 Ejercicio
-
-Simular una mala rebase y recuperarse con reflog
+## 🎯 Objetivo
+## 4.1 📊 Comparación de revisiones
+## 4.2 ✍️ Reescritura del historial
+## 4.3 🧭 Reflog y recuperación de commits
+## 4.4 🧪 Ejercicio práctico
 
 # 5. 🌿 Ramas y flujos de trabajo en equipo
-## 5.1 Concepto de rama
-
-Rama como puntero movible
-
-## 5.2 Crear y cambiar ramas
-
-git branch, git switch, git checkout -b
-
-## 5.3 Fusionar ramas
-
-git merge (fast-forward vs. no-ff)
-
-Estructura de commits de merge
-
-## 5.4 Flujos populares
-
-GitHub Flow
-
-Git Flow (feature/release/hotfix)
-
-Trunk-based Development
-
-## 5.5 Resolución de conflictos
-
-Marcas en archivos
-
-Herramientas de merge (VSCode, meld)
-
-## 5.6 Ejercicio
-
-Recrear un conflicto entre dos ramas y resolverlo manualmente
+## 5.1 🌿 ¿Qué es una rama en Git?
+## 5.2🌿 Crear y gestionar ramas en Git
+#### 📌 Crear una rama (`git branch`)
+#### 🔍 Ver ramas activas (`git log --decorate`)
+#### 🔄 Cambiar de rama con `git switch`
+## 5.3 🌿 Procedimientos Básicos: Ramificar y Fusionar
+#### 🔧 Flujo de trabajo típico
+#### 🔀 Fusionar cambios
+#### ⚠️ ¿Y si hay conflictos?
+## 5.4 🧬 Rebase vs Merge
+#### 🌀 `git rebase` (reescribe el historial):
+#### Comparación:
+## 5.5 🤝 Trabajo colaborativo en GitHub
+#### Clonar un repositorio remoto
+#### Crear tu propia rama de trabajo
+#### Subir una rama a GitHub
+#### Crear un Pull Request (PR)
+#### Revisar y aceptar PRs
+## 5.6 🧪 Ejercicio colaborativo simulado
 
 # 6. ☁️ Trabajo con repositorios remotos en GitHub
 ## 6.1 🔄 Conceptos Básicos
-## ☁️ GitHub como servicio de hosting Git
-## 🏗️ Crear un repositorio remoto en GitHub
+#### ¿Qué es un repositorio remoto?
+#### 🖥️ Repositorio Local vs Repositorio Remoto
+#### ✅ Ventajas de Usar Repositorios Remotos
+### ☁️ GitHub como servicio de hosting Git
+### 🏗️ Crear un repositorio remoto en GitHub
+#### 🖱️ Opción 1: Desde la Interfaz Web
+#### 💻 Opción 2: Desde la Terminal con GitHub CLI
 ## 6.2 ⚖️ Configuración Inicial de Remotos
+### 🔗 ¿Qué es un "remote"?
+### 🔧 Comandos Clave para Gestionar Remotos
+### 🔗 Vincular un repositorio local a uno remoto (GitHub)
+#### 📁 Caso: Ya tienes un proyecto local iniciado con Git
+#### 📤 Subir tu proyecto por primera vez
+#### 🔁 Cambiar la URL del remoto
+#### ❌ Eliminar el remoto
 ## 6.3 🔑 URLs y Autenticación
+### 🔗 ¿Por qué necesitas autenticarte?
+### 🔀 Formas de conexión con GitHub
+### 🔒 HTTPS con Tokens de Acceso Personal (PAT)
+#### 🛠️ Cómo generar un PAT:
+### 🔐 SSH: Claves Públicas y Privadas
+#### 🧰 Pasos para usar SSH:
+### 🖥️ Almacenamiento de Credenciales
+### ⚡ Alternativa rápida: GitHub CLI
 ## 6.4 ➡️ Enviar Cambios al Remoto (Push)
+### 🔁 ¿Qué significa hacer `push`?
+### 📤 Primer Push (inicial)
+### 🔁 Comandos de push frecuentes
+### 👁️ Ver estado de ramas y seguimiento
+### ⬆️ Subir cambios al repositorio remoto
 ## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
 ## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
 ## 6.7 🌐 Gestión de múltiples remotos
