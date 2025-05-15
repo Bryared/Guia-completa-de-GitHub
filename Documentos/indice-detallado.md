@@ -1,227 +1,162 @@
 # 1. 📌 Introducción a Git y GitHub
-### 1.1 Objetivos
+## 1.1 🎯 Objetivos
+## 1.2 🧠 ¿Qué es Git?
+## 1.3 🌐 ¿Qué es GitHub?
+## 1.4 🆚 Git vs. GitHub:
+## 1.5 💡 Ventajas del control de versiones
+## 1.6 🔄 Flujo de trabajo general
+## 1.7 📝 Ejercicio
+## 1.8 🔗 Recursos
 
-Entender el propósito de un sistema de control de versiones.
-
-Conocer la historia y evolución de Git y GitHub.
-
-### 1.2 ¿Qué es Git?
-
-Definición y características principales
-
-Arquitectura distribuida vs. centralizada
-
-### 1.3 ¿Qué es GitHub?
-
-Plataforma colaborativa: repositorios remotos, social coding
-
-Diferencias clave frente a Git local
-
-### 1.4 Ventajas del control de versiones
-
-Colaboración y trazabilidad
-
-Historias de éxito (proyectos open-source, empresas)
-
-### 1.5 Flujo de trabajo general
-
-Local → Remoto → Colaborativo
-
-Diagrama de alto nivel
-
-### 1.6 Ejercicio
-
-Investigar un proyecto open-source y describir su flujo de Git/GitHub.
-
-### 1.7 Recursos
-
-Enlace a la documentación oficial de Git y GitHub
-
-# 2. ⚙️ Primeros pasos con Git
-### 2.1 Instalación de Git
-
-Windows (Git for Windows), macOS (Homebrew), Linux (apt/yum)
-
-### 2.2 Configuración inicial
-
-git config --global user.name / user.email
-
-Archivo .gitconfig y secciones comunes
-
-### 2.3 Alias y personalización
-
-Crear alias (git config alias.co checkout)
-
-Colores, prompts y hooks de cliente
-
-### 2.4 .gitignore y .gitattributes
-
-Sintaxis básica de .gitignore
-
-Uso de .gitattributes para fin de línea y diffs personalizados
-
-### 2.5 Primer repositorio
-
-git init vs. git clone
-
-Estructura del directorio .git/
-
-## 2.6 Ejercicio
-
-Configurar un alias y un .gitignore para un proyecto Python
-
-## 2.7 Recursos
-
-Cheatsheet de configuración de Git
+# 2. ⚙️ Primeros Pasos con Git
+## 2.1 🎯 Objetivo:
+## 2.2 📝Ventajas de usar git
+## 2.3 💾 Instalación de Git
+## 2.4 ⚙️ Configuración inicial de Git
+## 2.5 🖥️ Comandos básicos de la terminal de Git Bach
+## 2.5 🖼️ Opciones visuales (GUI)
+## 2.6 📘 Actividad guiada sugerida para cerrar el módulo
 
 # 3. 🧱 Flujo básico de trabajo con Git
-## 3.1 Estado del repositorio
-
-git status y sus interpretaciones
-
-## 3.2 Agregar y confirmar cambios
-
-git add (área de staging)
-
-git commit -m vs. -v vs. --amend
-
-## 3.3 Ver historial
-
-git log (formatos, alias, --graph)
-
-git show, git diff
-
-## 3.4 Tags y versiones
-
-git tag ligero vs. anotado
-
-Uso en liberaciones (semver)
-
-## 3.5 Recuperación rápida
-
-git reset --soft/mixed/hard
-
-git restore
-
-## 3.6 Ejercicio
-
-Crear varios commits y practicar reset y restore para deshacer
+## 3.1 🔍 Estado del repositorio
+## 3.2 🧾 Agregar y confirmar cambios
+## 3.3 📜 Ver historial
+## 3.4 🔖 Tags y versiones
+## 3.5 🧯 Recuperación rápida
+## 3.6 📝 Ejercicio
 
 # 4. 🔁 Gestión de versiones y cambios
-## 4.1 Comparación de revisiones
-
-git diff <commit> <commit>
-
-git difftool
-
-## 4.2 Reescritura de historial
-
-git commit --amend
-
-git rebase -i para squash y reordenar
-
-## 4.3 Reflog y recuperación
-
-git reflog para encontrar HEAD antiguas
-
-git cherry-pick para rescatar commits específicos
-
-## 4.4 Branches ligeros vs. pesados
-
-Impacto en el historial
-
-## 4.5 Ejercicio
-
-Simular una mala rebase y recuperarse con reflog
+## 🎯 Objetivo
+## 4.1 📊 Comparación de revisiones
+## 4.2 ✍️ Reescritura del historial
+## 4.3 🧭 Reflog y recuperación de commits
+## 4.4 🧪 Ejercicio práctico
 
 # 5. 🌿 Ramas y flujos de trabajo en equipo
-## 5.1 Concepto de rama
-
-Rama como puntero movible
-
-## 5.2 Crear y cambiar ramas
-
-git branch, git switch, git checkout -b
-
-## 5.3 Fusionar ramas
-
-git merge (fast-forward vs. no-ff)
-
-Estructura de commits de merge
-
-## 5.4 Flujos populares
-
-GitHub Flow
-
-Git Flow (feature/release/hotfix)
-
-Trunk-based Development
-
-## 5.5 Resolución de conflictos
-
-Marcas en archivos
-
-Herramientas de merge (VSCode, meld)
-
-## 5.6 Ejercicio
-
-Recrear un conflicto entre dos ramas y resolverlo manualmente
+## 5.1 🌿 ¿Qué es una rama en Git?
+## 5.2🌿 Crear y gestionar ramas en Git
+#### 📌 Crear una rama (`git branch`)
+#### 🔍 Ver ramas activas (`git log --decorate`)
+#### 🔄 Cambiar de rama con `git switch`
+## 5.3 🌿 Procedimientos Básicos: Ramificar y Fusionar
+#### 🔧 Flujo de trabajo típico
+#### 🔀 Fusionar cambios
+#### ⚠️ ¿Y si hay conflictos?
+## 5.4 🧬 Rebase vs Merge
+#### 🌀 `git rebase` (reescribe el historial):
+#### Comparación:
+## 5.5 🤝 Trabajo colaborativo en GitHub
+#### Clonar un repositorio remoto
+#### Crear tu propia rama de trabajo
+#### Subir una rama a GitHub
+#### Crear un Pull Request (PR)
+#### Revisar y aceptar PRs
+## 5.6 🧪 Ejercicio colaborativo simulado
 
 # 6. ☁️ Trabajo con repositorios remotos en GitHub
-## 6.1 Crear un repo remoto
-
-Opciones de visibilidad, README, plantilla de licencia
-
-## 6.2 Conexión local-remoto
-
-git remote add origin
-
-git push -u origin main
-
-## 6.3 Operaciones remotas
-
-git fetch vs. git pull
-
-git push (forzar, tags)
-
-## 6.4 Autenticación
-
-HTTPS con token personal
-
-SSH (generar par de llaves, ssh-agent)
-
-## 6.5 Sincronización de forks
-
-upstream remoto, fetch + rebase
-
-## 6.6 Ejercicio
-
-Clonar un fork, sincronizar con el repo original
+## 6.1 🔄 Conceptos Básicos
+#### ¿Qué es un repositorio remoto?
+#### 🖥️ Repositorio Local vs Repositorio Remoto
+#### ✅ Ventajas de Usar Repositorios Remotos
+### ☁️ GitHub como servicio de hosting Git
+### 🏗️ Crear un repositorio remoto en GitHub
+#### 🖱️ Opción 1: Desde la Interfaz Web
+#### 💻 Opción 2: Desde la Terminal con GitHub CLI
+## 6.2 ⚖️ Configuración Inicial de Remotos
+### 🔗 ¿Qué es un "remote"?
+### 🔧 Comandos Clave para Gestionar Remotos
+### 🔗 Vincular un repositorio local a uno remoto (GitHub)
+#### 📁 Caso: Ya tienes un proyecto local iniciado con Git
+#### 📤 Subir tu proyecto por primera vez
+#### 🔁 Cambiar la URL del remoto
+#### ❌ Eliminar el remoto
+## 6.3 🔑 URLs y Autenticación
+### 🔗 ¿Por qué necesitas autenticarte?
+### 🔀 Formas de conexión con GitHub
+### 🔒 HTTPS con Tokens de Acceso Personal (PAT)
+#### 🛠️ Cómo generar un PAT:
+### 🔐 SSH: Claves Públicas y Privadas
+#### 🧰 Pasos para usar SSH:
+### 🖥️ Almacenamiento de Credenciales
+### ⚡ Alternativa rápida: GitHub CLI
+## 6.4 ➡️ Enviar Cambios al Remoto (Push)
+### 🔁 ¿Qué significa hacer `push`?
+### 📤 Primer Push (inicial)
+### 🔁 Comandos de push frecuentes
+### 👁️ Ver estado de ramas y seguimiento
+### ⬆️ Subir cambios al repositorio remoto
+## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
+### 🔄 ¿Por qué es importante traer cambios?
+### 🧩 Diferencias entre `fetch` y `pull`
+### 📥 Comandos esenciales
+### 🧨 Posibles conflictos al hacer `pull`
+### 🛠️ Herramientas para resolución de conflictos
+## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
+### 🔍 ¿Qué es una *tracking branch*?
+### 🧠 ¿Cuándo se configura automáticamente una *tracking branch*?
+### 🛠️ Comandos útiles
+### 📘 Ejemplo completo
+### 🔄 Cambiar el seguimiento de una rama existente
+## 6.7 🌐 Gestión de múltiples remotos
+### 📌 ¿Qué es tener múltiples remotos?
+### 🔧 Comandos clave para gestionar remotos adicionales
+#### ➕ Añadir un segundo remoto
+#### 🔁 Verificar todos los remotos configurados
+#### ✏️ Renombrar un remoto existente
+#### ❌ Eliminar un remoto
+### 🔄 Sincronizar cambios desde otro remoto
+### ✅ Mini resumen visual
+## 6.8 📖 Clonación de Repositorios
+### 🔍 ¿Qué hace `git clone`?
+### 🔄 Variantes útiles de clonación
+#### 🔸 Clonar una rama específica
+#### 🔹 Clonación superficial (shallow clone)
+#### 🔍 Clonar sin historial completo + solo una rama:
+### 📁 Sparse Checkout: Clonar solo partes del proyecto
+## 6.9 🚚 Migrar un repositorio local a GitHub
+### 🎯 Objetivo
+### 🧱 Caso básico: subir un proyecto local a GitHub
+### 🪞 Caso avanzado: migrar un repositorio como espejo
+## 6.10 🏢 Organizaciones, Equipos y Permisos en GitHub
+### 👥 ¿Qué es una organización en GitHub?
+### 🛡️ Gestión de equipos y roles
+### 🔐 Permisos avanzados
+## 6.11 🗃️ Monorepos y gestión de permisos avanzada
+### 🧩 ¿Qué es un monorepo?
+### ✅ Ventajas:
+### ⚠️ Desafíos:
+### 🔐 Permisos por carpeta (con GitHub Teams)
+## 6.12 ⚙️ Automatización Local con Git
+### 🔁 Git Hooks
+### 🧪 Ejemplo: Validar antes de hacer push
+### 🕒 Sincronización automática con `cron`
+### 🔄 Comparación con GitHub Actions
+## 6.13 ⚠️ Manejo de Errores Comunes en Repos Remotos
+### 🚫 Permisos denegados (`403`, `401`)
+### 🔀 Historia divergente
+### 📭 Repositorio no encontrado
+### 🧹 Limpiar referencias obsoletas
+## 6.14 💡 Buenas Prácticas Fundamentales con Repos Remotos
+### 📌 Organización y nombres
+### 🔁 Flujo de trabajo profesional
+### 🔐 Seguridad básica
+### 🛠 Diagnóstico mínimo
+### 6.15 🧪 Actividad
+#### ✅ Pasos:
+### 6.16 📚 Recursos recomendados
 
 # 7. 🤝 Colaboración: Forks, Pull Requests y revisiones
-## 7.1 Fork vs. clone
-
-Flujo de contribución en proyectos open-source
-
-## 7.2 Crear un Pull Request
-
-Descripción clara, checklist, reviewers
-
-## 7.3 Review de código
-
-Comentarios en línea, sugerencias, aprobaciones
-
-## 7.4 Etiquetas de estado
-
-WIP, ready for review, approved
-
-## 7.5 Merge y squash
-
-Diferentes estrategias (merge commit, squash, rebase)
-
-## 7.6 Ejercicio
-
-Contribuir a un repositorio de ejemplo mediante fork + PR
+### 7.1 🍴 Fork vs. Clone
+### 7.2 📤 Crear un Pull Request (PR)
+#### 🔹 ¿Cuándo usar un PR?
+#### 🔹 Pasos para crear un Pull Request
+### 7.3 🧪 Revisar y fusionar PRs
+### 7.4 ✍️ Pull Request Drafts
+### 7.5 📄 Plantillas de Pull Request
+### 7.6 🧑‍💻 GitHub CLI para PRs
+#### Instalar GitHub CLI:
+#### Comandos útiles:
+### 7.7 🧠 Buenas prácticas de colaboración
 
 # 8. 🐞 Gestión de tareas e incidencias con GitHub Issues
 ## 8.1 Qué son los Issues

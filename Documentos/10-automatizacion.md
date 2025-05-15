@@ -1,9 +1,25 @@
-# 10. ⚙️ Automatización con GitHub Actions
-
-**GitHub Actions** permite automatizar flujos de trabajo como integración continua (CI), despliegue (CD), pruebas automáticas, análisis de seguridad y mucho más… todo dentro de tu repositorio.
-
+# 10. ⚙️ Automatización con GitHub Actions 🤖
 ---
 
+**GitHub Actions** te permite diseñar y ejecutar pipelines de CI/CD directamente desde tu repositorio. Con ellas puedes:
+
+- Ejecutar pruebas en cada push o PR  
+- Generar documentación automáticamente  
+- Desplegar artefactos a producción o entornos de staging  
+- Integrar tareas de mantenimiento o notificaciones
+  
+| Ventaja                        | Descripción                                                             |
+| ------------------------------ | ----------------------------------------------------------------------- |
+| ⚡ **Eficiencia operativa**     | Reduce tareas repetitivas manuales, ahorra tiempo y errores.            |
+| 🧪 **Integración continua**    | Ejecuta pruebas automáticamente con cada `push` o `pull request`.       |
+| 🚀 **Despliegue automatizado** | Publica tu app o sitio web automáticamente en producción o staging.     |
+| 📦 **Gestión de dependencias** | Usa bots como Dependabot para mantener paquetes seguros y actualizados. |
+| 👀 **Mayor visibilidad**       | Revisa logs y flujos desde la interfaz de GitHub.                       |
+| 📈 **Escalabilidad**           | Maneja múltiples tareas sin afectar el rendimiento del proyecto.        |
+| 🔒 **Seguridad integrada**     | Escanea código, secretos y dependencias por vulnerabilidades.           |
+| 🧰 **Personalización total**   | Crea workflows a medida según las necesidades de tu proyecto.           |
+
+---
 ### 10.1 🧬 Estructura básica de un workflow
 
 📁 Todos los workflows se almacenan en `.github/workflows/*.yml`.

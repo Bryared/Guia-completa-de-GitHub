@@ -83,7 +83,31 @@ gh codespace create
 
 ---
 
-### 14.5 🧠 Consejos finales para equipos
+### 14.5 🛡️ CODEOWNERS  
+- Define responsables automáticos para rutas específicas mediante un archivo `CODEOWNERS`.  
+- Garantiza que cambios en áreas críticas siempre pasen por los revisores adecuados.
+---
+### 14.6 📝 Plantillas de Issues y Pull Requests  
+- Crea `ISSUE_TEMPLATE.md` y `PULL_REQUEST_TEMPLATE.md` en `.github/`  
+- Estandariza el contenido y campos obligatorios de cada reporte o propuesta de cambio.
+---
+### 14.7 ✅ Checks y políticas de merge  
+- Configura **Required Status Checks** en la rama protegida (`main`): tests, linters, análisis de seguridad.  
+- Impide merges hasta que todos los checks hayan pasado.
+---
+### 14.8 🔍 Auditoría y registros de actividad  
+- Revisa periódicamente los **audit logs** de la organización (teams, permisos, acciones críticas).  
+- Usa GitHub Advanced Security (en planes Enterprise) para ver actividades sospechosas.
+---
+### 14.9 📦 Releases y versionado  
+- Etiqueta versiones con `git tag -a vX.Y.Z` y usa la sección **Releases** para publicar notas formales.  
+- Sigue **Semantic Versioning** para clarificar cambios mayores, menores y parches.
+---
+### 14.10 🗂️ Limpieza y archivado de repositorios  
+- Archiva repositorios inactivos para mantener la organización ordenada.  
+- Elimina ramas obsoletas y cierra proyectos terminados.
+---
+### 14.11 🧠 Consejos finales para equipos
 
 * Mantén la documentación actualizada
 * Automatiza lo repetitivo con Actions y CLI
@@ -91,4 +115,3 @@ gh codespace create
 * Revisa y limpia ramas muertas o sin uso
 * Fomenta revisiones constructivas de PRs
 
----

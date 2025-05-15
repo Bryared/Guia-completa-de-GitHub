@@ -40,13 +40,29 @@ Ejemplo:
 * Configurable con `devcontainer.json`
 * Usa tu propia configuración de VS Code
 * Compatible con GitHub Actions
+  
+### 🧠 ¿Cuándo usar Codespaces?
 
-#### 🛠️ Primer uso
+* Cuando no quieres instalar dependencias en tu máquina local
+* Al contribuir rápidamente a un nuevo proyecto
+* Para trabajar desde dispositivos sin mucha potencia
+* Para garantizar entornos homogéneos entre todos los miembros del equipo
+  
+### 🛠️ ¿Cómo crear un Codespace?
 
-1. Ir al repositorio → Botón **Code** → **Codespaces**
-2. Crear nuevo codespace
-3. Se abre entorno de desarrollo en segundos
+#### 1. Ve al repositorio deseado en GitHub
+   * ![image](https://github.com/user-attachments/assets/25028233-94f5-4cf4-aa7f-430cc52b5a4b)
+#### 2. Haz clic en el botón **Code**
+   * ![image](https://github.com/user-attachments/assets/6e545e88-b0a1-4f11-81b2-ac768547ce27)
+#### 3. Selecciona la pestaña **Codespaces**
+   * ![image](https://github.com/user-attachments/assets/2c37a749-6fe3-4746-b58d-dca67c3667a4)
+#### 4. Haz clic en **Create codespace on [rama]**
+   * ![image](https://github.com/user-attachments/assets/2cfe79e3-45ec-4ed1-a81f-07737eb250f2)
+#### 5. Espera a que el entorno se configure automáticamente
 
+> ⏱️ *El entorno estará listo en segundos, sin necesidad de configurar nada localmente.*
+
+---
 ---
 
 ### 13.4 🧩 Configurar con `devcontainer.json`
