@@ -159,122 +159,100 @@
 ### 7.7 🧠 Buenas prácticas de colaboración
 
 # 8. 🐞 Gestión de tareas e incidencias con GitHub Issues
-## 8.1 Qué son los Issues
-
-Tracking de bugs, tareas y discusiones
-
-## 8.2 Crear y gestionar Issues
-
-Etiquetas, asignaciones, milestones
-
-## 8.3 Plantillas de Issues
-
-.github/ISSUE_TEMPLATE/bug_report.md
-
-## 8.4 Automatización con keywords
-
-Closes #, Fixes # en commits o PRs
-
-## 8.5 Ejercicio
-
-Diseñar una plantilla de Issue para tu proyecto
+### 8.1 🎯 Objetivo
+### 8.2 ❓ ¿Qué es un Issue?
+### 8.3 ✍️ Crear y configurar un Issue
+##### 1. 🔹 Ir a la sección Issues  
+##### 2. 🔹 Escribir título y descripción  
+##### 3. 🔹 Añadir etiquetas (Labels)  
+##### 4. 🔹 Asignar responsables (Assignees)  
+##### 5. 🔹 Vincular a un hito (Milestone)  
+##### 6. 🔹 Agregar al tablero de proyecto (Projects)  
+### 8.4 📆 Milestones y vinculación con Pull Requests
+#### Milestones
+#### Vincular PR a un Issue
+### 8.5 🧩 Templates de Issue
+#### Tipos comunes de templates:
+### 8.6 💬 GitHub Discussions vs Wiki
+#### GitHub Discussions
+#### Wiki
+### 8.7 ⚙️ Automatización con Issues
+#### Cerrar issues automáticamente desde PRs
+### 8.8 🧠 Buenas prácticas
 
 # 9. 📊 Gestión de proyectos con GitHub Projects
-## 9.1 Introducción a Projects
-
-Vista Kanban vs. tabla vs. roadmap
-
-## 9.2 Crear tableros y columnas
-
-To Do, In Progress, Done
-
-## 9.3 Reglas de automatización
-
-Mover tarjetas según estado de Issues/PRs
-
-## 9.4 Vistas avanzadas
-
-Custom queries y campos
-
-## 9.5 Ejercicio
-
-Crear un proyecto para planificar todo el manual
+## 9.1 🗂️ Tipos de Projects: Classic vs. Beta (Projects v2)
+## 9.2 📌 Crear un nuevo Project en GitHub
+#### 1. Acceder a la sección de Projects
+#### 2. Iniciar la creación de un nuevo proyecto
+#### 3. Elegir una plantilla o empezar desde cero
+#### 4. Configurar los detalles del proyecto
+#### 5. Crear el proyecto
+## 9.3 📥 Añadir Issues y Pull Requests a un Project
+## 9.4 🔄 Automatizaciones
+#### En Projects Classic
+#### En Projects Beta
+## 9.5 📈 Métricas e Insights del repositorio
+#### En la pestaña **Insights**:
+## 9.6 💡 Buenas prácticas para equipos
+## 🧠 Tips adicionales
 
 # 10. ⚙️ Automatización con GitHub Actions
-## 10.1 ¿Qué son las Actions?
-
-Runners, workflows y jobs
-
-## 10.2 Anatomía de un workflow
-
-on:, jobs:, steps:
-
-## 10.3 Ejemplo CI básico
-
-Lint de Markdown, tests de Python
-
-## 10.4 Deploy a Pages
-
-actions/deploy-pages@v3
-
-## 10.5 Secrets y entornos
-
-Configurar variables seguras
-
-## 10.6 Ejercicio
-
-Crear un workflow que valide y despliegue tus docs/
+### 10.1 🧬 Estructura básica de un workflow
+### 10.2 🚀 Eventos de disparo (`on:`)
+### 10.3 🛠️ Jobs y pasos (`jobs` y `steps`)
+### 10.4 🔁 Reutilización con Workflows Reusables
+### 10.5 🏪 GitHub Actions Marketplace
+### 10.6 🔐 Secretos y seguridad
+### 10.7 📦 Ejemplos de automatización
+#### ✅ Integración continua (CI)
+#### 🌐 Despliegue automático a GitHub Pages
+#### 📢 Notificaciones a Slack/Discord
+### 🧠 Buenas prácticas
 
 # 11. 📄 Compartir código con GitHub Gists
-## 11.1 ¿Qué es un Gist?
-
-Snippets públicos vs. secretos
-
-## 11.2 Crear y versionar Gists
-
-Usar la API de Gist
-
-## 11.3 Integración en blogs y foros
-
-Embebidos en Markdown
-
-## 11.4 Ejercicio
-
-Publicar un snippet de tus alias Git como Gist
+### 11.1 🧩 ¿Qué es un Gist?
+### 11.2 🌐 Tipos de Gists
+### 11.3 🛠️ Crear un Gist
+#### 1. 🖥️ Crear un Gist desde la web
+### 11.4 🌀 Versionado y Forks
+### 11.5 💻 Usar Gists desde la terminal
+### 11.6 🧪 Usar la GitHub CLI con Gists
+### 11.7 🧠 Casos de uso recomendados
+### 11.8 ✅ Buenas prácticas
 
 # 12. 🌐 Publicación de sitios web con GitHub Pages
-## 12.1 Modelos de Pages
-
-Proyecto estático vs. Jekyll/MkDocs
-
-## 12.2 Configuración de Pages
-
-Carpeta /docs o rama gh-pages
-
-## 12.3 Temas y personalización
-
-Variables de configuración _config.yml
-
-## 12.4 Dominio personalizado y HTTPS
-
-## 12.5 Ejercicio
-
-Publicar tu manual como sitio web y compartir el link
+**GitHub Pages** te permite alojar sitios web estáticos directamente desde tu repositorio de GitHub. Ideal para portfolios, blogs, documentación o proyectos personales.
+### 12.1 🧭 ¿Qué es GitHub Pages?
+### 12.2 🏗️ Métodos de despliegue
+### 12.3 🧪 Crear un sitio básico con HTML
+### 12.4 💎 Uso de generadores estáticos
+#### 🧱 Jekyll (por defecto en GitHub Pages)
+#### ⚡ Otros generadores (Hugo, Docusaurus, Astro...)
+### 12.5 🛠️ Configurar un dominio personalizado
+### 12.6 🔐 HTTPS y seguridad
+### 12.7 🧩 Automatización con GitHub Actions
+### 12.8 📌 Buenas prácticas
+### 12.9 🧠 Recursos adicionales
 
 # 13. 💻 Entornos de desarrollo en la nube
-## 13.1 GitHub Codespaces
-
-Crear un Codespace, devcontainer.json
-
-## 13.2 GitHub.dev
-
-Edición ligera en navegador
-
-## 13.3 Comparativa local vs. cloud
-
-## 13.4 Ejercicio
-
-Abrir tu repo en GitHub.dev y modificar un capítulo
+GitHub ofrece soluciones potentes para programar desde cualquier lugar, sin necesidad de instalar herramientas localmente. Dos herramientas clave son **GitHub Codespaces** y **GitHub.dev**.
+### 13.1 ☁️ ¿Qué es un entorno de desarrollo en la nube?
+### 13.2 🧪 GitHub.dev (editor en el navegador)
+### 13.3 🚀 GitHub Codespaces (entorno completo en la nube)
+#### ✅ Características
+### 🧠 ¿Cuándo usar Codespaces?
+### 🛠️ ¿Cómo crear un Codespace?
+#### 1. Ve al repositorio deseado en GitHub
+#### 2. Haz clic en el botón **Code**
+#### 3. Selecciona la pestaña **Codespaces**
+#### 4. Haz clic en **Create codespace on [rama]**
+#### 5. Espera a que el entorno se configure automáticamente
+### 13.4 🧩 Configurar con `devcontainer.json`
+### 13.5 🧠 Casos de uso recomendados
+### 13.6 📊 Limitaciones y consideraciones
+### 13.7 🛡️ Seguridad y privacidad
+### 13.8 🧪 Consejos avanzados
 
 # 14. 🛡️ Buenas prácticas, seguridad y herramientas avanzadas
 ## 14.1 Buenas prácticas de commits
