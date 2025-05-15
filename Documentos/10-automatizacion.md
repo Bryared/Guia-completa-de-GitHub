@@ -81,7 +81,7 @@ GitHub Actions es un sistema de automatización basado en **archivos YAML** que 
 
 📁 Todos los workflows se almacenan en `.github/workflows/*.yml`.
 
-```
+```yaml
 name: Nombre del workflow
 on: [push, pull_request]
 
@@ -114,7 +114,7 @@ Puedes activar un workflow con distintos eventos:
 * **Job**: conjunto de pasos que se ejecutan en un entorno.
 * **Step**: cada comando o acción dentro del job.
 
-```
+```yaml
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -167,7 +167,7 @@ Permite que el software sea **entregado automáticamente a entornos de staging o
 
 ### ✅ Integración continua (CI)
 
-```
+```yaml
 on: push
 jobs:
   test:
