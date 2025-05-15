@@ -57,8 +57,6 @@ Se usa para colaboración, revisión de código, y mantener un historial limpio.
 
 > ⚠️ Ideal cuando trabajas en una rama o en un fork y quieres que tus cambios se integren al proyecto principal.
 
----
-
 #### 🔹 ¿Cuándo usar un PR?
 
 * Cuando desarrollas una nueva funcionalidad en una rama (`feature/login`).
@@ -88,15 +86,17 @@ Se usa para colaboración, revisión de código, y mantener un historial limpio.
 
 3. 🟢 **Desde GitHub, haz clic en “Compare & pull request”**
    GitHub detectará automáticamente que tu rama tiene cambios no integrados.
+   ![image](https://github.com/user-attachments/assets/a280f588-360e-4705-bda9-bbd4d95c626e)
 
-4. ✍️ **Completa el formulario del PR**
+5. ✍️ **Completa el formulario del PR**
 
    * **Título claro y descriptivo**.
    * **Descripción detallada** de qué hiciste y por qué.
    * Agrega capturas si es visual.
    * Asigna revisores si es necesario.
+   * ![image](https://github.com/user-attachments/assets/f2828e73-6d4e-483f-a4a0-c97134a6bec8)
 
-5. 🔗 **Vincula un Issue automáticamente (opcional)**
+6. 🔗 **Vincula un Issue automáticamente (opcional)**
    Si el PR resuelve un issue, puedes mencionarlo:
 
    ```
@@ -106,10 +106,14 @@ Se usa para colaboración, revisión de código, y mantener un historial limpio.
 
    > GitHub cerrará el issue automáticamente al hacer merge del PR.
 
-6. ⏳ **Espera revisión**
-   Los colaboradores pueden comentar, pedir cambios o aprobar.
+7. ⏳ **Espera revisión**
+   Tus compañeros pueden:
 
-7. 🔀 **Haz merge cuando esté aprobado**
+   * ✅ Aprobar
+   * 🛠️ Solicitar cambios
+   * 💬 Comentar
+
+8. 🔀 **Haz merge cuando esté aprobado**
    Elige entre:
 
    * **Merge Commit** → Combina con historial completo.
