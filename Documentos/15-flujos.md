@@ -4,9 +4,31 @@
 
 Este apartado te muestra cómo aplicar, organizar y optimizar todo lo aprendido para trabajar en proyectos reales con Git y GitHub, en equipo o de forma individual. Aquí se presentan los principales **flujos de trabajo (workflows)** utilizados por desarrolladores y organizaciones profesionales.
 
+### 🧭 ¿Qué es un flujo de trabajo?
+
+Un **flujo de trabajo (workflow)** en Git/GitHub define **cómo se colabora, ramifica, revisa y despliega** el código. Implica:
+
+* Cómo y cuándo se crean ramas.
+* Qué reglas se siguen para hacer commits y PRs.
+* Qué rama representa la versión “estable” del proyecto.
+* Cuándo se hace `merge` o `release`.
+
+> 💡 El objetivo es asegurar que el código sea colaborativo, mantenible y entregable de forma predecible.
+
 ---
 
-## 15.1 🔁 GitHub Flow (el más simple y efectivo)
+### 🧱 Componentes de un flujo de trabajo
+
+* **Ramas (`branches`)**: Dividen tareas, nuevas features, arreglos.
+* **Commits**: Cambios versionados con mensajes significativos.
+* **Pull Requests**: Solicitudes de integración, con revisión y discusión.
+* **Revisiones**: Control de calidad antes de fusionar.
+* **Integración continua (CI)**: Automatiza pruebas y builds.
+* **Deploy (CD)**: Entrega automática al entorno final.
+
+---
+
+## 15.1 🔁 GitHub Flow (el más simple y efectivo,  ideal para proyectos web)
 
 Ideal para proyectos pequeños o medianos, y especialmente para **desarrollo continuo**.
 
@@ -21,10 +43,11 @@ Ideal para proyectos pequeños o medianos, y especialmente para **desarrollo con
 7. Se despliega automáticamente (opcional con GitHub Actions)
 
 ✅ Recomendado para: sitios web, apps modernas, desarrollo ágil.
+❌ No ideal para software que requiere versiones estables o múltiples entornos.
 
 ---
 
-## 15.2 🌿 Git Flow (estructurado y robusto)
+## 15.2 🌿 Git Flow (estructurado y robusto, ideal para software en producción)
 
 Ideal para proyectos grandes con múltiples versiones en paralelo.
 
@@ -44,6 +67,7 @@ Ideal para proyectos grandes con múltiples versiones en paralelo.
 4. Si hay bugs críticos → `hotfix/` → merge a `main` y `develop`
 
 ✅ Recomendado para: software empresarial, sistemas complejos, apps con roadmap definido.
+❌ Puede ser complejo de manejar sin automatización.
 
 ---
 
@@ -58,6 +82,7 @@ Desarrollo basado en una sola rama principal (`main` o `trunk`) con ramas de vid
 3. Tests automáticos para asegurar estabilidad
 
 ✅ Recomendado para: equipos DevOps, CI/CD intenso, entornos ágiles.
+❌ Requiere testeo y CI/CD impecable.
 
 ---
 
