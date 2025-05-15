@@ -6,15 +6,57 @@ GitHub no solo es una plataforma para alojar y colaborar en código; también es
 
 ## 14.1 🧰 GitHub CLI (`gh`): Potencia GitHub desde tu terminal
 
-La **GitHub CLI** es una herramienta de línea de comandos oficial que permite interactuar con GitHub directamente desde tu terminal.
+La **GitHub CLI (`gh`)** (Command Line Interface) es una herramienta oficial de línea de comandos que te permite interactuar con GitHub sin salir de la terminal. 
 
+Es ideal para automatizar tareas, flujos, gestionar issues, revisiones, proyectos, trabajar más rápido, integrar scripts en flujos de desarrollo, y mantener un enfoque productivo sin depender de la interfaz web.
+
+> 🚀 Ideal para desarrolladores, DevOps, contributors open source y equipos que usan GitHub como centro de desarrollo.
+
+---
+
+### 🛠️ Instalación
+
+Instala desde: [https://cli.github.com/](https://cli.github.com/)
+
+
+---
 ### 🔹 ¿Qué puedes hacer con `gh`?
 
-* Crear y revisar *Pull Requests* (`gh pr create`, `gh pr review`)
-* Gestionar *issues* (`gh issue list`, `gh issue create`)
-* Clonar repositorios (`gh repo clone`)
-* Ver notificaciones (`gh notifications`)
-* Administrar proyectos, releases y más
+| Categoría         | Comando base               | Qué permite hacer                                  |
+| ----------------- | -------------------------- | -------------------------------------------------- |
+| Pull Requests     | `gh pr`                    | Crear, revisar, ver, cerrar, hacer checkout de PRs |
+| Issues            | `gh issue`                 | Crear, asignar, listar, cerrar issues              |
+| Repositorios      | `gh repo`                  | Clonar, crear, forkear, ver repos                  |
+| Releases          | `gh release`               | Crear, ver, subir assets a releases                |
+| Gists             | `gh gist`                  | Crear, listar y ver gists desde la terminal        |
+|Autenticación	    |`gh auth login`, `gh auth status`| Automatizar autenticación                     |
+| Projects          | `gh project`               | Gestionar tableros de proyectos (CLI beta o v2)    |
+| Notificaciones    | `gh notifications`         | Ver y gestionar notificaciones                     |
+| Alias/Extensiones | `gh alias`, `gh extension` | Personalizar y extender comandos                   |
+
+---
+#### Ejemplos rápidos:
+
+```bash
+# macOS (Homebrew)
+brew install gh
+
+# Windows (scoop)
+scoop install gh
+
+# Ubuntu/Debian
+sudo apt install gh
+```
+
+### 🔐 Autenticación
+
+Antes de usar `gh`, necesitas autenticarte:
+
+```bash
+gh auth login
+```
+
+> Puedes elegir entre autenticación por navegador o token personal (PAT). Es segura y solo necesitas hacerlo una vez.
 
 ### 🔹 Ejemplo básico
 
@@ -22,9 +64,68 @@ La **GitHub CLI** es una herramienta de línea de comandos oficial que permite i
 gh repo clone usuario/repositorio
 gh pr create --base main --head feature-rama --title "Añadir funcionalidad"
 ```
+### 🧪 Ejemplo práctico: Crear un repositorio y primer issue
 
-📘 Más información: [GitHub CLI Docs](https://cli.github.com/)
+```bash
+gh repo create mi-repo --public --source=. --remote=origin
+gh issue create --title "Mejora el README" --body "Agrega badges y enlaces útiles"
+```
 
+### 📦 Comandos avanzados útiles
+
+```bash
+gh repo clone org/proyecto       # Clonar un repo desde GitHub
+gh pr status                     # Ver PRs abiertos y asignados
+gh issue list --assignee @me     # Ver issues asignadas
+gh release create v1.0.0         # Crear una release
+gh alias set ci 'gh pr checks'   # Crear un alias personalizado
+```
+
+### ✨ Alias personalizados
+
+Puedes crear tus propios comandos abreviados:
+
+```bash
+gh alias set mi-pr 'pr create --fill'
+gh alias set m 'pr merge --merge'
+```
+
+
+### 🧩 Extensiones de GitHub CLI
+
+La comunidad y GitHub han creado **extensiones** para `gh`. Puedes explorarlas y agregarlas:
+
+```bash
+gh extension install dlvhdr/gh-dash     # Dashboard visual para PRs e issues
+gh extension install github/gh-copilot  # Usar GitHub Copilot desde la terminal
+```
+
+> Consulta más en: [https://github.com/topics/gh-extension](https://github.com/topics/gh-extension)
+
+
+### 🧠 Integración con scripts
+
+Puedes usar `gh` dentro de scripts Bash, CI/CD o workflows personalizados:
+
+```bash
+#!/bin/bash
+gh issue list --label "bug" --state open > bugs.txt
+```
+
+> 🔁 Combina `gh` con **GitHub Actions** o tareas en tu terminal para automatizar procesos.
+
+
+### 🧼 Buenas prácticas
+
+* Usa `gh` para integrarte más rápidamente en proyectos colaborativos.
+* Crea alias para comandos frecuentes.
+* Automatiza flujos repetitivos con scripts y `gh`.
+* Usa `gh pr view` o `gh pr diff` para revisar código en contexto.
+* Mantén actualizada la CLI con `gh version` y `gh upgrade`.
+
+###📘 Más información: 
+* [Documentación oficial de GitHub CLI](https://cli.github.com/manual/)
+* [GitHub CLI en GitHub](https://github.com/cli/cli)
 ---
 
 ## 14.2 🔌 GitHub REST API y GraphQL API
