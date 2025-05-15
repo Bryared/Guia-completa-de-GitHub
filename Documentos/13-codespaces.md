@@ -40,7 +40,14 @@ Ejemplo:
 * Configurable con `devcontainer.json`
 * Usa tu propia configuración de VS Code
 * Compatible con GitHub Actions
+  
+### 🧠 ¿Cuándo usar Codespaces?
 
+* Cuando no quieres instalar dependencias en tu máquina local
+* Al contribuir rápidamente a un nuevo proyecto
+* Para trabajar desde dispositivos sin mucha potencia
+* Para garantizar entornos homogéneos entre todos los miembros del equipo
+* 
 #### 🛠️ Primer uso
 
 1. Ir al repositorio → Botón **Code** → **Codespaces**
