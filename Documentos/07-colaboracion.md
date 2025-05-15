@@ -4,7 +4,7 @@ La colaboración es uno de los pilares de GitHub. Los **Forks**, **Pull Requests
 
 ---
 
-### 7.1 🍴 Fork vs. Clone
+## 7.1 🍴 Fork vs. Clone
 
 | Concepto    | Descripción                                                         |
 | ----------- | ------------------------------------------------------------------- |
@@ -50,7 +50,7 @@ Cuando tienes **acceso directo** al repositorio o no necesitas hacer un *fork*. 
 
 ---
 
-### 7.2 📤 Crear un Pull Request (PR)
+## 7.2 📤 Crear un Pull Request (PR)
 
 Un **Pull Request (PR)** permite proponer y discutir cambios antes de integrarlos a la rama principal de un repositorio (como `main` o `develop`).
 Se usa para colaboración, revisión de código, y mantener un historial limpio.
@@ -124,7 +124,7 @@ Se usa para colaboración, revisión de código, y mantener un historial limpio.
 
 ---
 
-### 7.3 🧪 Revisar y fusionar PRs
+## 7.3 🧪 Revisar y fusionar PRs
 
 Revisar un PR implica:
 
@@ -146,7 +146,7 @@ Después de la revisión:
 
 ---
 
-### 7.4 ✍️ Pull Request Drafts
+## 7.4 ✍️ Pull Request Drafts
 
 Los **drafts** (borradores) son PRs en progreso. Útiles para:
 
@@ -161,7 +161,7 @@ Estado del PR: “Draft”
 
 ---
 
-### 7.5 📄 Plantillas de Pull Request
+## 7.5 📄 Plantillas de Pull Request
 
 Puedes definir un formato predeterminado para todos los PRs en tu proyecto.
 
@@ -185,7 +185,15 @@ Fixes #...
 
 ---
 
-### 7.6 🧑‍💻 GitHub CLI para PRs
+## 7.6 🧑‍💻 GitHub CLI para PRs
+
+La **GitHub CLI (`gh`)** te permite interactuar con GitHub directamente desde la terminal, sin abrir el navegador. Esto es especialmente útil al colaborar mediante **Pull Requests**.
+
+#### ✅ ¿Qué puedes hacer con `gh` en este contexto?
+
+* Crear un PR rápidamente desde tu rama actual.
+* Ver y revisar Pull Requests de otros colaboradores.
+* Cambiarte de rama para probar el código de un PR.
 
 #### Instalar GitHub CLI:
 
@@ -202,9 +210,10 @@ gh pr review       # Comentar o aprobar PR
 
 > 💡 Acelera tu flujo sin salir de la terminal.
 
----
-Más detalles en: [14.🔧Herramientas Avanzadas y Extensibilidad en GitHub](14-herramientas.md)
-### 7.7 🧠 Buenas prácticas de colaboración
+>📘 *¿Quieres automatizar más tareas o extender el uso de `gh`? Consulta el capítulo: [14.🔧Herramientas Avanzadas y Extensibilidad en GitHub](14-herramientas.md)
+
+
+## 7.7 🧠 Buenas prácticas de colaboración
 
 | Práctica                   | Beneficio                           |
 | -------------------------- | ----------------------------------- |
