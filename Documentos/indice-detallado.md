@@ -86,16 +86,64 @@
 ### 👁️ Ver estado de ramas y seguimiento
 ### ⬆️ Subir cambios al repositorio remoto
 ## 6.5 💾 Obtener Cambios del Remoto (Fetch & Pull)
+### 🔄 ¿Por qué es importante traer cambios?
+### 🧩 Diferencias entre `fetch` y `pull`
+### 📥 Comandos esenciales
+### 🧨 Posibles conflictos al hacer `pull`
+### 🛠️ Herramientas para resolución de conflictos
 ## 6.6 🔹 Ramas de Seguimiento (Tracking Branches)
+### 🔍 ¿Qué es una *tracking branch*?
+### 🧠 ¿Cuándo se configura automáticamente una *tracking branch*?
+### 🛠️ Comandos útiles
+### 📘 Ejemplo completo
+### 🔄 Cambiar el seguimiento de una rama existente
 ## 6.7 🌐 Gestión de múltiples remotos
+### 📌 ¿Qué es tener múltiples remotos?
+### 🔧 Comandos clave para gestionar remotos adicionales
+#### ➕ Añadir un segundo remoto
+#### 🔁 Verificar todos los remotos configurados
+#### ✏️ Renombrar un remoto existente
+#### ❌ Eliminar un remoto
+### 🔄 Sincronizar cambios desde otro remoto
+### ✅ Mini resumen visual
 ## 6.8 📖 Clonación de Repositorios
+### 🔍 ¿Qué hace `git clone`?
+### 🔄 Variantes útiles de clonación
+#### 🔸 Clonar una rama específica
+#### 🔹 Clonación superficial (shallow clone)
+#### 🔍 Clonar sin historial completo + solo una rama:
+### 📁 Sparse Checkout: Clonar solo partes del proyecto
 ## 6.9 🚚 Migrar un repositorio local a GitHub
+### 🎯 Objetivo
+### 🧱 Caso básico: subir un proyecto local a GitHub
+### 🪞 Caso avanzado: migrar un repositorio como espejo
 ## 6.10 🏢 Organizaciones, Equipos y Permisos en GitHub
+### 👥 ¿Qué es una organización en GitHub?
+### 🛡️ Gestión de equipos y roles
+### 🔐 Permisos avanzados
 ## 6.11 🗃️ Monorepos y gestión de permisos avanzada
+### 🧩 ¿Qué es un monorepo?
+### ✅ Ventajas:
+### ⚠️ Desafíos:
+### 🔐 Permisos por carpeta (con GitHub Teams)
 ## 6.12 ⚙️ Automatización Local con Git
+### 🔁 Git Hooks
+### 🧪 Ejemplo: Validar antes de hacer push
+### 🕒 Sincronización automática con `cron`
+### 🔄 Comparación con GitHub Actions
 ## 6.13 ⚠️ Manejo de Errores Comunes en Repos Remotos
+### 🚫 Permisos denegados (`403`, `401`)
+### 🔀 Historia divergente
+### 📭 Repositorio no encontrado
+### 🧹 Limpiar referencias obsoletas
 ## 6.14 💡 Buenas Prácticas Fundamentales con Repos Remotos
-## 6.14 💡 Buenas Prácticas con Repos Remotos
+### 📌 Organización y nombres
+### 🔁 Flujo de trabajo profesional
+### 🔐 Seguridad básica
+### 🛠 Diagnóstico mínimo
+### 6.15 🧪 Actividad
+#### ✅ Pasos:
+### 6.16 📚 Recursos recomendados
 
 # 7. 🤝 Colaboración: Forks, Pull Requests y revisiones
 ## 7.1 Fork vs. clone
