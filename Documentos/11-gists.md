@@ -24,16 +24,21 @@
 ---
 
 ### 11.3 🛠️ Crear un Gist
+Los **Gists** son mini-repositorios para compartir fragmentos de código o notas, públicos o secretos. Útiles para snippets reutilizables, configuraciones rápidas o documentación pequeña.
 
-1. Ir a [gist.github.com](https://gist.github.com)
-2. Iniciar sesión con tu cuenta de GitHub.
-3. Ingresar:
 
-   * Un título (opcional)
-   * Uno o varios archivos con nombre y contenido
-   * Descripción (recomendado)
-4. Elegir: público o secreto.
-5. Hacer clic en **"Create public/secret gist"**.
+#### 1. 🖥️ Crear un Gist desde la web
+
+1. Ve a [gist.github.com](https://gist.github.com/).  
+2. Inicia sesión en tu cuenta de GitHub.  
+3. Rellena los campos:  
+   * **Filename**: nombre del archivo (p. ej. `snippet.py`).  
+   * **Content**: pega tu código o texto.  
+   * **Description** (opcional, recomendado): explica el propósito.  
+   * **Public / Secret**: selecciona visibilidad.  
+4. Haz clic en **Create public gist** o **Create secret gist**.  
+
+> 🔗 Cada Gist tiene su propia URL y un pequeño historial de versiones.
 
 ---
 
