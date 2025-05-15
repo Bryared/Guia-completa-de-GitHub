@@ -3,6 +3,56 @@
 GitHub Actions es la solución integrada de **automatización** dentro de GitHub. Permite crear flujos de trabajo que se ejecutan automáticamente en respuesta a eventos del repositorio, como *push*, *pull requests*, *releases*, o tareas programadas. Es ideal para CI/CD, pruebas automáticas, despliegues, y mucho más.
 
 ---
+## 10.0 🤖 Conceptos de Automatización
+
+* **Automatización**: uso de scripts y herramientas para ejecutar tareas repetitivas sin intervención manual.
+* **Pipeline**: secuencia de etapas (build, test, deploy, monitor) que se ejecutan de forma automática.
+* **Idempotencia**: cada ejecución produce el mismo resultado si parte del mismo estado; evita efectos secundarios inesperados.
+* **Modularidad**: dividir el pipeline en jobs y steps independientes para facilitar el mantenimiento y la depuración.
+* **Paralelismo**: ejecución concurrente de tareas (por ejemplo, tests en diferentes entornos) para acelerar tiempos de respuesta.
+* **Retroalimentación rápida (Fast Feedback)**: informar inmediatamente sobre fallos en cualquier etapa para corregir a tiempo.
+* **Observabilidad**: recogida de logs, métricas y alertas en cada paso del pipeline para monitorizar su salud y rendimiento.
+* **Infraestructura como Código (IaC)**: definir y gestionar entornos y configuraciones mediante archivos (por ejemplo, Terraform, Ansible).
+* **Gestión de secretos**: almacenamiento seguro de credenciales y tokens para evitar filtraciones.
+
+### 📝 YAML
+
+YAML (“YAML Ain’t Markup Language”) es un formato de texto sencillo y legible, ideal para definir workflows en GitHub Actions.
+
+- **Indentación con espacios**  
+  - Usa siempre **2 espacios** por nivel (¡nunca tabuladores!).  
+  - Los niveles de indentación delimitan la jerarquía.
+
+* **Claves y valores**:
+  - Se definen con `clave: valor`.  
+  - El valor puede ser texto, número, booleano (`true`/`false`) o lista anidada.
+ 
+  ```yaml
+  clave: valor
+  nombre: Juan
+  edad: 30
+  ```
+* **Listas**:
+
+  ```yaml
+  lista:
+    - item1
+    - item2
+  frutas:
+    - manzana
+    - banana
+  ```
+* **Jerarquía** (bloques anidados):
+
+  ```yaml
+  jobs:
+    build:
+      steps:
+        - run: echo "Hola"
+  ```
+* **Comentarios**: Usa `#` para añadir notas.
+
+
 ## 10.1 🧠 ¿Qué es GitHub Actions?
 
 GitHub Actions es un sistema de automatización basado en **archivos YAML** que viven dentro de tu repositorio. Define “**qué hacer**”, “**cuándo hacerlo**” y “**dónde ejecutarlo**”.
@@ -26,6 +76,7 @@ GitHub Actions es un sistema de automatización basado en **archivos YAML** que 
 | 🧰 **Personalización total**   | Crea workflows a medida según las necesidades de tu proyecto.           |
 
 ---
+
 ## 10.2 🧬 Estructura básica de un workflow
 
 📁 Todos los workflows se almacenan en `.github/workflows/*.yml`.
