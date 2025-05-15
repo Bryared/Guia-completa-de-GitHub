@@ -146,23 +146,17 @@
 ### 6.16 📚 Recursos recomendados
 
 # 7. 🤝 Colaboración: Forks, Pull Requests y revisiones
-## 7.1 Fork vs. clone
-## 7.2 Crear un Pull Request
-## 7.3 Review de código
-
-Comentarios en línea, sugerencias, aprobaciones
-
-## 7.4 Etiquetas de estado
-
-WIP, ready for review, approved
-
-## 7.5 Merge y squash
-
-Diferentes estrategias (merge commit, squash, rebase)
-
-## 7.6 Ejercicio
-
-Contribuir a un repositorio de ejemplo mediante fork + PR
+### 7.1 🍴 Fork vs. Clone
+### 7.2 📤 Crear un Pull Request (PR)
+#### 🔹 ¿Cuándo usar un PR?
+#### 🔹 Pasos para crear un Pull Request
+### 7.3 🧪 Revisar y fusionar PRs
+### 7.4 ✍️ Pull Request Drafts
+### 7.5 📄 Plantillas de Pull Request
+### 7.6 🧑‍💻 GitHub CLI para PRs
+#### Instalar GitHub CLI:
+#### Comandos útiles:
+### 7.7 🧠 Buenas prácticas de colaboración
 
 # 8. 🐞 Gestión de tareas e incidencias con GitHub Issues
 ## 8.1 Qué son los Issues
