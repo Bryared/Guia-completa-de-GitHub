@@ -254,25 +254,79 @@ GitHub ofrece soluciones potentes para programar desde cualquier lugar, sin nece
 ### 13.7 🛡️ Seguridad y privacidad
 ### 13.8 🧪 Consejos avanzados
 
+# 14. 🔧 Herramientas Avanzadas y Extensibilidad en GitHub
+GitHub no solo es una plataforma para alojar y colaborar en código; también es un ecosistema altamente extensible que permite automatizar procesos, integrar herramientas externas, y personalizar completamente el flujo de desarrollo. En esta sección aprenderás a usar herramientas avanzadas que te permiten interactuar con GitHub más allá de la interfaz web, integrarlo con otros servicios y ampliar sus funcionalidades.
+## 14.1 🧰 GitHub CLI (`gh`): Potencia GitHub desde tu terminal
+La **GitHub CLI** es una herramienta de línea de comandos oficial que permite interactuar con GitHub directamente desde tu terminal.
+### 🔹 ¿Qué puedes hacer con `gh`?
+### 🔹 Ejemplo básico
+## 14.2 🔌 GitHub REST API y GraphQL API
+Si necesitas acceder a GitHub desde tus propias aplicaciones o scripts, puedes usar sus potentes APIs.
+### 🔹 REST API
+### 🔹 GraphQL API
+### 🧪 Ejemplo de llamada REST usando `curl`
+## 14.3 🧩 GitHub Apps y OAuth Apps
+Estas aplicaciones permiten extender GitHub, automatizar tareas, o conectar con servicios externos.
+### 🔹 GitHub Apps
+### 🔹 OAuth Apps
+## 14.4 🌐 Webhooks
+Los **Webhooks** permiten que GitHub envíe notificaciones automáticas a otros sistemas cuando ocurren eventos como *push*, *pull request* o *issue*.
+### 🔹 Casos de uso:
+### 🔹 Ejemplo:
+## 14.5 🛒 GitHub Marketplace
+El **GitHub Marketplace** es una tienda de aplicaciones y *Actions* listas para usar en tus proyectos.
+### 🔹 Tipos de herramientas disponibles:
+## 14.6 ♻️ GitHub Actions: Reusable Workflows
+Además de crear flujos de trabajo únicos, GitHub Actions permite reutilizar flujos (`reusable workflows`) entre distintos repositorios.
+### 🔹 ¿Para qué sirve?
+### 🔹 Estructura básica
+## 14.7 🔗 Integración con herramientas externas (Slack, Jira, etc.)
+GitHub puede integrarse con múltiples herramientas de terceros para sincronizar tareas, notificaciones y código.
+### 🔹 Ejemplos comunes:
+## 14.8 🧠 Scripts avanzados: combinando Actions + API
+Puedes crear **automatizaciones personalizadas** combinando GitHub Actions con la REST API (o GraphQL API) para lograr flujos avanzados.
+### 🔹 Ejemplo:
+
+# 15. 🚀 Estrategias de Flujo de Trabajo en Proyectos GitHub
+Este apartado te muestra cómo aplicar, organizar y optimizar todo lo aprendido para trabajar en proyectos reales con Git y GitHub, en equipo o de forma individual. Aquí se presentan los principales **flujos de trabajo (workflows)** utilizados por desarrolladores y organizaciones profesionales.
+## 15.1 🔁 GitHub Flow (el más simple y efectivo)
+Ideal para proyectos pequeños o medianos, y especialmente para **desarrollo continuo**.
+### 🧭 Flujo:
+## 15.2 🌿 Git Flow (estructurado y robusto)
+Ideal para proyectos grandes con múltiples versiones en paralelo.
+### 🔱 Estructura de ramas:
+### 🧭 Flujo:
+## 15.3 🤝 Trunk-Based Development
+Desarrollo basado en una sola rama principal (`main` o `trunk`) con ramas de vida muy corta.
+### 🧭 Flujo:
+## 15.4 🔀 Forking Workflow
+Usado cuando no todos los colaboradores tienen acceso directo al repositorio (open source, proyectos públicos).
+### 🧭 Flujo:
+## 15.5 🧱 GitHub Projects + Issues + PRs
+### 🔹 Organización visual:
+### 🔹 Ejemplo real:
+## 15.6 🧠 Recomendaciones Finales para elegir el mejor flujo
+## 15.7 🛠️ Herramientas para potenciar tus flujos
+## 🎯 Tu Misión Final
+
 # 14. 🛡️ Buenas prácticas, seguridad y herramientas avanzadas
-## 14.1 Buenas prácticas de commits
-
-Mensajes claros, convenciones (Conventional Commits)
-
-## 14.2 Protección de ramas
-
-Revisiones obligatorias, status checks
-
-## 14.3 CODEOWNERS y políticas
-
-## 14.4 Escaneo de vulnerabilidades
-
-Dependabot, CodeQL
-
-## 14.5 Herramientas GUI y CLI avanzadas
-
-gh CLI, Sourcetree, GitKraken
-
-## 14.6 Ejercicio
-
-Configurar una regla de protección de ramas y un workflow de CodeQL
+La gestión responsable de proyectos en GitHub no se trata solo de código funcional, sino también de mantener estándares, seguridad y colaboración efectiva. Aquí verás cómo lograrlo.
+### 14.1 🧱 Buenas prácticas de repositorio
+#### Archivos esenciales
+#### Estructura ordenada
+### 14.2 🔒 Seguridad y protección
+#### Protecciones en ramas (`Branch Protection Rules`)
+#### Dependabot
+#### Code Scanning
+#### Secret Scanning
+### 14.3 ⚙️ Automatización con GitHub CLI y API
+#### GitHub CLI (`gh`)
+#### GitHub API
+### 14.4 🧰 GitHub Marketplace y herramientas externas
+### 14.5 🛡️ CODEOWNERS  
+### 14.6 📝 Plantillas de Issues y Pull Requests  
+### 14.7 ✅ Checks y políticas de merge  
+### 14.8 🔍 Auditoría y registros de actividad  
+### 14.9 📦 Releases y versionado  
+### 14.10 🗂️ Limpieza y archivado de repositorios  
+### 14.11 🧠 Consejos finales para equipos
