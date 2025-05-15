@@ -4,7 +4,8 @@ Aprender a instalar y configurar Git en el sistema local, y familiarizarse con l
 
 #### 🧠 Recordando que es Git!
 Git es un sofware de control de versiones de una carpeta que nos permite tener diferentes versiones de una carpeta
-#### 2.2 📝Ventajas de usar git
+
+## 2.2 📝Ventajas de usar git
 
 | Ventaja                          | Descripción                                                                                                |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -202,7 +203,7 @@ Un *commit* es como decir una “fotografía” del estado actual del proyecto: 
    > ```
 ---
 
-## 2.5 🖼️ Opciones visuales (GUI)
+## 2.6 🖼️ Opciones visuales (GUI)
 
 Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, existen diversas aplicaciones que facilitan la gestión de repositorios Git. A continuación se presentan cuatro alternativas populares, junto con sus características principales y enlaces oficiales.
 
@@ -237,7 +238,7 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
 
 > Con estas herramientas, los usuarios pueden elegir la que mejor se adapte a su flujo de trabajo y entorno, manteniendo una experiencia gráfica que complementa las operaciones de Git en terminal.
 
-## 2.6 📘 Actividad guiada sugerida para cerrar el módulo
+## 2.7 📘 Actividad guiada sugerida para cerrar el módulo
 
 > ### 🧪 Práctica: Crea tu primer repositorio
 
@@ -257,3 +258,6 @@ Para quienes prefieren interfaces gráficas en lugar de la línea de comandos, e
    `git switch -c mi-rama`
 8. Cambia algo en el README y haz un segundo commit.
 9. Usa `git log --oneline` para ver el historial.
+
+## 2.8 🔗 Recursos
+[Aprende GIT interactivo en español](https://learngitbranching.js.org/?locale=es_ES)
