@@ -1,10 +1,10 @@
-# 14. 🛡️ Buenas prácticas, seguridad y herramientas avanzadas
+# 16. 🛡️ Buenas prácticas, seguridad y herramientas avanzadas
 
 La gestión responsable de proyectos en GitHub no se trata solo de código funcional, sino también de mantener estándares, seguridad y colaboración efectiva. Aquí verás cómo lograrlo.
 
 ---
 
-### 14.1 🧱 Buenas prácticas de repositorio
+## 16.1 🧱 Buenas prácticas de repositorio
 
 #### Archivos esenciales
 
@@ -22,7 +22,7 @@ La gestión responsable de proyectos en GitHub no se trata solo de código funci
 
 ---
 
-### 14.2 🔒 Seguridad y protección
+## 16.2 🔒 Seguridad y protección
 
 #### Protecciones en ramas (`Branch Protection Rules`)
 
@@ -48,7 +48,7 @@ La gestión responsable de proyectos en GitHub no se trata solo de código funci
 
 ---
 
-### 14.3 ⚙️ Automatización con GitHub CLI y API
+## 14.3 ⚙️ Automatización con GitHub CLI y API
 
 #### GitHub CLI (`gh`)
 
@@ -71,7 +71,7 @@ gh codespace create
 
 ---
 
-### 14.4 🧰 GitHub Marketplace y herramientas externas
+## 14.4 🧰 GitHub Marketplace y herramientas externas
 
 * Instala Apps para CI/CD, documentación, revisión de código, etc.
 * Ejemplos:
@@ -83,31 +83,31 @@ gh codespace create
 
 ---
 
-### 14.5 🛡️ CODEOWNERS  
+## 14.5 🛡️ CODEOWNERS  
 - Define responsables automáticos para rutas específicas mediante un archivo `CODEOWNERS`.  
 - Garantiza que cambios en áreas críticas siempre pasen por los revisores adecuados.
 ---
-### 14.6 📝 Plantillas de Issues y Pull Requests  
+## 14.6 📝 Plantillas de Issues y Pull Requests  
 - Crea `ISSUE_TEMPLATE.md` y `PULL_REQUEST_TEMPLATE.md` en `.github/`  
 - Estandariza el contenido y campos obligatorios de cada reporte o propuesta de cambio.
 ---
-### 14.7 ✅ Checks y políticas de merge  
+## 14.7 ✅ Checks y políticas de merge  
 - Configura **Required Status Checks** en la rama protegida (`main`): tests, linters, análisis de seguridad.  
 - Impide merges hasta que todos los checks hayan pasado.
 ---
-### 14.8 🔍 Auditoría y registros de actividad  
+## 14.8 🔍 Auditoría y registros de actividad  
 - Revisa periódicamente los **audit logs** de la organización (teams, permisos, acciones críticas).  
 - Usa GitHub Advanced Security (en planes Enterprise) para ver actividades sospechosas.
 ---
-### 14.9 📦 Releases y versionado  
+## 14.9 📦 Releases y versionado  
 - Etiqueta versiones con `git tag -a vX.Y.Z` y usa la sección **Releases** para publicar notas formales.  
 - Sigue **Semantic Versioning** para clarificar cambios mayores, menores y parches.
 ---
-### 14.10 🗂️ Limpieza y archivado de repositorios  
+## 14.10 🗂️ Limpieza y archivado de repositorios  
 - Archiva repositorios inactivos para mantener la organización ordenada.  
 - Elimina ramas obsoletas y cierra proyectos terminados.
 ---
-### 14.11 🧠 Consejos finales para equipos
+## 14.11 🧠 Consejos finales para equipos
 
 * Mantén la documentación actualizada
 * Automatiza lo repetitivo con Actions y CLI
