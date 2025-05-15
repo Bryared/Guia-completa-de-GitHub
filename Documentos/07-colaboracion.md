@@ -203,7 +203,7 @@ gh pr review       # Comentar o aprobar PR
 > 💡 Acelera tu flujo sin salir de la terminal.
 
 ---
-
+Más detalles en: [14.🔧Herramientas Avanzadas y Extensibilidad en GitHub](Documentos/14-herramientas.md)
 ### 7.7 🧠 Buenas prácticas de colaboración
 
 | Práctica                   | Beneficio                           |
