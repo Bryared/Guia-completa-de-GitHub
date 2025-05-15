@@ -1,111 +1,29 @@
 # 1. 📌 Introducción a Git y GitHub
-### 1.1 Objetivos
+## 1.1 🎯 Objetivos
+## 1.2 🧠 ¿Qué es Git?
+## 1.3 🌐 ¿Qué es GitHub?
+## 1.4 🆚 Git vs. GitHub:
+## 1.5 💡 Ventajas del control de versiones
+## 1.6 🔄 Flujo de trabajo general
+## 1.7 📝 Ejercicio
+## 1.8 🔗 Recursos
 
-Entender el propósito de un sistema de control de versiones.
-
-Conocer la historia y evolución de Git y GitHub.
-
-### 1.2 ¿Qué es Git?
-
-Definición y características principales
-
-Arquitectura distribuida vs. centralizada
-
-### 1.3 ¿Qué es GitHub?
-
-Plataforma colaborativa: repositorios remotos, social coding
-
-Diferencias clave frente a Git local
-
-### 1.4 Ventajas del control de versiones
-
-Colaboración y trazabilidad
-
-Historias de éxito (proyectos open-source, empresas)
-
-### 1.5 Flujo de trabajo general
-
-Local → Remoto → Colaborativo
-
-Diagrama de alto nivel
-
-### 1.6 Ejercicio
-
-Investigar un proyecto open-source y describir su flujo de Git/GitHub.
-
-### 1.7 Recursos
-
-Enlace a la documentación oficial de Git y GitHub
-
-# 2. ⚙️ Primeros pasos con Git
-### 2.1 Instalación de Git
-
-Windows (Git for Windows), macOS (Homebrew), Linux (apt/yum)
-
-### 2.2 Configuración inicial
-
-git config --global user.name / user.email
-
-Archivo .gitconfig y secciones comunes
-
-### 2.3 Alias y personalización
-
-Crear alias (git config alias.co checkout)
-
-Colores, prompts y hooks de cliente
-
-### 2.4 .gitignore y .gitattributes
-
-Sintaxis básica de .gitignore
-
-Uso de .gitattributes para fin de línea y diffs personalizados
-
-### 2.5 Primer repositorio
-
-git init vs. git clone
-
-Estructura del directorio .git/
-
-## 2.6 Ejercicio
-
-Configurar un alias y un .gitignore para un proyecto Python
-
-## 2.7 Recursos
-
-Cheatsheet de configuración de Git
+# 2. ⚙️ Primeros Pasos con Git
+## 2.1 🎯 Objetivo:
+## 2.2 📝Ventajas de usar git
+## 2.3 💾 Instalación de Git
+## 2.4 ⚙️ Configuración inicial de Git
+## 2.5 🖥️ Comandos básicos de la terminal de Git Bach
+## 2.5 🖼️ Opciones visuales (GUI)
+## 2.6 📘 Actividad guiada sugerida para cerrar el módulo
 
 # 3. 🧱 Flujo básico de trabajo con Git
-## 3.1 Estado del repositorio
-
-git status y sus interpretaciones
-
-## 3.2 Agregar y confirmar cambios
-
-git add (área de staging)
-
-git commit -m vs. -v vs. --amend
-
-## 3.3 Ver historial
-
-git log (formatos, alias, --graph)
-
-git show, git diff
-
-## 3.4 Tags y versiones
-
-git tag ligero vs. anotado
-
-Uso en liberaciones (semver)
-
-## 3.5 Recuperación rápida
-
-git reset --soft/mixed/hard
-
-git restore
-
-## 3.6 Ejercicio
-
-Crear varios commits y practicar reset y restore para deshacer
+## 3.1 🔍 Estado del repositorio
+## 3.2 🧾 Agregar y confirmar cambios
+## 3.3 📜 Ver historial
+## 3.4 🔖 Tags y versiones
+## 3.5 🧯 Recuperación rápida
+## 3.6 📝 Ejercicio
 
 # 4. 🔁 Gestión de versiones y cambios
 ## 4.1 Comparación de revisiones
