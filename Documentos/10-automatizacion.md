@@ -1,7 +1,13 @@
 # 10. ⚙️ Automatización con GitHub Actions 🤖
----
 
-**GitHub Actions** te permite diseñar y ejecutar pipelines de CI/CD directamente desde tu repositorio. Con ellas puedes:
+GitHub Actions es la solución integrada de **automatización** dentro de GitHub. Permite crear flujos de trabajo que se ejecutan automáticamente en respuesta a eventos del repositorio, como *push*, *pull requests*, *releases*, o tareas programadas. Es ideal para CI/CD, pruebas automáticas, despliegues, y mucho más.
+
+---
+## 10.1 🧠 ¿Qué es GitHub Actions?
+
+GitHub Actions es un sistema de automatización basado en **archivos YAML** que viven dentro de tu repositorio. Define “**qué hacer**”, “**cuándo hacerlo**” y “**dónde ejecutarlo**”.
+
+**GitHub Actions** te permite diseñar y ejecutar pipelines de Integración(CI)/Despliegue(CD) Continuo directamente desde tu repositorio. Con ellas puedes:
 
 - Ejecutar pruebas en cada push o PR  
 - Generar documentación automáticamente  
@@ -20,11 +26,11 @@
 | 🧰 **Personalización total**   | Crea workflows a medida según las necesidades de tu proyecto.           |
 
 ---
-### 10.1 🧬 Estructura básica de un workflow
+## 10.2 🧬 Estructura básica de un workflow
 
 📁 Todos los workflows se almacenan en `.github/workflows/*.yml`.
 
-```yaml
+```
 name: Nombre del workflow
 on: [push, pull_request]
 
@@ -39,7 +45,7 @@ jobs:
 
 ---
 
-### 10.2 🚀 Eventos de disparo (`on:`)
+## 10.3 🚀 Eventos de disparo (`on:`)
 
 Puedes activar un workflow con distintos eventos:
 
@@ -52,12 +58,12 @@ Puedes activar un workflow con distintos eventos:
 
 ---
 
-### 10.3 🛠️ Jobs y pasos (`jobs` y `steps`)
+## 10.4 🛠️ Jobs y pasos (`jobs` y `steps`)
 
 * **Job**: conjunto de pasos que se ejecutan en un entorno.
 * **Step**: cada comando o acción dentro del job.
 
-```yaml
+```
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -66,8 +72,70 @@ jobs:
 ```
 
 ---
+## 10.5 🔄 CI/CD: Integración y Despliegue Continuo
 
-### 10.4 🔁 Reutilización con Workflows Reusables
+### CI – *Integración Continua* (Continuous Integration)
+
+Proceso donde cada cambio en el código es **integrado y probado automáticamente**.
+✅ Automatiza la construcción y prueba de tu código en cada cambio.
+✅ Asegura que el nuevo código **no rompa lo anterior**: Mantiene la calidad del código
+✅ Detecta errores **tempranamente** en el ciclo de desarrollo.
+
+### CD – *Entrega Continua / Despliegue Continuo* (Continuous Delivery / Deployment)
+
+Permite que el software sea **entregado automáticamente a entornos de staging o producción** después de pasar las pruebas.
+
+🚀 Minimiza el tiempo entre escribir código (time-to-market) y verlo funcionando en vivo (errores manuales).
+
+### Comparativa
+ 🧪 CI se enfoca en **probar**; CD se enfoca en **entregar/desplegar**.
+
+**Ventajas del uso de CI/CD con GitHub Actions:**
+
+* Reducción de errores humanos
+* Feedback inmediato
+* Ahorro de tiempo en tareas repetitivas
+* Facilita equipos distribuidos
+
+---
+
+
+## 📦 Ejemplos de automatización
+
+### ✅ Integración continua (CI)
+
+```
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar pruebas
+        run: npm test
+```
+
+### 🌐 Despliegue automático a GitHub Pages
+
+```yaml
+uses: peaceiris/actions-gh-pages@v3
+with:
+  github_token: ${{ secrets.GITHUB_TOKEN }}
+  publish_dir: ./dist
+```
+
+## 🔔 Notificaciones y tareas externas
+
+Envía avisos a Slack, Discord o cualquier webhook:
+
+* `8398a7/action-slack`
+* `Ilshidur/action-discord`
+
+---
+
+## 10.4 🔁 Reutilización con Workflows Reusables
 
 Puedes definir **workflows reutilizables** para compartir lógica entre repositorios o jobs.
 
@@ -79,7 +147,7 @@ with:
 
 ---
 
-### 10.5 🏪 GitHub Actions Marketplace
+## 10.5 🏪 GitHub Actions Marketplace
 
 Repositorio oficial de **acciones preconstruidas** por la comunidad.
 
@@ -93,7 +161,7 @@ Ejemplos:
 
 ---
 
-### 10.6 🔐 Secretos y seguridad
+## 10.6 🔐 Secretos y seguridad
 
 GitHub permite usar **secretos cifrados** para proteger tokens o contraseñas.
 
@@ -110,40 +178,28 @@ env:
 
 ---
 
-### 10.7 📦 Ejemplos de automatización
+## 10.12 ✨ Avanzado: Matrices y extensiones
 
-#### ✅ Integración continua (CI)
-
-```yaml
-on: push
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Instalar dependencias
-        run: npm install
-      - name: Ejecutar pruebas
-        run: npm test
-```
-
-#### 🌐 Despliegue automático a GitHub Pages
+### Matrices (paralelizar)
 
 ```yaml
-uses: peaceiris/actions-gh-pages@v3
-with:
-  github_token: ${{ secrets.GITHUB_TOKEN }}
-  publish_dir: ./dist
+strategy:
+  matrix:
+    node: [14, 16, 18]
+steps:
+  - uses: actions/setup-node@v4
+    with: { node-version: ${{ matrix.node }} }
 ```
 
-#### 📢 Notificaciones a Slack/Discord
+### Extensiones y alias
 
-Con Webhooks o usando acciones como:
-
-* `8398a7/action-slack`
-* `Ilshidur/action-discord`
+```bash
+gh extension install dlvhdr/gh-dash
+gh alias set deploy 'workflow run deploy.yml'
+```
 
 ---
+
 
 ### 🧠 Buenas prácticas
 
