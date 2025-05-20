@@ -32,7 +32,9 @@ Los **Gists** son mini-repositorios para compartir fragmentos de código o notas
 1. Ve a [gist.github.com](https://gist.github.com/).  
 2. Inicia sesión en tu cuenta de GitHub.
 3. Nos vamos a Create new...
+
 ![Vamos a Create new...](https://media.discordapp.net/attachments/724308790098395236/1372477809548726342/image.png?ex=682d8291&is=682c3111&hm=e90c609ca66b839d472ade51648c41128e29f22eecd4b68767c5e6f7fc6452ce&=&format=webp&quality=lossless&width=286&height=242)
+
 4. Rellena los campos:  
    * **Filename**: nombre del archivo (p. ej. `snippet.py`).  
    * **Content**: pega tu código o texto.  
