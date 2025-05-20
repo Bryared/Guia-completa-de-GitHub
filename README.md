@@ -1,5 +1,5 @@
 # 🧠 Guía Completa de Git & GitHub
-#Esto es un encabezado sin espacio  (esto provocará un warning)
+
 📘 Un manual sobre el uso moderno de Git y GitHub. 
 
 ❗Una pagina web implementada con GitHub Pages [aquí](https://bryared.github.io/Guia-completa-de-GitHub/)
