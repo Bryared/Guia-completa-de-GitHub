@@ -1,6 +1,8 @@
 # 🧠 Guía Completa de Git & GitHub
 
-📘 Un manual sobre el uso moderno de Git y GitHub.  
+📘 Un manual sobre el uso moderno de Git y GitHub. 
+
+❗Una pagina web implementada con GitHub Pages [aquí](https://bryared.github.io/Guia-completa-de-GitHub/)
 
 | 🎯 Integrantes         |   Código    | 🔨 Usuario de GitHub                            |
 |------------------------|-----|-------------------------------------------------|
